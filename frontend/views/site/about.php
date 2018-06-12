@@ -5,181 +5,400 @@ use yii\helpers\Html;
 if (isset($meta_title) && $meta_title != '')
         $this->title = $meta_title;
 else
-        $this->title = 'Epitome';
+        $this->title = 'New Bharath Pitstop';
 ?>
-<section class="in-banner"><!--in-banner-->
-        <div class="container">
-                <div class="banner-cont">
-                        <h2><span>A</span>bouts <span>C</span>omapny</h2>
-                </div>
-                <div class="main-breadcrumb"><a href="<?= Yii::$app->homeUrl ?>">Home</a><i>|</i><span>Abouts</span> </div>
-        </div>
-</section>
-<!--in-banner-->
-<section class="in-top-about"><!--in-top-about-->
+
+
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area">
         <div class="container">
                 <div class="row">
-                        <div class="col-md-4">
-                                <div class="img-box">
-                                        <h3>According of the <span>CEO</span></h3>
-                                        <img src="<?= Yii::$app->homeUrl ?>uploads/about/<?= $about->id ?>/<?= $about->id ?>.<?= $about->image ?>"  class="img-fluid" alt="Message From CEO" title="">
-                                        <div class="about-box">
-                                                <h2><small>ABOUT</small> US</h2>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="col-md-8">
-                                <div class="cont">
-                                        <?= $about->content ?>
-
+                        <div class="col-md-12">
+                                <div class="breadcrumbs text-center">
+                                        <h1>About New Bharath Pitstop</h1>
+                                        <h4>Get to Know us Better</h4>
                                 </div>
                         </div>
                 </div>
         </div>
 </section>
-<!--in-top-about-->
+<!--End breadcrumb area-->
 
-<section class="in-customer-focused-team"><!--in-customer-focused-team-->
+<!--Start breadcrumb bottom area-->
+<section class="breadcrumb-bottom-area">
         <div class="container">
-                <h3><b>Making your ideas work</b> on the <b>Web Services</b> <br>that will render your business newfangled and futuristic
-                </h3>
                 <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                                <div class="focused-team">
-                                        <div class="icon"></div>
-                                        <h2>100%</h2>
-                                        <small>Design</small> </div>
+                        <div class="col-md-6 col-sm-5">
+                                <ul>
+                                        <li><a href="#">Home</a></li>
+                                        <li><i class="fa fa-angle-right"></i></li>
+                                        <li>About</li>
+                                </ul>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                                <div class="focused-team">
-                                        <div class="icon icon2"></div>
-                                        <h2>98%</h2>
-                                        <small>Development</small> </div>
+                        <div class="col-md-6 col-sm-7">
+                                <p>We are here to provide 100% services to our customers</p>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                                <div class="focused-team">
-                                        <div class="icon icon3"></div>
-                                        <h2>99%</h2>
-                                        <small>Marketing</small> </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                                <div class="focused-team">
-                                        <div class="icon icon4"></div>
-                                        <h2>98%</h2>
-                                        <small>Branding</small> </div>
-                        </div>
-                </div>
-        </div>
-</section>
-<!--in-customer-focused-team-->
-<section class="in-work-cycle"><!--in-work-cycle-->
-        <div class="container">
-                <div class="main-head1">
-                        <h2><span>t</span>he <span>W</span>ork <span>C</span>ycle </h2>
-                        <small>Our Process</small></div>
-                <p class="text-cont"><?= $about->work_cycle ?></p>
-                <div class="main-cycle">
-                        <div class="row">
-                                <div class="col-lg-4">
-                                        <div class="cycle-box">
-                                                <div class="no">01</div>
-                                                <div class="icon"></div>
-                                                <h3><?= $about->work_cycle_1 ?></h3>
-                                                <p><?= $about->work_cycle_1_content ?></p>
-                                        </div>
-                                </div>
-                                <div class="col-lg-4">
-                                        <div class="cycle-box">
-                                                <div class="no">02</div>
-                                                <div class="icon icon2"></div>
-                                                <h3><?= $about->work_cycle_2 ?></h3>
-                                                <p><?= $about->work_cycle_2_content ?></p>
-                                        </div>
-                                </div>
-                                <div class="col-lg-4">
-                                        <div class="cycle-box">
-                                                <div class="no">03</div>
-                                                <div class="icon icon3"></div>
-                                                <h3><?= $about->work_cycle_3 ?></h3>
-                                                <p><?= $about->work_cycle_3_content ?></p>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="main-cycle2">
-                        <div class="row">
-                                <div class="col-lg-4 oder1">
-                                        <div class="cycle-box">
-                                                <div class="no">04</div>
-                                                <div class="icon icon4"></div>
-                                                <h3><?= $about->work_cycle_4 ?></h3>
-                                                <p><?= $about->work_cycle_4_content ?></p>
-                                        </div>
-                                </div>
-                                <div class="col-lg-4 oder2">
-                                        <div class="cycle-box">
-                                                <div class="no">05</div>
-                                                <div class="icon icon5"></div>
-                                                <h3><?= $about->work_cycle_5 ?></h3>
-                                                <p><?= $about->work_cycle_5_content ?></p>
-                                        </div>
-                                </div>
-                                <div class="col-lg-4 oder3">
-                                        <div class="cycle-box">
-                                                <div class="no">06</div>
-                                                <div class="icon icon6"></div>
-                                                <h3><?= $about->work_cycle_6 ?></h3>
-                                                <p><?= $about->work_cycle_6_content ?></p>
-                                        </div>
-                                </div>
-                        </div>
-                        <div class="cycle-box-main">
-                                <h3>Launch</h3>
-                                <p>The final campaign is only launched when our experts and client are content with the campaign. The campaign is released at the most opportune moment to ensure that it achieves all the goals it was predicted to attain.</p>
-                        </div>
-                </div>
-        </div>
-</section>
-<!--in-work-cycle-->
 
-<?= common\components\ServiceListWidget::widget() ?>
-<!--in-main-link-section-allpage-->
-<section class="in-best-of-us"><!--in-best-of-us-->
+                </div>
+        </div>
+</section>
+<!--End breadcrumb bottom area-->
+
+<!--Start customers area-->
+<section class="customers-area">
         <div class="container">
-                <div class="main-head1">
-                        <h2><span>t</span>he <span>B</span>est <span>o</span>f <span>u</span>s</h2>
-                        <small>Our best of us</small></div>
-                <p class="text">Most helpful Web search</p>
                 <div class="row">
-                        <div class="col-lg-4">
-                                <div class="Our-best-box">
-                                        <div class="icon"></div>
-                                        <h3><small>Professionals</small> At your Service</h3>
-                                        <p>Our horde of expert professionals possess years of hands-on industry experience. Our team is headed by industry pundits and marketing maestros. The multitude of workforce stationed in various departments works as different organs of the body, synchronizing our ideas and efforts towards achieving your goals. Our professionals regularly trained and tested to ensure that our client gets an overwhelming response and the best use of his money.</p>
-                                        <a href="#" class="link">Browse Know</a>
+                        <div class="col-lg-9 col-md-8">
+                                <div class="customers-info">
+                                        <div class="sec-title text-left">
+                                                <h1>Know About Us</h1>
+                                                <span class="decor"></span>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-5">
+                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/resources/about-sub.jpg" alt="Awesome Image" class="img-responsive"> </div>
+                                                </div>
+                                                <div class="col-md-7">
+                                                        <div class="content">
+                                                                <h3>COMPANY OVERVIEW</h3>
+                                                                <h5>Welcome to NEW BHARATH TYRES. New Bharath Tyres offers a complete range of Tyres, Alloy-wheels and modern tyre services.</h5>
+                                                                <img src="<?= Yii::$app->homeUrl ?>img/icon/since.png"><br><br>
+
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <div class="content">
+
+                                                                <p>NewBharath Tyres, the pioneers in tyre retailing with over 60 years of excellence has been accredited the No.1 dealer by world’s leading tyre manufacturers.<p>
+                                                                <p>NewBharath Tyres, the tyre retailer with a chain of outlets all over Kerala facilitates to cater the World-Class products and services all under one roof. Best products, latest machinery, sound management, financial stability, experienced and technically qualified workforce and quality control practice is the specialty of NewBharath Tyres. From world’s best Tyres to Alloy wheels and latest wheel alignment and balancing technology and specialized services like alloy wheel fitment, nitrogen-air, NewBharath Tyres offers you unmatchable international service. NewBharath Tyres takes maximum effort and is successful in bringing the lastest service technologies before any other, in town.
+
+                                                                        NewBharath Tyres has been capable in bringing new standards and trends in tyre-retailing in India for the customers with truly world class services and facilities which is not available anywhere in India. NewBharath Tyres, through an unwavering commitment and dedication won the trust and confidence of a legion of loyal customers of over 2 million  and still counting.</p>
+
+                                                        </div>
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
-                        <div class="col-lg-4">
-                                <div class="Our-best-box">
-                                        <div class="icon icon2"></div>
-                                        <h3><small>Successful</small>Track Record</h3>
-                                        <p>The series of success stories recorded by us is our biggest testimony. For us, the success pertains to meeting and exceeding the expectations of our client. The number of people reached, number of visits to the website, number of favorable actions recorded as a result, the elevation of the brand image together constitute a digital marketing success story. We have a history of exhilarated clients and colossal victories.</p>
-                                        <a href="#" class="link">View More</a>
-                                </div>
-                        </div>
-                        <div class="col-lg-4">
-                                <div class="Our-best-box">
-                                        <div class="icon icon3"></div>
-                                        <h3><small>Demonstrable</small>Results</h3>
-                                        <p>Epitome’s digital marketing endeavor has etched the success of over 120 international projects and 80+ overseas clients. We brand has a story to tell, we help you narrate that story enthrallingly.
-                                                We create a concrete, convincing online presence for brands with our ingenious digital products, insights, integrated experiences, robust strategies, and captivating story-telling on mobile and web.
-                                        </p>
-                                        <a href="#" class="link">View More</a>
+                        <div class="col-lg-3 col-md-4">
+                                <div class="customer-support">
+                                        <h4>24/7 Free Customer Support.</h4>
+                                        <p>New Bharath Pitstop is your ONE STOP<br> solution bringing best car services.</p>
+                                        <h3><span class="flaticon-telephone"></span><br>800PITSTOP (7487867)</h3>
+                                        <div class="info-box text-center">
+                                                <p>phone: 042630606</p>
+                                                <p>Email: dubai@newbharathtyres.com</p>
+
+                                                <div class="social">
+                                                        <ul>
+                                                                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                                                                <li><a href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+                                                                <li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
+                                                        </ul>
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
                 </div>
         </div>
 </section>
-<!--in-best-of-us-->
-<?= common\components\ContactFormWidget::widget() ?>
+<!--End customers area-->
 
+<!--Start years tab area-->
+
+<!--End years tab area-->
+
+<!--Fact counter area-->
+
+<!--End counter area-->
+
+<!--Start why choose us area-->
+<section class="why-choose-us-area">
+        <div class="container">
+                <div class="sec-title text-center">
+                        <h1>Why Choose Us</h1>
+                        <span class="decor"></span>
+                </div>
+                <div class="row">
+                        <!--Start single item-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="single-item">
+                                        <div class="icon-holder">
+                                                <span class="flaticon-social"></span>
+                                        </div>
+                                        <div class="content">
+                                                <h3>100% Transparency</h3>
+                                                <p>We ensure that you get a well detailed break-up of each minor repair work</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                        <!--End single item-->
+                        <!--Start single item-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="single-item">
+                                        <div class="icon-holder">
+                                                <span class="flaticon-wrench"></span>
+                                        </div>
+                                        <div class="content">
+                                                <h3>Genuine Spare Parts</h3>
+                                                <p>We useuthorized genuine spare parts &amp; accessories to ensure that your</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                        <!--End single item-->
+                        <!--Start single item-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="single-item">
+                                        <div class="icon-holder">
+                                                <span class="flaticon-map"></span>
+                                        </div>
+                                        <div class="content">
+                                                <h3>Trusted &amp; Quality Service</h3>
+                                                <p>You can avail our free pickup &amp; drop so that you can just sit &amp; relax</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                        <!--End single item-->
+                        <!--Start single item-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="single-item">
+                                        <div class="icon-holder">
+                                                <span class="flaticon-interface-2"></span>
+                                        </div>
+                                        <div class="content">
+                                                <h3>Friendly & Helpfull Team</h3>
+                                                <p>We are a friendly & helpful professional group of people in autocare.</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                        <!--End single item-->
+                        <!--Start single item-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="single-item">
+                                        <div class="icon-holder">
+                                                <span class="flaticon-transport-2"></span>
+                                        </div>
+                                        <div class="content">
+                                                <h3>free Pickup & Drop</h3>
+                                                <p>You can avail our free pickup & drop so that you can just sit & relax.</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                        <!--End single item-->
+                        <!--Start single item-->
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                <div class="single-item">
+                                        <div class="icon-holder">
+                                                <span class="flaticon-money"></span>
+                                        </div>
+                                        <div class="content">
+                                                <h3>Zero Upselling</h3>
+                                                <p>You can see servicing cost upfront our Service Calculator. Only additional.</p>
+
+                                        </div>
+                                </div>
+                        </div>
+                        <!--End single item-->
+                </div>
+        </div>
+</section>
+<!--End why choose us area-->
+
+<!--Start testimonial area-->
+<section class="years-tab-area">
+        <div class="container">
+                <div class="row">
+                        <div class="col-lg-9 col-md-8">
+                                <div class="years-tab">
+                                        <div class="tab-menu">
+                                                <ul>
+                                                        <li class="active">
+                                                                <a href="#launched" data-toggle="tab">
+                                                                        <h3>1984</h3>
+                                                                        <span>Launched</span>
+                                                                </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#service" data-toggle="tab">
+                                                                        <h3>1986</h3><span>Service of the year</span>
+                                                                </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#extended" data-toggle="tab">
+                                                                        <h3>1987</h3><span>Extended 14 center</span>
+                                                                </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#engine" data-toggle="tab">
+                                                                        <h3>1991</h3><span>Engine Diagnosis </span>
+                                                                </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#award" data-toggle="tab">
+                                                                        <h3>1992</h3><span>Employee Award</span>
+                                                                </a>
+                                                        </li>
+                                                        <li>
+                                                                <a href="#offer" data-toggle="tab">
+                                                                        <h3>1994</h3><span>Offer of the year</span>
+                                                                </a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="tab-content clearfix">
+                                                <!--Start single tab pane-->
+                                                <div class="tab-pane active" id="launched">
+                                                        <div class="title">
+                                                                <h2>We Are Started at California - 1984</h2>
+                                                                <span class="border"></span>
+                                                        </div>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The points of using Lorem Ipsum is that seds uts it has more-or-less normal distribution of letters embarrassing generators  fact that a reader will be distracted by the readable content of a page when looking.</p>
+                                                        <div class="row">
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-text">
+                                                                                <p>There are many variations of passages of available, but the majority have suffereed alteration in some forms by seds injected humour or randomiseed words  slightly believable If you are going to user a passages of  you need to be sure theree isn't seds embarrassing hidden in the  fact that a reader.</p>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-img-holder">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>img/years-tab/1.jpg" alt="">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!--End single tab pane-->
+                                                <!--Start single tab pane-->
+                                                <div class="tab-pane" id="service">
+                                                        <div class="title">
+                                                                <h2>We Are Started at California - 1984</h2>
+                                                                <span class="border"></span>
+                                                        </div>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The points of using Lorem Ipsum is that seds uts it has more-or-less normal distribution of letters embarrassing generators  fact that a reader will be distracted by the readable content of a page when looking.</p>
+                                                        <div class="row">
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-text">
+                                                                                <p>There are many variations of passages of available, but the majority have suffereed alteration in some forms by seds injected humour or randomiseed words  slightly believable If you are going to user a passages of  you need to be sure theree isn't seds embarrassing hidden in the  fact that a reader.</p>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-img-holder">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>img/years-tab/2.jpg" alt="">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!--End single tab pane-->
+                                                <!--Start single tab pane-->
+                                                <div class="tab-pane" id="extended">
+                                                        <div class="title">
+                                                                <h2>We Are Started at California - 1984</h2>
+                                                                <span class="border"></span>
+                                                        </div>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The points of using Lorem Ipsum is that seds uts it has more-or-less normal distribution of letters embarrassing generators  fact that a reader will be distracted by the readable content of a page when looking.</p>
+                                                        <div class="row">
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-text">
+                                                                                <p>There are many variations of passages of available, but the majority have suffereed alteration in some forms by seds injected humour or randomiseed words  slightly believable If you are going to user a passages of  you need to be sure theree isn't seds embarrassing hidden in the  fact that a reader.</p>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-img-holder">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>img/years-tab/3.jpg" alt="">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!--End single tab pane-->
+                                                <!--Start single tab pane-->
+                                                <div class="tab-pane" id="engine">
+                                                        <div class="title">
+                                                                <h2>We Are Started at California - 1984</h2>
+                                                                <span class="border"></span>
+                                                        </div>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The points of using Lorem Ipsum is that seds uts it has more-or-less normal distribution of letters embarrassing generators  fact that a reader will be distracted by the readable content of a page when looking.</p>
+                                                        <div class="row">
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-text">
+                                                                                <p>There are many variations of passages of available, but the majority have suffereed alteration in some forms by seds injected humour or randomiseed words  slightly believable If you are going to user a passages of  you need to be sure theree isn't seds embarrassing hidden in the  fact that a reader.</p>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-img-holder">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>img/years-tab/4.jpg" alt="">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!--End single tab pane-->
+                                                <!--Start single tab pane-->
+                                                <div class="tab-pane" id="award">
+                                                        <div class="title">
+                                                                <h2>We Are Started at California - 1984</h2>
+                                                                <span class="border"></span>
+                                                        </div>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The points of using Lorem Ipsum is that seds uts it has more-or-less normal distribution of letters embarrassing generators  fact that a reader will be distracted by the readable content of a page when looking.</p>
+                                                        <div class="row">
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-text">
+                                                                                <p>There are many variations of passages of available, but the majority have suffereed alteration in some forms by seds injected humour or randomiseed words  slightly believable If you are going to user a passages of  you need to be sure theree isn't seds embarrassing hidden in the  fact that a reader.</p>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-img-holder">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>img/years-tab/5.jpg" alt="">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!--End single tab pane-->
+                                                <!--Start single tab pane-->
+                                                <div class="tab-pane" id="offer">
+                                                        <div class="title">
+                                                                <h2>We Are Started at California - 1984</h2>
+                                                                <span class="border"></span>
+                                                        </div>
+                                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The points of using Lorem Ipsum is that seds uts it has more-or-less normal distribution of letters embarrassing generators  fact that a reader will be distracted by the readable content of a page when looking.</p>
+                                                        <div class="row">
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-text">
+                                                                                <p>There are many variations of passages of available, but the majority have suffereed alteration in some forms by seds injected humour or randomiseed words  slightly believable If you are going to user a passages of  you need to be sure theree isn't seds embarrassing hidden in the  fact that a reader.</p>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                        <div class="bottom-img-holder">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>img/years-tab/6.jpg" alt="">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!--End single tab pane-->
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4">
+                                <div class="working-time">
+                                        <h3>Working Time</h3>
+                                        <ul>
+                                                <li>Monday - Friday<span>9.00 to 18.00</span></li>
+                                                <li>Saturday<span>10.00 to 15.00</span></li>
+                                                <li>Sunday<span><a href="#">Closed</a></span></li>
+                                        </ul>
+                                </div>
+                                <div class="subscribe">
+                                        <h3>Subscribe Us</h3>
+                                        <form action="#">
+                                                <input type="email" name="email" placeholder="Email Address">
+                                                <button type="submit"><span class="flaticon-paper"></span></button>
+                                                <p>* Your Mail id is Fully Protected.</p>
+                                        </form>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</section>
+<!--End testimonial area-->

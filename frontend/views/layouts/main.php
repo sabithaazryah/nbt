@@ -13,9 +13,9 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
         <head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <!-- Basic -->
-                
+
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,300 +24,249 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                 <title><?= Html::encode($this->title) ?></title>
                 <link rel="shortcut icon" href="<?= Yii::$app->homeUrl ?>favicon/icon.png">
                 <script src="<?= yii::$app->homeUrl; ?>js/jquery-min.js"></script>
-                <script src='https://www.google.com/recaptcha/api.js'></script>
                 <?php $this->head() ?>
         </head>
-        <body>
+        <body class="main-body">
                 <?php $action = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id; // controller action id  ?>
                 <?php $this->beginBody() ?>
-                <div class="main-right-call" itemscope itemtype="http://schema.org/Epitome"><!--main-right-call-->
-                        <div class="call-box">
-                                <div class="icon"><i class="fa fa-phone"></i></div>
-                                <span>Call Us</span>
-                                <h3 itemprop="tel"> <?= $contact_details->phone1 ?></h3>
+
+                <?php if (Yii::$app->controller->action->id == 'index' || '') { ?>
+                        <div class="left-sd-service">
+                                <ul class="list">
+                                        <li><a href="tyres.html">tyres</a></li>
+                                        <li><a href="batteries.html" class="icon2">Batteries</a></li>
+                                        <li><a href="alloy-wheels.html" class="icon3">alloy wheels</a></li>
+                                        <li><a href="services.html" class="icon4">wheel alignment</a></li>
+                                        <li><a href="services.html" class="icon5">wheel balancing</a></li>
+                                        <li><a href="services.html" class="icon6">nitrogen filling</a></li>
+                                        <li><a href="services.html" class="icon7">oil change</a></li>
+                                        <li><a href="services.html" class="icon8">brakes</a></li>
+                                </ul>
                         </div>
-                </div>
-                <!--main-right-call-->
-                <div class="main-right-chat"><!--main-right-call-->
-                        <a href="#">
-                                <div class="chat-box">
-                                        <div class="icon"><i class="fa fa-comments"></i></div>
-                                        <span>Chat</span> </div>
-                        </a> </div>
-                <header class="header main_head navbar-custom fixed-top"><!--header-->
-                        <!--head-top-section-->
-                        <section class="top-section"><!--top-section-->
-                                <div class="container">
-                                        <div class="row">
-                                                <div class="col-md-4 col-7">
-                                                        <div class="top-cont-left">Express the way you imagine</div>
+                        <div class="main-link"> <a href="#exampleModal" data-toggle="modal" class="quick-enquiry"></a> </div>
+                        <!--main-popup-->
+                        <div class="main-popup">
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+                                        <div class="modal-dialog modal-md" role="document">
+                                                <div class="modal-content ">
+                                                        <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                                <h4 class="modal-title">Need Assistance?</h4>
+                                                        </div>
+                                                        <form>
+                                                                <div class="form-box">
+                                                                        <input name="" type="text" class="form-control" placeholder="Your Full Name">
+                                                                        <input name="" type="text" class="form-control" placeholder="Your Phone Number">
+                                                                        <input name="" type="text" class="form-control" placeholder="Your Email">
+                                                                        <textarea name="" cols="" rows="" class="form-control" placeholder="Your Message"></textarea>
+                                                                        <input name="" type="submit" value="SEND" class="submit">
+                                                                </div>
+                                                        </form>
                                                 </div>
-                                                <div class="col-md-8 col-5">
-                                                        <div class="top-right-section" itemscope itemtype="http://schema.org/Epitome">
-                                                                <div class="top-link">
+                                        </div>
+                                </div>
+                        </div>
+                <?php } ?>
+                <!-- /.customizer-box -->
+                <!--Start header area-->
+                <header class="main-header stricky">
+                        <!--Start header top-->
+                        <div class="header-top">
+                                <div class="container">
+                                        <div class="header-top-content">
+                                                <div class="row">
+                                                        <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12">
+                                                                <div class="header-contact-info">
                                                                         <ul>
-                                                                                <li><?= Html::a('Blog', ['/site/blogs']) ?></li>
-                                                                                <li><span>|</span></li>
-                                                                                <li><?= Html::a('Happy Clients', ['/site/portfolio']) ?></li>
+                                                                                <li><i class="flaticon-telephone"></i>Customer Support: 800PITSTOP (7487867)</li>
+                                                                                <li><i class="flaticon-interface-1"></i>dubai@newbharathtyres.com</li>
                                                                         </ul>
                                                                 </div>
-
-                                                                <div class="call"><h6><span>Call Now:</span> <span itemprop="tel" class="top-section-contact"><?= $contact_details->phone1 ?></span></h6></div>
-                                                               <div class="mail"><span>Email:</span><?= $contact_details->email ?></div>
-
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-5 col-sm-3 col-xs-12">
+                                                                <div class="social-links">
+                                                                        <ul>
+                                                                                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                                                                                <li><a href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+                                                                                <li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
+                                                                                <li><a href="#"><i class="flaticon-linkedin-logo"></i></a></li>
+                                                                        </ul>
+                                                                </div>
+                                                                <div class="top-map"><a href="https://www.google.co.in/maps/place/New+Bharath+PITSTOP+(New+Bharath+Tyres)/@25.277115,55.385991,15z/data=!4m5!3m4!1s0x0:0x95fef0a91c98e7f5!8m2!3d25.277115!4d55.385991" target="_blank"></a></div>
                                                         </div>
                                                 </div>
                                         </div>
                                 </div>
-                        </section>
+                        </div>
+                        <!--End header top-->
 
-                        <!--top-section-->
-                        <section class="head-middle-section"><!--head-top-section-->
+                        <nav class="header-lower navbar navbar-default">
                                 <div class="container">
+                                        <!-- Brand and toggle get grouped for better mobile display -->
                                         <div class="row">
                                                 <div class="col-md-3">
-                                                        <h1 class="logo"><a href="<?= Yii::$app->homeUrl ?>"><img src="<?= Yii::$app->homeUrl ?>images/logo.png" alt="Epitome In Dubai" title="Epitome In Dubai" class="img-fluid"></a></h1>
+                                                        <div class="logo"> <a  href="<?= Yii::$app->homeUrl ?>"><img src="<?= Yii::$app->homeUrl ?>img/resources/logo.png" alt=""></a></div>
                                                 </div>
-                                                <div class="col-md-9">
-                                                        <div class="nav-section"><!--nav-section-->
-                                                                <nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-expand-md">
-                                                                        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="nav_titel">Menu</span>
-                                                                                <span class="main-icon-bar"> <i class="fa fa-bars"></i></span>
-                                                                        </button>
-                                                                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                                                                                <ul class="navbar-nav">
-                                                                                        <li><?= Html::a('Home', ['/site/index'], ['class' => Yii::$app->controller->action->id == 'index' || '' ? 'active' : '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                                        <li><?= Html::a('About Us', ['/site/about'], ['class' => Yii::$app->controller->action->id == 'about' ? 'active' : '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                                        <?php
-                                                                                        $service_active = '';
-                                                                                        if (Yii::$app->controller->action->id == 'it-services' || Yii::$app->controller->action->id == 'graphic-designing' || Yii::$app->controller->action->id == 'services' || Yii::$app->controller->action->id == 'digital-marketing' || Yii::$app->controller->action->id == 'reputation-management' || Yii::$app->controller->action->id == 'serach-engine-optimisation' || Yii::$app->controller->action->id == 'serach-engine-marketing' || Yii::$app->controller->action->id == 'pay-per-click' || Yii::$app->controller->action->id == 'social-media-marketing' || Yii::$app->controller->action->id == 'email-marketing' || Yii::$app->controller->action->id == 'content-marketing' || Yii::$app->controller->action->id == 'local-seo') {
-                                                                                                $service_active = 'active';
-                                                                                        }
-                                                                                        ?>
-
-                                                                                       <li class="dropdown"> <a href="#" class="dropdown-toggle <?= $service_active ?>" data-toggle="dropdown">Services<!--<span class="fa fa-angle-down"></span>--></a>
-                                                                                                <ul class="dropdown-menu animated2 fadeInUp" >
-                                                                                                        <div class="sub-main-menu">
-                                                                                                                <div class="row">
-                                                                                                                        <div class="col-md-8"><?= Html::a('IT Services', ['/site/it-services'], ['class' => 'head', 'title' => 'Epitome In Dubai']) ?>
-                                                                                                                                <div class="row"><!--row-->
-                                                                                                                                        <div class="col-md-6">
-                                                                                                                                                <li> <?= Html::a('Web Design', ['/site/services', 'service' => 'web-design-company-in-dubai'], ['class' => 'dropdown-item sub-head']) ?>
-                                                                                                                                                        <div class="sub-menu-list">
-                                                                                                                                                                <?= Html::a('Wordpress', ['/site/services', 'service' => 'web-design-company-in-dubai'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Drupal', ['/site/services', 'service' => 'web-design-company-in-dubai'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Static web designing', ['/site/services', 'service' => 'web-design-company-in-dubai'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                        </div>
-                                                                                                                                                </li>
-                                                                                                                                                <li><?= Html::a('Web application development', ['/site/services', 'service' => 'web-application-development'], ['class' => 'dropdown-item']) ?></li>
-                                                                                                                                                <li><?= Html::a('Software development', ['/site/services', 'service' => 'software-development'], ['class' => 'dropdown-item sub-head']) ?>
-                                                                                                                                                        <div class="sub-menu-list">
-                                                                                                                                                                <?= Html::a('Web based softwares', ['/site/services', 'service' => 'software-development'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Desktop softwares', ['/site/services', 'service' => 'software-development'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                        </div>
-                                                                                                                                                </li>
-                                                                                                                                                <li> <?= Html::a('Mobile app development', ['/site/services', 'service' => 'mobile-app-development'], ['class' => 'dropdown-item sub-head']) ?>
-
-                                                                                                                                                        <div class="sub-menu-list">
-
-                                                                                                                                                                <?= Html::a('Web based softwares', ['/site/services', 'service' => 'mobile-app-development'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Desktop softwares', ['/site/services', 'service' => 'mobile-app-development'], ['class' => 'dropdown-item']) ?>
-
-                                                                                                                                                        </div>
-                                                                                                                                                </li>
-                                                                                                                                        </div>
-                                                                                                                                        <div class="col-md-6">
-                                                                                                                                                <li> <?= Html::a('E-commerce applications', ['/site/services', 'service' => 'e-commerce-applications'], ['class' => 'dropdown-item sub-head']) ?>
-
-                                                                                                                                                        <div class="sub-menu-list">
-
-                                                                                                                                                                <?= Html::a('Single vendor Shopping cart', ['/site/services', 'service' => 'e-commerce-applications'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Multi vendor shopping cart', ['/site/services', 'service' => 'e-commerce-applications'], ['class' => 'dropdown-item']) ?>
-
-                                                                                                                                                        </div>
-                                                                                                                                                </li>
-                                                                                                                                                <li><?= Html::a('ERP solutions', ['/site/services', 'service' => 'erp-solutions'], ['class' => 'dropdown-item']) ?></li>
-                                                                                                                                                <li> <?= Html::a('Graphic Designing', ['/site/graphic-designing'], ['class' => 'dropdown-item sub-head']) ?>
-
-                                                                                                                                                        <div class="sub-menu-list">
-                                                                                                                                                                <?= Html::a('Logo Designing', ['/site/services', 'service' => 'logo-designing'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Brochure Designing', ['/site/services', 'service' => 'brochure-designing'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Flyer Designing', ['/site/services', 'service' => 'flyer-designing'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Business card design', ['/site/services', 'service' => 'business-card-design'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Catlog designing', ['/site/services', 'service' => 'catlog-designing'], ['class' => 'dropdown-item']) ?>
-                                                                                                                                                                <?= Html::a('Flex designing', ['/site/services', 'service' => 'flex-designing'], ['class' => 'dropdown-item']) ?>
-
-                                                                                                                                                        </div>
-                                                                                                                                                </li>
-                                                                                                                                        </div>
-                                                                                                                                </div>
-                                                                                                                                <!--row-->
-                                                                                                                        </div>
-                                                                                                                        <div class="col-md-4"> <?= Html::a('Digital marketing', ['/site/digital-marketing'], ['class' => 'head']) ?>
-                                                                                                                                <li><?= Html::a('Reputation Management', ['/site/reputation-management']) ?></li>
-                                                                                                                                <li><?= Html::a('Search Engine Optimisation', ['/site/serach-engine-optimisation']) ?></li>
-                                                                                                                                <li><?= Html::a('Search Engine Marketing', ['/site/serach-engine-marketing']) ?></li>
-                                                                                                                                <li><?= Html::a('Pay-Per Click', ['/site/pay-per-click']) ?></li>
-                                                                                                                                <li><?= Html::a('Social Media Marketing', ['/site/social-media-marketing']) ?></li>
-                                                                                                                                <li><?= Html::a('Email Marketing', ['/site/email-marketing']) ?></li>
-                                                                                                                                <li><?= Html::a('Content Marketing', ['/site/content-marketing']) ?></li>
-                                                                                                                                <li><?= Html::a('Local SEO', ['/site/local-seo']) ?></li>
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </div>
-                                                                                                </ul>
-                                                                                        </li>
-                                                                                        <li><?= Html::a('Portfolio', ['/site/portfolio'], ['class' => Yii::$app->controller->action->id == 'portfolio' || isset($params['name']) ? 'active' : '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                                        <li><?= Html::a('Platforms', ['/site/platforms'], ['class' => Yii::$app->controller->action->id == 'platforms' || isset($params['id']) ? 'active' : '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                                        <li><?= Html::a('Products', ['#'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                                        <li><?= Html::a('Contact', ['/site/contact'], ['class' => Yii::$app->controller->action->id == 'contact' ? 'active' : '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </nav>
+                                                <div class="col-md-7 col-sm-10 col-xs-9">
+                                                        <div class="navbar-header">
+                                                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                                                         </div>
-                                                        <!--nav-section-->
+
+                                                        <!-- Collect the nav links, forms, and other content for toggling -->
+                                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                                                <ul class="nav navbar-nav ">
+                                                                        <li class="<?= Yii::$app->controller->action->id == 'index' || '' ? 'active' : '' ?>"><?= Html::a('Home <span class="decor"></span>', ['/site/index'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li class="<?= Yii::$app->controller->action->id == 'about' || '' ? 'active' : '' ?>"><?= Html::a('About Us', ['/site/about'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li class="dropdown"> <a href="services.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Products <span class="decor"></span></a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/tyres">Tyres</a></li>
+                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/alloy-wheels">Alloy Wheels</a></li>
+                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/batteries">Batteries</a></li>
+
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li class="dropdown"> <a href="<?= Yii::$app->homeUrl ?>site/services" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Services <span class="decor"></span></a>
+                                                                                <ul class="dropdown-menu">
+                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/services">Wheel Alignment</a></li>
+                                                                                        <li><a href="#">Wheel Balancing</a></li>
+                                                                                        <li><a href="#">Tyre Fitment</a></li>
+                                                                                        <li><a href="#">Wheel Care</a></li>
+                                                                                        <li><a href="#">Nitrogen Air</a></li>
+                                                                                        <li><a href="#">Air Conditioning</a></li>
+                                                                                        <li><a href="#">Brakes</a></li>
+                                                                                        <li><a href="#">Window Tinting</a></li>
+                                                                                        <li><a href="#">Car Detailing</a></li>
+                                                                                </ul>
+                                                                        </li>
+                                                                        <li class="<?= Yii::$app->controller->action->id == 'privileges' || '' ? 'active' : '' ?>"><?= Html::a('select Privilege', ['/site/privileges'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li class="<?= Yii::$app->controller->action->id == 'offers' || '' ? 'active' : '' ?>"><?= Html::a('offers', ['/site/offers'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li class="<?= Yii::$app->controller->action->id == 'contact' || '' ? 'active' : '' ?>"><?= Html::a('Contact', ['/site/contact'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                </ul>
+                                                        </div>
+                                                        <!-- /.navbar-collapse -->
+                                                </div>
+                                                <div class="col-md-2 col-sm-2 col-xs-3">
+                                                        <div class="header-years-box"><img src="<?= Yii::$app->homeUrl ?>img/icon/years.png" class="img-responsive"></div>
                                                 </div>
                                         </div>
                                 </div>
-                        </section>
+                                <!-- /.container-fluid -->
+                        </nav>
                 </header>
-                <!--header-->
+                <!--End header area-->
 
                 <?= $content ?>
 
-
-                <footer><!--footer-->
-                        <section class="top-footer"><!--top-footer-->
-                                <div class="container">
-                                        <div class="row" itemscope itemtype="http://schema.org/Epitome">
-                                                <div class="col-md-3 col-sm-12 f-logo-section">
-                                                        <a href="<?= Yii::$app->homeUrl ?>"><img src="<?= Yii::$app->homeUrl ?>images/icon/f-logo.png" class="img-fluid" alt="Epitome" title=""> </a>
-                                                        <div class="f-location" itemprop="address"><?= $contact_details->address ?></div>
-                                                </div>
-                                                <div class="col-md-3 col-sm-4  f-more-section">
-                                                        <div class="icon">&nbsp;</div>
-                                                        <small>contact us</small>
-                                                        <h3 itemprop="tel"><?= $contact_details->phone2 ?></h3>
-                                                </div>
-                                                <div class="col-md-3 col-sm-4 f-more-section">
-                                                        <div class="icon icon2">&nbsp;</div>
-                                                        <small>Send Mail</small>
-                                                          
-                                                                <h3 itemprop="email"><?= $contact_details->email ?></h3>
-                                                         
-                                                         </div>
-                                                <div class="col-md-3 col-sm-4 f-more-section border-none">
-                                                        <div class="icon icon3">&nbsp;</div>
-                                                        <small>Working Time</small>
-                                                        <h3>9 AM to 6 PM</h3>
-                                                </div>
-                                        </div>
-                                </div>
-                        </section>
-                        <!--top-footer-->
-                        <section class="footer-middle-section"><!--footer-middle-section-->
+                <footer class="footer-area">
+                        <div class="footer-middle">
                                 <div class="container">
                                         <div class="row">
-                                                <div class="col-lg-3">
-                                                        <h3>QUICK LINKS</h3>
-                                                        <ul class="f-list">
-                                                                <li><?= Html::a('Home', ['/site/index'], ['class' => 'active', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('About Us', ['/site/about'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('IT Services', ['/site/it-services'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('Portfolio', ['/site/portfolio'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('Platforms', ['/site/platforms'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('Products', ['#'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('Happy clients', ['/site/portfolio'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('Blog', ['/site/blogs'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-                                                                <li><?= Html::a('Contact', ['/site/contact'], ['class' => '', 'title' => 'Epitome In Dubai']) ?></li>
-
-                                                        </ul>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                        <h3>SERVICES</h3>
-                                                        <div class="row">
-                                                                <div class="col-sm-6">
-                                                                        <ul class="f-list">
-                                                                                <li><?= Html::a('Digital marketing', ['/site/digital-marketing']) ?></li>
-                                                                                <li><?= Html::a('Reputation Management', ['/site/reputation-management']) ?></li>
-                                                                                <li><?= Html::a('Search Engine Optimisation', ['/site/serach-engine-optimisation']) ?></li>
-                                                                                <li><?= Html::a('Search Engine Marketing', ['/site/serach-engine-marketing']) ?></li>
-                                                                                <li><?= Html::a('Pay-Per Click', ['/site/pay-per-click']) ?></li>
-                                                                                <li><?= Html::a('Social Media Marketing', ['/site/social-media-marketing']) ?></li>
-                                                                                <li><?= Html::a('Email Marketing', ['/site/email-marketing']) ?></li>
-                                                                                <li><?= Html::a('Content Marketing', ['/site/content-marketing']) ?></li>
-                                                                                <li><?= Html::a('Local SEO', ['/site/local-seo']) ?></li>
-                                                                        </ul>
-                                                                </div>
-                                                                <div class="col-sm-6">
-                                                                        <ul class="f-list">
-
-                                                                                <li><?= Html::a('Web Designing', ['/site/services', 'service' => 'web-design-company-in-dubai']) ?></li>
-                                                                                <li><?= Html::a('Web Development', ['/site/services', 'service' => 'web-application-development']) ?></li>
-                                                                                <li><?= Html::a('Software Development', ['/site/services', 'service' => 'software-development']) ?></li>
-                                                                                <li><?= Html::a('Mobile App development', ['/site/services', 'service' => 'mobile-app-development']) ?></li>
-                                                                                <li><?= Html::a('E-commerce applications', ['/site/services', 'service' => 'e-commerce-applications']) ?></li>
-                                                                                <li><?= Html::a('Graphic Design', ['/site/graphic-designing']) ?></li>
-                                                                                <li><?= Html::a('ERP solutions', ['/site/services', 'service' => 'erp-solutions']) ?></li>
-                                                                                <li><?= Html::a('Logo Designing', ['/site/services', 'service' => 'logo-designing']) ?></li>
-                                                                                <li><?= Html::a('Brochure Designing', ['/site/services', 'service' => 'brochure-designing']) ?></li>
-
-
-
-                                                                        </ul>
+                                                <!--Start single footer widget-->
+                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="single-footer-widget">
+                                                                <div class="footer-logo"> <img src="<?= Yii::$app->homeUrl ?>img/resources/footer-logo.png" alt="Awesome Footer Logo"> </div>
+                                                                <div class="text">
+                                                                        <p>Welcome to NEW BHARATH TYRES. New Bharath Tyres offers a complete range of Tyres, Alloy-wheels and modern tyre services. The Best quality products and 100% customer satisfaction at unbeatable price .NewBharath Tyres, the pioneers in tyre retailing with over 60 years of excellence has been accredited the No.1 dealer by world’s leading tyre manufacturers. </p>
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-lg-3">
-                                                        <h3>Other Services</h3>
-                                                        <ul class="f-list">
-                                                                <li><a href="#">Facebook Marketing</a></li>
-                                                                <li><a href="#">Google+ Marketing</a></li>
-                                                                <li><a href="#">Twitter Marketing</a></li>
-                                                                <li><a href="#">YouTube Marketing</a></li>
-                                                        </ul>
-                                                        <div class="f-follows">
-                                                                <h3>follow</h3>
-                                                                <ul>
-                                                                        <li> <a href="#" target="_blank"> <i class="fa fa-facebook"></i> </a></li>
-                                                                        <li> <a href="#" target="_blank"> <i class="fa fa-twitter"></i> </a></li>
-                                                                        <li> <a href="#" target="_blank"> <i class="fa fa-linkedin"></i> </a></li>
-                                                                        <li> <a href="#" target="_blank"> <i class="fa fa-youtube"></i> </a></li>
+                                                <!--End single footer widget-->
+                                                <!--Start single footer widget-->
+                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="single-footer-widget">
+                                                                <div class="sec-title text-left">
+                                                                        <h2>useful links</h2>
+                                                                        <span class="decor"></span> </div>
+                                                                <ul class="service-list">
+                                                                        <li><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a></li>
+                                                                        <li><a href="about-us.html"><i class="fa fa-angle-right" aria-hidden="true"></i>About us </a></li>
+                                                                        <li><a href="products.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Products </a></li>
+                                                                        <li><a href="services.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Services</a></li>
+                                                                        <li><a href="blog.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog </a></li>
+                                                                        <li><a href="brand.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Our brand</a></li>
+                                                                        <li><a href="contact.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact US</a></li>
                                                                 </ul>
                                                         </div>
                                                 </div>
+                                                <!--End single footer widget-->
+                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="single-footer-widget">
+                                                                <div class="sec-title text-left">
+                                                                        <h2>Our Services</h2>
+                                                                        <span class="decor"></span> </div>
+                                                                <ul class="service-list">
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Wheel Alignment</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Wheel Balancing</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Tyre Fitment</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Wheel Care</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Nitrogen Air</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Air Conditioning</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Brakes</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Window Tinting</a></li>
+                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Car Detailing</a></li>
+                                                                </ul>
+                                                        </div>
+                                                </div>
+                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                                        <div class="single-footer-widget">
+                                                                <div class="sec-title text-left">
+                                                                        <h2>CONTACT US</h2>
+                                                                        <span class="decor"></span> </div>
+                                                                <div class="f-contact"><b>Address</b>
+                                                                        <p>NH 47 Bypass<br>
+                                                                                Puthiya Road Junction<br>
+                                                                                Cochin 682028</p>
+                                                                </div>
+                                                                <div class="f-contact"><b>Phone No</b>
+                                                                        <p>042630606</p>
+                                                                </div>
+                                                                <div class="f-contact"><b>Email</b>
+                                                                        <p>dubai@newbharathtyres.com</p>
+                                                                </div>
+                                                                <div class="footer-social-link">
+                                                                        <ul>
+                                                                                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                                                                                <li><a href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+                                                                                <li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
+                                                                                <li><a href="#"><i class="flaticon-linkedin-logo"></i></a></li>
+                                                                        </ul>
+                                                                </div>
+                                                        </div>
+                                                </div>
                                         </div>
                                 </div>
-                        </section>
-                        <!--footer-middle-section-->
-                        <section class="more-section">
+                        </div>
+                        <div class="footer-bottom">
                                 <div class="container">
-                                        <h6>Copyright © <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script> </span> <b>EPITOME.</b> All Rights Reserved.</h6>
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <div class="copy-right">
+                                                                <p>Copyright © 2018 New Bharath pitstop. All Rights Reserved.</a></p>
+                                                        </div>
+                                                </div>
+                                        </div>
                                 </div>
-                        </section>
+                        </div>
                 </footer>
-                <a href="#" class="scrollup" >Scroll</a> <!--Scroll-->
+
                 <?php $this->endBody() ?>
 
                 <script>
-                        $(document).ready(function () {
-
-                                $(window).scroll(function () {
-                                        // $('.scrollup').hide();
-                                        if ($(this).scrollTop() > 100) {
-
-                                                $('.scrollup').fadeIn();
-                                        } else {
-                                                $('.scrollup').fadeOut();
+                        if ($(window).width() > 768) {
+                                $('.otherservices-hover').hover(function () {
+                                        $(".otherservices-hover").unbind('mouseover mouseleave');
+                                        if ($(this).attr('href')) {
+                                                $('.tab-pane').removeClass('active');
+                                                $($('ul.otherservice_list li.active a').attr("href")).addClass('active');
                                         }
+                                        $(this).trigger("click");
                                 });
 
-                                $('.scrollup').click(function () {
-                                        $("html, body").animate({scrollTop: 0}, 1000);
-                                        return false;
-                                });
+                        } else {
+                                $(".otherservice-mobile").removeClass("otherservices-hover");
+                        }
 
-                        });
+
                 </script>
         </body>
 

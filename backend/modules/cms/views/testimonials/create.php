@@ -2,11 +2,10 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model common\models\Testimonials */
 
-$this->title = 'Create Testimonials';
+$this->title = 'Add Testimonials';
 $this->params['breadcrumbs'][] = ['label' => 'Testimonials', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -20,15 +19,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         </div>
                         <div class="panel-body">
-                                <?=  Html::a('<i class="fa-th-list"></i><span> Manage Testimonials</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                                <?= Html::a('<i class="fa-th-list"></i><span> Manage Testimonials</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
                                 <div class="panel-body"><div class="testimonials-create">
-                                                <?= $this->render('_form', [
-                                                'model' => $model,
-                                                ]) ?>
+                                                <?=
+                                                $this->render('_form', [
+                                                    'model' => $model,
+                                                ])
+                                                ?>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </div>
 </div>
-                
+

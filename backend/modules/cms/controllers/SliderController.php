@@ -82,7 +82,7 @@ class SliderController extends Controller {
                                         $path = Yii::$app->basePath . '/../uploads/sliders/' . $model->id . '/';
                                         $size = [
                                                 ['width' => 100, 'height' => 100, 'name' => 'small'],
-                                                ['width' => 1920, 'height' => 566, 'name' => 'image'],
+                                                ['width' => 1920, 'height' => 613, 'name' => 'image'],
                                         ];
                                         Yii::$app->UploadFile->UploadFile($model, $image, $path, $size);
                                 }
@@ -116,7 +116,7 @@ class SliderController extends Controller {
                                         $path = Yii::$app->basePath . '/../uploads/sliders/' . $model->id . '/';
                                         $size = [
                                                 ['width' => 100, 'height' => 100, 'name' => 'small'],
-                                                ['width' => 3000, 'height' => 2000, 'name' => 'image'],
+                                                ['width' => 1920, 'height' => 613, 'name' => 'image'],
                                         ];
                                         Yii::$app->UploadFile->UploadFile($model, $image, $path, $size);
                                 }

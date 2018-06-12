@@ -2,11 +2,10 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
 /* @var $model common\models\Slider */
 
-$this->title = 'Create Slider';
+$this->title = 'Add Slider';
 $this->params['breadcrumbs'][] = ['label' => 'Sliders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -20,15 +19,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         </div>
                         <div class="panel-body">
-                                <?=  Html::a('<i class="fa-th-list"></i><span> Manage Slider</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                                <?= Html::a('<i class="fa-th-list"></i><span> Manage Slider</span>', ['index'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
                                 <div class="panel-body"><div class="slider-create">
-                                                <?= $this->render('_form', [
-                                                'model' => $model,
-                                                ]) ?>
+                                                <?=
+                                                $this->render('_form', [
+                                                    'model' => $model,
+                                                ])
+                                                ?>
                                         </div>
                                 </div>
                         </div>
                 </div>
         </div>
 </div>
-                
+

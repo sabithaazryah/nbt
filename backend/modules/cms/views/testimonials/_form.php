@@ -13,24 +13,9 @@ use dosamigos\ckeditor\CKEditor;
 
         <?php $form = ActiveForm::begin(); ?>
         <div class="row">
-                <div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'type')->dropDownList(['1' => 'Home Page', '2' => 'Digital Marketing'])->label('Testimonial For') ?>
+                <div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd' id="test-markeing">    <?=
-                        $form->field($model, 'marketing')->dropDownList([
-                            '1' => 'Reputation Management       ',
-                            '2' => 'Search Engine Optimisation',
-                            '3' => 'Search Engine Marketing',
-                            '4' => 'Pay-Per Click',
-                            '5' => 'Social Media Marketing',
-                            '6' => 'Email Marketing',
-                            '7' => 'Content Marketing',
-                            '8' => 'Local SEO',
-                                ], ['prompt' => '--Select--'])->label('Digital Marketing')
-                        ?>
-
-                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-
-                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'link')->textInput(['maxlength' => true])->label('Designation') ?>
 
                 </div> <div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'rating')->textInput()->label('Rating (Choose a number from 1 to 5)') ?>
 
@@ -41,7 +26,7 @@ use dosamigos\ckeditor\CKEditor;
                         ])
                         ?>
 
-                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'image', ['options' => ['class' => 'form-group'], 'template' => '{label}<label>Image [ File Size :( 170x165 ) ]</label>{input}{error}'])->fileInput(['maxlength' => true])->label(FALSE) ?>
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'image', ['options' => ['class' => 'form-group'], 'template' => '{label}<label>Image [ File Size :( 70x70 ) ]</label>{input}{error}'])->fileInput(['maxlength' => true])->label(FALSE) ?>
                         <?php
                         if ($model->isNewRecord)
                                 echo "";

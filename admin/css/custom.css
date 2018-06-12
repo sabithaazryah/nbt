@@ -97,7 +97,7 @@ body {
 #login .login_content form div a {
         font-size: 14px;
         margin: 10px 15px 0 0;
-        color: #2baac7;
+        color: #fff;
 }
 .separator {
         border-top: 1px solid #49585d;
@@ -125,15 +125,15 @@ body {
 }
 .log-layout .submit{
         padding: 10px 40px;
-        background-color: #2aaac7;
-        border-color: #2aaac7;
+        background-color: #d51e27;
+        border-color: #d51e27;
         text-transform: uppercase;
         font-weight: 600;
         float: left;
         color:#fff;
 }
 .control-label {
-        color: #2baac7;
+        color: #fff;
         text-shadow:none;
         font-weight: 400;
 }

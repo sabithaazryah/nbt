@@ -14,9 +14,7 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use common\models\Slider;
-use common\models\Clients;
 use common\models\CmsMetaTags;
-use common\models\Platforms;
 use common\models\Services;
 
 /**
@@ -76,9 +74,6 @@ class SiteController extends Controller {
          */
         public function actionIndex() {
                 $sliders = Slider::find()->where(['status' => 1])->all();
-                $clients = Clients::find()->where(['status' => 1])->all();
-                $blogs = \common\models\Blogs::find()->where(['status' => 1])->limit(2)->all();
-                $home_page_content = \common\models\HomePage::findOne(1);
                 $testimonials = \common\models\Testimonials::find()->where(['type' => 1])->all();
                 $contact = new \common\models\ContactForm;
                 $contact->setScenario('enquiry');
@@ -87,9 +82,6 @@ class SiteController extends Controller {
                 \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('index', [
                             'sliders' => $sliders,
-                            'clients' => $clients,
-                            'blogs' => $blogs,
-                            'home_page_content' => $home_page_content,
                             'testimonials' => $testimonials,
                             'meta_title' => $meta_tags->meta_title,
                             'contact' => $contact,
@@ -237,6 +229,57 @@ class SiteController extends Controller {
                             'model' => $model,
                             'contact_details' => $contact_details,
                             'meta_title' => $meta_tags->meta_title,
+                ]);
+        }
+
+        /*
+         * Displays offer page.
+         */
+
+        public function actionOffers() {
+                return $this->render('offers', [
+                ]);
+        }
+
+        /*
+         * Displays service page.
+         */
+
+        public function actionServices() {
+                return $this->render('services', [
+                ]);
+        }
+
+        /*
+         * Displays privilege page.
+         */
+
+        public function actionPrivileges() {
+                return $this->render('privileges', [
+                ]);
+        }
+
+        /*
+         * Displays tyres page.
+         */
+
+        public function actionTyres() {
+                return $this->render('tyres', [
+                ]);
+        }
+
+        public function actionTyresDetail() {
+                return $this->render('tyres-detail', [
+                ]);
+        }
+
+        public function actionAlloyWheels() {
+                return $this->render('alloy-wheels', [
+                ]);
+        }
+
+        public function actionBatteries() {
+                return $this->render('batteries', [
                 ]);
         }
 

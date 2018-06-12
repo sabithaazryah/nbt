@@ -32,6 +32,9 @@ class Testimonials extends \yii\db\ActiveRecord {
                         [['content'], 'string'],
                         [['name', 'image', 'link'], 'string', 'max' => 250],
                         [['CB', 'UB', 'DOC', 'DOU'], 'safe'],
+                        [['image'], 'file', 'extensions' => 'jpg, gif, png,jpeg'],
+                        [['name', 'content'], 'required'],
+                        [['image'], 'required', 'on' => 'create'],
                 ];
         }
 

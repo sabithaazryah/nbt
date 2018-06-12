@@ -20,43 +20,43 @@ use Yii;
  */
 class Slider extends \yii\db\ActiveRecord {
 
-    /**
-     * @inheritdoc
-     */
-    public static function tableName() {
-        return 'slider';
-    }
+        /**
+         * @inheritdoc
+         */
+        public static function tableName() {
+                return 'slider';
+        }
 
-    /**
-     * @inheritdoc
-     */
-    public function rules() {
-        return [
-            [['status', 'CB', 'UB'], 'integer'],
-            [['DOC', 'DOU'], 'safe'],
-            [['alt_tag'], 'required'],
-            [['image', 'title', 'sub_title', 'alt_tag'], 'string', 'max' => 100],
-            [['image'], 'required', 'on' => 'create'],
-            [['image'], 'file', 'extensions' => 'jpg, gif, png,jpeg'],
-        ];
-    }
+        /**
+         * @inheritdoc
+         */
+        public function rules() {
+                return [
+                        [['status', 'CB', 'UB'], 'integer'],
+                        [['DOC', 'DOU', 'title_1', 'title_2', 'title_3'], 'safe'],
+                        [['alt_tag'], 'required'],
+                        [['image', 'title', 'sub_title', 'alt_tag'], 'string', 'max' => 100],
+                        [['image'], 'required', 'on' => 'create'],
+                        [['image'], 'file', 'extensions' => 'jpg, gif, png,jpeg'],
+                ];
+        }
 
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels() {
-        return [
-            'id' => 'ID',
-            'image' => 'Image',
-            'title' => 'Title',
-            'sub_title' => 'Sub Title',
-            'alt_tag' => 'Alt Tag',
-            'status' => 'Status',
-            'CB' => 'Cb',
-            'UB' => 'Ub',
-            'DOC' => 'Doc',
-            'DOU' => 'Dou',
-        ];
-    }
+        /**
+         * @inheritdoc
+         */
+        public function attributeLabels() {
+                return [
+                    'id' => 'ID',
+                    'image' => 'Image',
+                    'title' => 'Title',
+                    'sub_title' => 'Sub Title',
+                    'alt_tag' => 'Alt Tag',
+                    'status' => 'Status',
+                    'CB' => 'Cb',
+                    'UB' => 'Ub',
+                    'DOC' => 'Doc',
+                    'DOU' => 'Dou',
+                ];
+        }
 
 }
