@@ -1,0 +1,30 @@
+<?php
+
+return [
+    '' => '/site/index',
+    'about' => '/site/about',
+    'blogs' => '/site/blogs',
+    'platforms' => '/site/platforms',
+    'portfolio' => '/site/portfolio',
+    'contact' => '/site/contact',
+    'it-services' => '/site/it-services',
+    'marketing' => '/site/digital-marketing',
+    'reputation-management' => '/site/reputation-management',
+    'serach-engine-optimisation' => '/site/serach-engine-optimisation',
+    'serach-engine-marketing' => '/site/serach-engine-marketing',
+    'pay-per-click' => '/site/pay-per-click',
+    'social-media-marketing' => '/site/social-media-marketing',
+    'email-marketing' => '/site/email-marketing',
+    'content-marketing' => '/site/content-marketing',
+    'graphic-designing' => '/site/graphic-designing',
+    'increases-brand-awareness' => '/site/increases-brand-awareness',
+    'increases-audience-loyalty' => '/site/increases-audience-loyalty',
+    'feedback' => '/site/feedback',
+    'base-of-potential-customers' => '/site/base-of-potential-customers',
+    'local-seo' => '/site/local-seo',
+    'portfolio/<name>' => 'site/portfolio-detail',
+    'platform/<id>' => 'site/platform-detail',
+    'blogs/<blog>' => 'site/blog-detail',
+    '<service>' => 'site/services',
+        ]
+;
