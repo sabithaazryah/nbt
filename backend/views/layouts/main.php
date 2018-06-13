@@ -130,6 +130,23 @@ AppAsset::register($this);
                                                         </li>
                                                 </ul>
                                         </li>
+                                        
+                                         <li>
+                                                        <a href="">
+                                                                <i class="fa fa-tachometer"></i>
+                                                                <span class="title">Products</span>
+                                                        </a>
+                                                        <ul>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Tyres', ['/cms/tyres/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Alloy Wheels', ['/cms/alloy-wheels/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
 
 
                                         <!--                                                <li>
@@ -295,6 +312,23 @@ AppAsset::register($this);
 
                                                                 <li>
                                                                         <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+                                                
+                                                <li>
+                                                        <a href="">
+                                                                <i class="fa fa-tachometer"></i>
+                                                                <span class="title">Products</span>
+                                                        </a>
+                                                        <ul>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Tyres', ['/cms/tyres/index'], ['class' => 'title']) ?>
+                                                                </li>
+                                                                
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Alloy Wheels', ['/cms/alloy-wheels/index'], ['class' => 'title']) ?>
                                                                 </li>
                                                         </ul>
                                                 </li>
