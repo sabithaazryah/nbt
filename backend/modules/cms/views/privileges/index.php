@@ -22,37 +22,30 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 </div>
                                 <div class="panel-body">
-                                                                                            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-                                        
-                                        <?=  Html::a('<i class="fa-th-list"></i><span> Add Privileges</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
-                                                                                                                                                        <?= GridView::widget([
-                                                'dataProvider' => $dataProvider,
-                                                'filterModel' => $searchModel,
-        'columns' => [
-                                                ['class' => 'yii\grid\SerialColumn'],
-            [
-                                                    'attribute' => 'image',
-                                                    'format' => 'raw',
-                                                    'value' => function ($data) {
-                                                            if (!empty($data->image))
-                                                                    $img = '<img width="120px" src="' . Yii::$app->homeUrl . '../uploads/blogs/' . $data->id . '/small.' . $data->image . '"/>';
-                                                            return $img;
-                                                    },
-                                                ],
-
-            'title',
-            'image',
-            'status',
-            // 'CB',
-            // 'UB',
-            // 'DOC',
-            // 'DOU',
-
+                                        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+                                        <?= common\widgets\Alert::widget() ?>
+                                        <?= Html::a('<i class="fa-th-list"></i><span> Add Privileges</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                                        <?=
+                                        GridView::widget([
+                                            'dataProvider' => $dataProvider,
+                                            'filterModel' => $searchModel,
+                                            'columns' => [
+                                                    ['class' => 'yii\grid\SerialColumn'],
+                                                'title',
+                                                'content:ntext',
+                                                'image',
+                                                'image_alt',
+                                                // 'status',
+                                                // 'CB',
+                                                // 'UB',
+                                                // 'DOC',
+                                                // 'DOU',
                                                 ['class' => 'yii\grid\ActionColumn',
-                                                    'template'=>'{updat}{delete}'],
-                                                ],
-                                                ]); ?>
-                                                                                                                </div>
+                                                    'template' => '{update}{delete}'],
+                                            ],
+                                        ]);
+                                        ?>
+                                </div>
                         </div>
                 </div>
         </div>
