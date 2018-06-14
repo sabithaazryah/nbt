@@ -13,9 +13,11 @@ use dosamigos\ckeditor\CKEditor;
 
         <?php $form = ActiveForm::begin(); ?>
         <div class="row">
-                <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+                <div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-                </div><div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'canonical_name')->textInput(['maxlength' => true,'readonly'=>true]) ?>
+
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
 
                 </div> <div class='col-md-12 col-sm-12 col-xs-12 left_padd'>    <?=
                         $form->field($model, 'content', ['options' => ['class' => 'form-group']])->widget(CKEditor::className(), [
@@ -99,7 +101,19 @@ use dosamigos\ckeditor\CKEditor;
                         });
                 });
 
-
+$('#services-title').keyup(function () {
+                        var name = slug($(this).val());
+                        $('#services-canonical_name').val(slug($(this).val()));
+                });
+                
+                var slug = function (str) {
+                var $slug = '';
+                var trimmed = $.trim(str);
+                $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
+                        replace(/-+/g, '-').
+                        replace(/^-|-$/g, '');
+                return $slug.toLowerCase();
+        }
 
 
         });

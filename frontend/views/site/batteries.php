@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-
+use yii\helpers\Url;
 if (isset($meta_title) && $meta_title != '')
         $this->title = $meta_title;
 else
@@ -50,75 +50,32 @@ else
                                 <div class="in-product-section">
                                         <div class="product-details-section">
                                                 <h2 class="head-text-batteries"><i class="batteries-icon"></i><span>B</span>Atteries</h2>
-                                                <div class="img-box-batteries"><img src="<?= Yii::$app->homeUrl ?>img/best-service/b1.jpg" class="img-responsive"></div>
-                                                <div class="cont-box"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                                <div class="img-box-batteries"><img src="<?= Yii::$app->homeUrl ?>uploads/batteries/<?=$batteries->id?>/image.<?=$batteries->image?>" class="img-responsive"></div>
+                                                <div class="cont-box"><p><?=$batteries->content?></p>
                                                 </div>
+                                                
+                                                <?php if(isset($batteries->specifications) && $batteries->specifications!=''){
+                                                    $specifction=explode(',',$batteries->specifications);
+                                                    ?>
                                                 <h2 class="head-text">Specifications</h2>
                                                 <ul class="specifications-list">
-                                                        <li>Type:	Maintenance-free Type</li>
-                                                        <li>Rated Voltage:	12V</li>
-                                                        <li>Charging Voltage:	16V</li>
-                                                        <li>Working Voltage:	12V</li>
-                                                        <li>Charging Type:	Constant Voltage</li>
-                                                        <li>Wet Shelf Life:	2~3Year</li>
+                                                    <?php foreach($specifction as $value){ ?>
+                                                        <li><?=$value?></li>
+                                                    <?php } ?>   
                                                 </ul>
-                                                <h2 class="head-text">Specifications</h2>
+                                                <?php }?>
+                                                
+                                                <?php if(count($brands)>0){ ?>
+                                                <h2 class="head-text">Brands</h2>
                                                 <div class="main-brand-box">
+                                                    <?php foreach($brands as $brand) {?>
+                                                    
                                                         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/1.png" class="img-responsive"></a></div>
+                                                                <div class="brands-box"><img src="<?= Yii::$app->homeUrl ?>uploads/brands/<?=$brand->id?>/image.<?=$brand->image?>" class="img-responsive"></div>
                                                         </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/2.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/3.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/4.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/5.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/6.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/7.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/8.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/9.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/10.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/11.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/12.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/13.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/14.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/15.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/16.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?>img/brand/17.png" class="img-responsive"></a></div>
-                                                        </div>
-                                                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                                                                <div class="brands-box"><a href="tyres-details.html"><img src="<?= Yii::$app->homeUrl ?> img/brand/18.png" class="img-responsive"></a></div>
-                                                        </div>
+                                                    <?php }?> 
                                                 </div>
+                                                <?php }?>
                                         </div>
 
 
@@ -130,9 +87,11 @@ else
                                         <!--Start Single item-->
                                         <div class="single-item">
                                                 <ul class="services-list">
-                                                        <li><a href="tyres.html">TYRES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="alloy-wheels.html">ALLOY WHEELS<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li class="active"><a href="batteries.html">BATTERIES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                      
+                                                        <li><a href="<?= Url::to(['site/tyres']) ?>">TYRES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                        <li><a href="<?= Url::to(['site/alloy-wheels']) ?>">ALLOY WHEELS<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                        <li class="active"><a href="<?= Url::to(['site/batteries']) ?>">BATTERIES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                
                                                 </ul>
                                         </div>
                                         <!--End Single item-->

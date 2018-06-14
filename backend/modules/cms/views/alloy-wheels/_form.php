@@ -7,7 +7,7 @@ use yii\helpers\ArrayHelper;
 /* @var $this yii\web\View */
 /* @var $model common\models\AlloyWheels */
 /* @var $form yii\widgets\ActiveForm */
-$brands=Brands::find()->where(['status'=>1,'type'=>1])->all();
+$brands=Brands::find()->where(['status'=>1,'type'=>2])->all();
 ?>
 
 <div class="alloy-wheels-form form-inline">

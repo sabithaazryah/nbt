@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\helpers\Url;
 
 if (isset($meta_title) && $meta_title != '')
         $this->title = $meta_title;
@@ -47,89 +48,32 @@ else
                 <div class="row">
                         <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right">
                                 <div class="in-product-section">
+                                    
+                                    <?php foreach($brands as $brand){
+                                        $brand_alloy_wheels=\common\models\AlloyWheels::find()->where(['status'=>1,'brand'=>$brand->id])->all();
+                                        if(count($brand_alloy_wheels)>0){
+                                        ?>
                                         <div class="product-details-section">
-                                                <div class="head-text-detail2"><img src="<?= Yii::$app->homeUrl ?>img/brand/1.png" class="img-responsive"></div>
+                                                <div class="head-text-detail2"><img src="<?= Yii::$app->homeUrl ?>uploads/brands/<?=$brand->id?>/image.<?=$brand->image?>" class="img-responsive"></div>
                                                 <div class="row">
+                                                    <?php foreach($brand_alloy_wheels as $wheels){?>
                                                         <div class="col-md-4 col-sm-6 col-xs-6">
                                                                 <div class="details-box">
-                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/best-service/p3.jpg" class="img-responsive"></div>
+                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>uploads/alloy-wheels/<?=$wheels->id?>/image.<?=$wheels->image?>" class="img-responsive"></div>
                                                                         <div class="link"><a href="appointment.html">enquiry Now</a></div>
-
-                                                                        <div class="cont-box">
+<div class="cont-box">
                                                                                 <h3>Specification</h3>
-                                                                                <p>Size:  165/60R14 </p>
-                                                                                <p>Type:  Good Performance</p>
+                                                                                <p><?=$wheels->spec_1?>:  <?=$wheels->spec_1_value?> </p>
+                                                                                <p><?=$wheels->spec_2?>:  <?=$wheels->spec_2_value?></p>
                                                                         </div>
+                                                                        
                                                                 </div>
                                                         </div>
-                                                        <div class="col-md-4 col-sm-6 col-xs-6">
-                                                                <div class="details-box">
-                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/best-service/p3.jpg" class="img-responsive"></div>
-                                                                        <div class="link"><a href="appointment.html">enquiry Now</a></div>
-
-                                                                        <div class="cont-box">
-                                                                                <h3>Specification</h3>
-                                                                                <p>Size:  165/60R14 </p>
-                                                                                <p>Type:  Good Performance</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-sm-6 col-xs-6">
-                                                                <div class="details-box">
-                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/best-service/p3.jpg" class="img-responsive"></div>
-                                                                        <div class="link"><a href="appointment.html">enquiry Now</a></div>
-
-                                                                        <div class="cont-box">
-                                                                                <h3>Specification</h3>
-                                                                                <p>Size:  165/60R14 </p>
-                                                                                <p>Type:  Good Performance</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
+                                                        <?php } ?>
                                                 </div>
                                         </div>
-                                        <div class="product-details-section">
-                                                <div class="head-text-detail2"><img src="<?= Yii::$app->homeUrl ?>img/brand/5.png" class="img-responsive"></div>
-                                                <div class="row">
-                                                        <div class="col-md-4 col-sm-6 col-xs-6">
-                                                                <div class="details-box">
-                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/best-service/p3.jpg" class="img-responsive"></div>
-                                                                        <div class="link"><a href="appointment.html">enquiry Now</a></div>
-
-                                                                        <div class="cont-box">
-                                                                                <h3>Specification</h3>
-                                                                                <p>Size:  165/60R14 </p>
-                                                                                <p>Type:  Good Performance</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-sm-6 col-xs-6">
-                                                                <div class="details-box">
-                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/best-service/p3.jpg" class="img-responsive"></div>
-                                                                        <div class="link"><a href="appointment.html">enquiry Now</a></div>
-
-                                                                        <div class="cont-box">
-                                                                                <h3>Specification</h3>
-                                                                                <p>Size:  165/60R14 </p>
-                                                                                <p>Type:  Good Performance</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="col-md-4 col-sm-6 col-xs-6">
-                                                                <div class="details-box">
-                                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/best-service/p3.jpg" class="img-responsive"></div>
-                                                                        <div class="link"><a href="appointment.html">enquiry Now</a></div>
-
-                                                                        <div class="cont-box">
-                                                                                <h3>Specification</h3>
-                                                                                <p>Size:  165/60R14 </p>
-                                                                                <p>Type:  Good Performance</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                        </div>
-
+                                      
+                                    <?php }} ?>
 
                                 </div>
                         </div>
@@ -138,9 +82,10 @@ else
                                         <!--Start Single item-->
                                         <div class="single-item">
                                                 <ul class="services-list">
-                                                        <li><a href="tyres.html">TYRES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li class="active"><a href="alloy-wheels.html">ALLOY WHEELS<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="batteries.html">BATTERIES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                    
+                                                        <li><a href="<?= Url::to(['site/tyres']) ?>">TYRES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                        <li class="active"><a href="<?= Url::to(['site/alloy-wheels']) ?>">ALLOY WHEELS<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                        <li><a href="<?= Url::to(['site/batteries']) ?>">BATTERIES<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
                                                 </ul>
                                         </div>
                                         <!--End Single item-->

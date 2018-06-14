@@ -76,8 +76,6 @@ class SiteController extends Controller {
                 $sliders = Slider::find()->where(['status' => 1])->all();
                 $brands = \common\models\Brands::find()->where(['status' => 1, 'home_page' => 1])->all();
                 $testimonials = \common\models\Testimonials::find()->where(['type' => 1])->all();
-                $contact = new \common\models\ContactForm;
-                $contact->setScenario('enquiry');
                 $meta_tags = CmsMetaTags::find()->where(['id' => 1])->one();
                 $our_services = \common\models\OurServices::find()->where(['status' => 1])->all();
                 $privilege = \common\models\HomePrivilege::findOne(1);
@@ -87,7 +85,6 @@ class SiteController extends Controller {
                             'sliders' => $sliders,
                             'testimonials' => $testimonials,
                             'meta_title' => $meta_tags->meta_title,
-                            'contact' => $contact,
                             'brands' => $brands,
                             'our_services' => $our_services,
                             'privilege' => $privilege,
@@ -251,8 +248,16 @@ class SiteController extends Controller {
          * Displays service page.
          */
 
-        public function actionServices() {
+        public function actionServices($service=null) {
+            if(!isset($service)&& $service==''){
+              $service_detail=\common\models\Services::findOne(1);  
+            }else{
+            $service_detail=\common\models\Services::find()->where(['canonical_name'=>$service])->one();
+            }
+            $all_services=\common\models\Services::find()->where(['status'=>1])->all();
                 return $this->render('services', [
+                    'service_detail'=>$service_detail,
+                    'services'=>$all_services,
                 ]);
         }
 
@@ -261,7 +266,9 @@ class SiteController extends Controller {
          */
 
         public function actionPrivileges() {
+            $privileges=\common\models\Privileges::find()->where(['status'=>1])->all();
                 return $this->render('privileges', [
+                    'privileges'=>$privileges,
                 ]);
         }
 
@@ -278,7 +285,9 @@ class SiteController extends Controller {
 
         public function actionTyresDetail($brand) {
                 if (isset($brand)) {
+                    $types=\common\models\Tyres::find()->where(['status'=>1])->select('type')->distinct()->all();
                         return $this->render('tyres-detail', [
+                            'types'=>$types,
                         ]);
                 } else {
                         $this->redirect('site/error');
@@ -286,12 +295,18 @@ class SiteController extends Controller {
         }
 
         public function actionAlloyWheels() {
+            $brands=\common\models\Brands::find()->where(['type' => 2, 'status' => 1])->all();
                 return $this->render('alloy-wheels', [
+                    'brands'=>$brands,
                 ]);
         }
 
         public function actionBatteries() {
+            $batteries=\common\models\Batteries::findOne(1);
+            $brands=\common\models\Brands::find()->where(['status'=>1,'type'=>3])->all();
                 return $this->render('batteries', [
+                    'batteries'=>$batteries,
+                    'brands'=>$brands,
                 ]);
         }
 

@@ -49,44 +49,48 @@ else
                         <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right">
                                 <div class="services-single-content">
                                         <div class="sec-title text-left">
-                                                <h1>Wheel Alignment</h1>
+                                                <h1><?=$service_detail->title?></h1>
                                                 <span class="decor"></span>
                                         </div>
+                                    <?php  
+                                    $path = Yii::getAlias('@paths') . '/services/' . $service_detail->id . '/gallery_thumb';
+                        if (count(glob("{$path}/*")) > 0) { ?>
+                                    
                                         <div id="services-single-carousel" class="carousel slide" data-ride="carousel">
                                                 <ol class="carousel-indicators">
-                                                        <li data-target="#services-single-carousel" data-slide-to="0" class="active"></li>
-                                                        <li data-target="#services-single-carousel" data-slide-to="1"></li>
-                                                        <li data-target="#services-single-carousel" data-slide-to="2"></li>
+                                                    <?php
+                                                    $k = 0;
+                                foreach (glob("{$path}/*") as $file) {
+                                                    ?>
+                                                        <li data-target="#services-single-carousel" data-slide-to="<?=$k?>" class="<?=$k==0?'active':''?>"></li>
+                                                        
+                                <?php $k++;} ?>
                                                 </ol>
                                                 <div class="carousel-inner" role="listbox">
-                                                        <div class="item active">
+                                                     <?php
+                                                    $l = 0;
+                                foreach (glob("{$path}/*") as $file) {
+                                    $arry = explode('/', $file);
+                                        $img_nmee = end($arry);
+
+                                        $img_nmees = explode('.', $img_nmee);
+                                        if ($img_nmees['1'] != '') {
+                                                    ?>
+                                                        <div class="item <?=$l==0?'active':''?>">
                                                                 <div class="single-item">
                                                                         <div class="img-holder">
-                                                                                <img src="<?= Yii::$app->homeUrl ?>img/services-single-v1/1.jpg" alt="Awesome Image">
+                                                                                <img src="<?= Yii::$app->homeUrl ?>uploads/services/<?=$service_detail->id?>/gallery/<?=end($arry)?>" alt="Awesome Image">
                                                                         </div>
                                                                 </div>
                                                         </div>
-                                                        <div class="item">
-                                                                <div class="single-item">
-                                                                        <div class="img-holder">
-                                                                                <img src="<?= Yii::$app->homeUrl ?>img/services-single-v1/1.jpg" alt="Awesome Image">
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="item">
-                                                                <div class="single-item">
-                                                                        <div class="img-holder">
-                                                                                <img src="<?= Yii::$app->homeUrl ?>img/services-single-v1/1.jpg" alt="Awesome Image">
-                                                                        </div>
-                                                                </div>
-                                                        </div>
+                                <?php $l++;}} ?>   
+                                                      
                                                 </div>
                                         </div>
+                        <?php } ?>
                                         <div class="content">
 
-                                                <p class="top-text">Pleasure and praising pain was born and I will give you a complete account of the systems, and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself.</p>
-                                                <p>Complete account of the systems and expound the actually teachings of the great explorer of the truth, the master-builder of human uts happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful anyone who loves or pursues.</p>
-
+                                                <?=$service_detail->content?>
                                         </div>
 
 
@@ -98,15 +102,9 @@ else
                                         <!--Start Single item-->
                                         <div class="single-item">
                                                 <ul class="services-list">
-                                                        <li class="active"><a href="#">Wheel Alignment<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Wheel Balancing<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Tyre Fitment<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Wheel Care<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Nitrogen Air<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Air Conditioning<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Brakes<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Window Tinting<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                                                        <li><a href="#">Car Detailing<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                                    <?php foreach($services as $service){ ?>
+<li class="<?=$service->canonical_name==$service_detail->canonical_name?'active':''?>"><?= Html::a($service->title.' <i class="fa fa-angle-right" aria-hidden="true"></i>', ['/site/services','service'=>$service->canonical_name]) ?> </li>
+                                                    <?php }?>
                                                 </ul>
                                         </div>
                                         <!--End Single item-->

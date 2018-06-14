@@ -8,7 +8,8 @@ use common\models\AlloyWheelsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\web\UploadedFile;
+use yii\helpers\FileHelper;
 /**
  * AlloyWheelsController implements the CRUD actions for AlloyWheels model.
  */
@@ -65,13 +66,25 @@ class AlloyWheelsController extends Controller
     {
         $model = new AlloyWheels();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+        if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
+                        $image = UploadedFile::getInstance($model, 'image');
+                        $model->image = $image->extension;
+                        if ($model->validate() && $model->save()) {
+                                if (!empty($image)) {
+                                        $path = Yii::$app->basePath . '/../uploads/alloy-wheels/' . $model->id . '/';
+                                        $size = [
+                                                ['width' => 100, 'height' => 100, 'name' => 'small'],
+                                                ['width' => 450, 'height' => 408, 'name' => 'image'],
+                                        ];
+                                        Yii::$app->UploadFile->UploadFile($model, $image, $path, $size);
+                                }
+                                Yii::$app->session->setFlash('success', "Added Successfully");
+                                return $this->redirect(['index']);
+                        }
+                }
+                return $this->render('create', [
+                            'model' => $model,
+                ]);
     }
 
     /**
@@ -84,13 +97,31 @@ class AlloyWheelsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+       $image_ = $model->image;
+
+                if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
+                        $image = UploadedFile::getInstance($model, 'image');
+                        if (!empty($image))
+                                $model->image = $image->extension;
+                        else
+                                $model->image = $image_;
+                        if ($model->validate() && $model->save()) {
+                                if (!empty($image)) {
+                                        $path = Yii::$app->basePath . '/../uploads/alloy-wheels/' . $model->id . '/';
+                                        $size = [
+                                                ['width' => 100, 'height' => 100, 'name' => 'small'],
+                                                ['width' => 450, 'height' => 408, 'name' => 'image'],
+                                        ];
+                                        Yii::$app->UploadFile->UploadFile($model, $image, $path, $size);
+                                }
+                        }
+                        Yii::$app->session->setFlash('success', "Updated Successfully");
+                        return $this->redirect(['index']);
+                }
+
+                return $this->render('update', [
+                            'model' => $model,
+                ]);
     }
 
     /**

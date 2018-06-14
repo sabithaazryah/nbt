@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use \common\models\Brands;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\AlloyWheelsSearch */

@@ -31,10 +31,35 @@ $this->params['breadcrumbs'][] = $this->title;
                                             'filterModel' => $searchModel,
                                             'columns' => [
                                                     ['class' => 'yii\grid\SerialColumn'],
+                                                [
+                                                    'attribute' => 'image',
+                                                    'format' => 'raw',
+                                                    'value' => function ($data) {
+                                                            if (!empty($data->image))
+                                                                    $img = '<img width="120px" src="' . Yii::$app->homeUrl . '../uploads/privileges/' . $data->id . '/small.' . $data->image . '"/>';
+                                                            return $img;
+                                                    },
+                                                    'filter' => '',
+                                                ],
                                                 'title',
-                                                'content:ntext',
-                                                'image',
-                                                'image_alt',
+                                            [
+                                                    'attribute' => 'content',
+                                                    'value' => function($data) {
+                                                        
+                                                            $data->content = strip_tags($data->content);
+                                                            echo $data->content;exit;
+                                                            if (strlen($data->content) > 50) {
+                                                                    $str = substr($data->content, 0, strpos(wordwrap($data->content, 50), "\n"));
+                                                                    $dot = ' ....';
+                                                            } else {
+                                                                    $str = $data->content;
+                                                                    $dot = '';
+                                                            }
+                                                            return $str . $dot;
+                                                    },
+                                                ],
+                                                
+                                                //'image_alt',
                                                 // 'status',
                                                 // 'CB',
                                                 // 'UB',

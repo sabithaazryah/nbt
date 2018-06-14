@@ -33,7 +33,8 @@ class Services extends \yii\db\ActiveRecord {
                 return [
                         [['content'], 'string'],
                         [['status', 'CB', 'UB'], 'integer'],
-                        [['DOC', 'DOU'], 'safe'],
+                        [['DOC', 'DOU','canonical_name'], 'safe'],
+                        [['canonical_name'],'unique'],
                         [['title'], 'string', 'max' => 250],
                         [['gallery_iamge'], 'file', 'extensions' => 'jpeg, jpg, png', 'maxFiles' => 4],
                 ];
