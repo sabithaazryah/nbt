@@ -7,6 +7,7 @@ use frontend\assets\AppAsset;
 
 AppAsset::register($this);
 $contact_details = \common\models\ContactAddress::findOne(1);
+$about = \common\models\About::findOne(1);
 $params = $parameters = \yii::$app->getRequest()->getQueryParams();
 ?>
 <?php $this->beginPage() ?>
@@ -78,21 +79,21 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                         <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12">
                                                                 <div class="header-contact-info">
                                                                         <ul>
-                                                                                <li><i class="flaticon-telephone"></i>Customer Support: 800PITSTOP (7487867)</li>
-                                                                                <li><i class="flaticon-interface-1"></i>dubai@newbharathtyres.com</li>
+                                                                                <li><i class="flaticon-telephone"></i>Customer Support: <?= $about->customer_support_no ?></li>
+                                                                                <li><i class="flaticon-interface-1"></i><?= $contact_details->email ?></li>
                                                                         </ul>
                                                                 </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-5 col-sm-3 col-xs-12">
                                                                 <div class="social-links">
                                                                         <ul>
-                                                                                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                                                                                <li><a href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
-                                                                                <li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
-                                                                                <li><a href="#"><i class="flaticon-linkedin-logo"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->facebook ?>" target="_blank"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->twitter ?>" target="_blank"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->google_plus ?>" target="_blank"><i class="flaticon-google-plus-logo"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->instagram ?>" target="_blank"><i class="flaticon-linkedin-logo"></i></a></li>
                                                                         </ul>
                                                                 </div>
-                                                                <div class="top-map"><a href="https://www.google.co.in/maps/place/New+Bharath+PITSTOP+(New+Bharath+Tyres)/@25.277115,55.385991,15z/data=!4m5!3m4!1s0x0:0x95fef0a91c98e7f5!8m2!3d25.277115!4d55.385991" target="_blank"></a></div>
+                                                                <div class="top-map"><a href="<?= $contact_details->map_link ?>" target="_blank"></a></div>
                                                         </div>
                                                 </div>
                                         </div>

@@ -74,10 +74,13 @@ class SiteController extends Controller {
          */
         public function actionIndex() {
                 $sliders = Slider::find()->where(['status' => 1])->all();
+                $brands = \common\models\Brands::find()->where(['status' => 1, 'home_page' => 1])->all();
                 $testimonials = \common\models\Testimonials::find()->where(['type' => 1])->all();
                 $contact = new \common\models\ContactForm;
                 $contact->setScenario('enquiry');
                 $meta_tags = CmsMetaTags::find()->where(['id' => 1])->one();
+                $our_services = \common\models\OurServices::find()->where(['status' => 1])->all();
+                $privilege = \common\models\HomePrivilege::findOne(1);
                 \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
                 \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('index', [
@@ -85,6 +88,9 @@ class SiteController extends Controller {
                             'testimonials' => $testimonials,
                             'meta_title' => $meta_tags->meta_title,
                             'contact' => $contact,
+                            'brands' => $brands,
+                            'our_services' => $our_services,
+                            'privilege' => $privilege,
                 ]);
         }
 
@@ -264,13 +270,19 @@ class SiteController extends Controller {
          */
 
         public function actionTyres() {
+                $tyre_brands = \common\models\Brands::find()->where(['type' => 1, 'status' => 1])->all();
                 return $this->render('tyres', [
+                            'brands' => $tyre_brands
                 ]);
         }
 
-        public function actionTyresDetail() {
-                return $this->render('tyres-detail', [
-                ]);
+        public function actionTyresDetail($brand) {
+                if (isset($brand)) {
+                        return $this->render('tyres-detail', [
+                        ]);
+                } else {
+                        $this->redirect('site/error');
+                }
         }
 
         public function actionAlloyWheels() {

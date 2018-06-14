@@ -62,7 +62,7 @@ else
                                                 <div class="col-md-7">
                                                         <div class="content">
                                                                 <h3>COMPANY OVERVIEW</h3>
-                                                                <h5>Welcome to NEW BHARATH TYRES. New Bharath Tyres offers a complete range of Tyres, Alloy-wheels and modern tyre services.</h5>
+                                                                <h5><?= $about->small_content ?></h5>
                                                                 <img src="<?= Yii::$app->homeUrl ?>img/icon/since.png"><br><br>
 
                                                         </div>
@@ -70,10 +70,7 @@ else
                                                 <div class="col-md-12">
                                                         <div class="content">
 
-                                                                <p>NewBharath Tyres, the pioneers in tyre retailing with over 60 years of excellence has been accredited the No.1 dealer by world’s leading tyre manufacturers.<p>
-                                                                <p>NewBharath Tyres, the tyre retailer with a chain of outlets all over Kerala facilitates to cater the World-Class products and services all under one roof. Best products, latest machinery, sound management, financial stability, experienced and technically qualified workforce and quality control practice is the specialty of NewBharath Tyres. From world’s best Tyres to Alloy wheels and latest wheel alignment and balancing technology and specialized services like alloy wheel fitment, nitrogen-air, NewBharath Tyres offers you unmatchable international service. NewBharath Tyres takes maximum effort and is successful in bringing the lastest service technologies before any other, in town.
-
-                                                                        NewBharath Tyres has been capable in bringing new standards and trends in tyre-retailing in India for the customers with truly world class services and facilities which is not available anywhere in India. NewBharath Tyres, through an unwavering commitment and dedication won the trust and confidence of a legion of loyal customers of over 2 million  and still counting.</p>
+                                                                <p><?= $about->detailed_content ?></p>
 
                                                         </div>
                                                 </div>
@@ -82,9 +79,9 @@ else
                         </div>
                         <div class="col-lg-3 col-md-4">
                                 <div class="customer-support">
-                                        <h4>24/7 Free Customer Support.</h4>
-                                        <p>New Bharath Pitstop is your ONE STOP<br> solution bringing best car services.</p>
-                                        <h3><span class="flaticon-telephone"></span><br>800PITSTOP (7487867)</h3>
+                                        <h4><?= $about->customer_support ?></h4>
+                                        <p><?= $about->customer_support_detail ?></p>
+                                        <h3><span class="flaticon-telephone"></span><br><?= $about->customer_support_no ?></h3>
                                         <div class="info-box text-center">
                                                 <p>phone: 042630606</p>
                                                 <p>Email: dubai@newbharathtyres.com</p>
@@ -127,8 +124,8 @@ else
                                                 <span class="flaticon-social"></span>
                                         </div>
                                         <div class="content">
-                                                <h3>100% Transparency</h3>
-                                                <p>We ensure that you get a well detailed break-up of each minor repair work</p>
+                                                <h3><?= $about->caption_1 ?></h3>
+                                                <p><?= $about->caption_1_detail ?></p>
 
                                         </div>
                                 </div>
@@ -141,8 +138,8 @@ else
                                                 <span class="flaticon-wrench"></span>
                                         </div>
                                         <div class="content">
-                                                <h3>Genuine Spare Parts</h3>
-                                                <p>We useuthorized genuine spare parts &amp; accessories to ensure that your</p>
+                                                <h3><?= $about->caption_2 ?></h3>
+                                                <p><?= $about->caption_2_detail ?></p>
 
                                         </div>
                                 </div>
@@ -155,8 +152,8 @@ else
                                                 <span class="flaticon-map"></span>
                                         </div>
                                         <div class="content">
-                                                <h3>Trusted &amp; Quality Service</h3>
-                                                <p>You can avail our free pickup &amp; drop so that you can just sit &amp; relax</p>
+                                                <h3><?= $about->caption_3 ?></h3>
+                                                <p><?= $about->caption_3_detail ?></p>
 
                                         </div>
                                 </div>
@@ -169,8 +166,8 @@ else
                                                 <span class="flaticon-interface-2"></span>
                                         </div>
                                         <div class="content">
-                                                <h3>Friendly & Helpfull Team</h3>
-                                                <p>We are a friendly & helpful professional group of people in autocare.</p>
+                                                <h3><?= $about->caption_4 ?></h3>
+                                                <p><?= $about->caption_4_detail ?></p>
 
                                         </div>
                                 </div>
@@ -183,8 +180,8 @@ else
                                                 <span class="flaticon-transport-2"></span>
                                         </div>
                                         <div class="content">
-                                                <h3>free Pickup & Drop</h3>
-                                                <p>You can avail our free pickup & drop so that you can just sit & relax.</p>
+                                                <h3><?= $about->caption_5 ?></h3>
+                                                <p><?= $about->caption_5_detail ?></p>
 
                                         </div>
                                 </div>
@@ -197,8 +194,8 @@ else
                                                 <span class="flaticon-money"></span>
                                         </div>
                                         <div class="content">
-                                                <h3>Zero Upselling</h3>
-                                                <p>You can see servicing cost upfront our Service Calculator. Only additional.</p>
+                                                <h3><?= $about->caption_6 ?></h3>
+                                                <p><?= $about->caption_6_detail ?></p>
 
                                         </div>
                                 </div>

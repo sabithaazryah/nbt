@@ -11,76 +11,96 @@ use dosamigos\ckeditor\CKEditor;
 
 <div class="services-form form-inline">
 
-    <?php $form = ActiveForm::begin(); ?>
-    <div class="row">
-        <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'heading')->textInput(['maxlength' => true,'readonly'=>true]) ?>
+        <?php $form = ActiveForm::begin(); ?>
+        <div class="row">
+                <div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-        </div><div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'canonical_name')->textInput(['maxlength' => true,'readonly'=>true]) ?>
+                </div><div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'status')->dropDownList(['1' => 'Enabled', '0' => 'Disabled']) ?>
 
-        </div><div class='col-md-12 col-sm-12 col-xs-12 left_padd'>    <?=
+                </div> <div class='col-md-12 col-sm-12 col-xs-12 left_padd'>    <?=
                         $form->field($model, 'content', ['options' => ['class' => 'form-group']])->widget(CKEditor::className(), [
                             'options' => ['rows' => 2],
                             'preset' => 'custom',
                         ])
                         ?>
 
-        </div><div class='col-md-12 col-sm-12 col-xs-12 left_padd'>   <?=
-                        $form->field($model, 'we_provide', ['options' => ['class' => 'form-group']])->widget(CKEditor::className(), [
-                            'options' => ['rows' => 2],
-                            'preset' => 'custom',
-                        ])
-                        ?>
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'gallery_iamge[]')->fileInput(['multiple' => true]) ?>
 
-        </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'meta_title')->textInput(['maxlength' => true]) ?>
+                </div>  </div>
 
-        </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'meta_description')->textarea(['rows' => 6]) ?>
 
-        </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'meta_keyword')->textarea(['rows' => 6]) ?>
-
-        </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>   <?= $form->field($model, 'image', ['options' => ['class' => 'form-group'], 'template' => '{label}<label>Image [ File Size :( 800x445 ) ]</label>{input}{error}'])->fileInput(['maxlength' => true])->label(FALSE) ?>
+        <?php if (!$model->isNewRecord) { ?>
+                                                                                                                                                                                                                                                        <!--<a href=''><img src="<?= yii::$app->homeUrl ?>/../../uploads/product/1/dasda_0.jpg" width="100" alt="Delete"></a>-->
+                <div class="row">
                         <?php
-                        if ($model->isNewRecord)
-                                echo "";
-                        else {
-                                if (!empty($model->image)) {
-                                        ?>
+                        $path = Yii::getAlias('@paths') . '/services/' . $model->id . '/gallery_thumb';
+                        if (count(glob("{$path}/*")) > 0) {
+                                echo "<hr class='appoint_history'/> <h4 class='sub-heading'>Uploaded Files</h4>";
 
-                                        <img src="<?= Yii::$app->homeUrl ?>../uploads/services/<?= $model->id ?>/small.<?= $model->image; ?>" width="125" height="100"/>
-                                        <?php
+                                $k = 0;
+                                foreach (glob("{$path}/*") as $file) {
+                                        $k++;
+                                        $arry = explode('/', $file);
+                                        $img_nmee = end($arry);
+
+                                        $img_nmees = explode('.', $img_nmee);
+                                        if ($img_nmees['1'] != '') {
+                                                ?>
+
+                                                <div class = "col-md-1 img-box" id="<?= $k; ?>">
+                                                        <div class="news-img">
+                                                                <img src="<?= Yii::$app->homeUrl . '../uploads/services/' . $model->id . '/gallery_thumb/' . end($arry) ?>" >
+                                                                <a  title="Delete" class="img-remove news_image" id="<?= $model->id . "@" . $img_nmee . '@' . $k; ?>" style="cursor:pointer"><i class="fa fa-remove" style="position: absolute;top: 3px;font-size: 17px;
+                                                                                                                                                                                                color: red;"></i></a>
+                                                        </div> </div>
+
+
+                                                <?php
+                                        }
                                 }
                         }
                         ?>
+                </div>
+                <?php
+        }
+        ?>
 
-        </div><div class='col-md-6 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'alt_tag')->textInput(['maxlength' => true]) ?>
-
+        <div class="row">
+                <div class='col-md-4 col-sm-6 col-xs-12' >
+                        <div class="form-group">
+                                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary', 'style' => 'margin-top:15px']) ?>
+                        </div>
+                </div>
         </div>
-    </div>
 
-    <div class="row"> 
-        <div class='col-md-4 col-sm-6 col-xs-12' >
-            <div class="form-group">
-                <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-            </div>
-        </div>
-    </div>
-
-    <?php ActiveForm::end(); ?>
+        <?php ActiveForm::end(); ?>
 
 </div>
 
+
 <script>
         $(document).ready(function () {
-                $('#services-heading').keyup(function () {
-                        var name = slug($(this).val());
-                        $('#services-canonical_name').val(slug($(this).val()));
+                $('.news_image').click(function () {
+                        var id = this.id;
+                        $.ajax({
+                                url: 'ajax_imgdelete',
+                                type: "post",
+                                data: {image: id},
+                                success: function (data) {
+                                        var $data = JSON.parse(data);
+                                        if ($data.msg == "success") {
+                                                $('#' + $data.id).hide();
+                                        } else {
+                                                alert($data.title);
+                                        }
+                                }, error: function () {
+                                        alert('Image Cannot be delete');
+                                }
+                        });
                 });
+
+
+
+
         });
-        var slug = function (str) {
-                var $slug = '';
-                var trimmed = $.trim(str);
-                $slug = trimmed.replace(/[^a-z0-9-]/gi, '-').
-                        replace(/-+/g, '-').
-                        replace(/^-|-$/g, '');
-                return $slug.toLowerCase();
-        }
 </script>

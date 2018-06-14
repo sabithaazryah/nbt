@@ -82,7 +82,7 @@ AppAsset::register($this);
 
                                         <li>
                                                 <a href="">
-                                                        <i class="fa fa-home"></i>
+                                                        <i class="fa fa-cubes"></i>
                                                         <span class="title">Home Page</span>
                                                 </a>
                                                 <ul>
@@ -115,6 +115,10 @@ AppAsset::register($this);
                                         </li>
 
                                         <li>
+                                                <?= Html::a('<i class="fa fa-sitemap"></i> <span class="title">About</span>', ['/cms/about/update?id=1'], ['class' => 'title']) ?>
+                                        </li>
+
+                                        <li>
                                                 <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Offers</span>', ['/cms/offers/index'], ['class' => 'title']) ?>
                                         </li>
 
@@ -128,49 +132,49 @@ AppAsset::register($this);
                                                         <li>
                                                                 <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
                                                         </li>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Terms and Conditions', ['/cms/terms-and-condition/update?id=1'], ['class' => 'title']) ?>
+                                                        </li>
                                                 </ul>
                                         </li>
-                                        
-                                         <li>
-                                                        <a href="">
-                                                                <i class="fa fa-tachometer"></i>
-                                                                <span class="title">Products</span>
-                                                        </a>
-                                                        <ul>
 
-                                                                <li>
-                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Tyres', ['/cms/tyres/index'], ['class' => 'title']) ?>
-                                                                </li>
-                                                                
-                                                                <li>
-                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Alloy Wheels', ['/cms/alloy-wheels/index'], ['class' => 'title']) ?>
-                                                                </li>
-                                                        </ul>
-                                                </li>
+                                        <li>
+                                                <a href="">
+                                                        <i class="fa fa-tachometer"></i>
+                                                        <span class="title">Products</span>
+                                                </a>
+                                                <ul>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Tyres', ['/cms/tyres/index'], ['class' => 'title']) ?>
+                                                        </li>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Alloy Wheels', ['/cms/alloy-wheels/index'], ['class' => 'title']) ?>
+                                                        </li>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Batteries', ['/cms/batteries/update?id=1'], ['class' => 'title']) ?>
+                                                        </li>
+                                                </ul>
+                                        </li>
+
+                                        <li>
+                                                <?= Html::a('<i class="fa fa-shield"></i> <span class="title">Services</span>', ['/cms/services/index'], ['class' => 'title']) ?>
+                                        </li>
+
+                                        <li>
+                                                <?= Html::a('<i class="fa fa-map-marker"></i> <span class="title">Contact Address</span>', ['/cms/contact-address/index'], ['class' => 'title']) ?>
+                                        </li>
 
 
-                                        <!--                                                <li>
-                                        <?= Html::a('<i class="fa fa-sliders"></i> <span class="title">Sliders</span>', ['/cms/slider/index'], ['class' => 'title']) ?>
-                                                                                        </li>
-
-
-                                                                                        <li>
-                                        <?= Html::a('<i class="fa fa-user"></i> <span class="title">Testimonials</span>', ['/cms/testimonials/index'], ['class' => 'title']) ?>
-                                                                                        </li>
+                                        <!--
 
                                                                                         <li>
                                         <?= Html::a('<i class="fa fa-sliders"></i> <span class="title">About</span>', ['/cms/about/update', 'id' => 1], ['class' => 'title']) ?>
                                                                                         </li>
-                                                                                        <li>
-                                        <?= Html::a('<i class="fa fa-user"></i> <span class="title">Clients</span>', ['/cms/clients/index'], ['class' => 'title']) ?>
-                                                                                        </li>
-                                                                                        <li>
-                                        <?= Html::a('<i class="fa fa-shield"></i> <span class="title">Services</span>', ['/cms/services/index'], ['class' => 'title']) ?>
-                                                                                        </li>
 
-                                                                                        <li>
-                                        <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Previleges</span>', ['/cms/privileges/index'], ['class' => 'title']) ?>
-                                                                                        </li>
 
                                                                                         <li>
                                         <?= Html::a('<i class="fa fa-map-marker"></i> <span class="title">Contact Address</span>', ['/cms/contact-address/index'], ['class' => 'title']) ?>
@@ -266,7 +270,7 @@ AppAsset::register($this);
 
                                                 <li>
                                                         <a href="">
-                                                                <i class="fa fa-home"></i>
+                                                                <i class="fa fa-cubes"></i>
                                                                 <span class="title">Home Page</span>
                                                         </a>
                                                         <ul>
@@ -299,6 +303,10 @@ AppAsset::register($this);
                                                 </li>
 
                                                 <li>
+                                                        <?= Html::a('<i class="fa fa-sitemap"></i> <span class="title">About</span>', ['/cms/about/update?id=1'], ['class' => 'title']) ?>
+                                                </li>
+
+                                                <li>
                                                         <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Offers</span>', ['/cms/offers/index'], ['class' => 'title']) ?>
                                                 </li>
 
@@ -313,9 +321,13 @@ AppAsset::register($this);
                                                                 <li>
                                                                         <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
                                                                 </li>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Terms and Conditions', ['/cms/terms-and-condition/update?id=1'], ['class' => 'title']) ?>
+                                                                </li>
                                                         </ul>
                                                 </li>
-                                                
+
                                                 <li>
                                                         <a href="">
                                                                 <i class="fa fa-tachometer"></i>
@@ -326,12 +338,30 @@ AppAsset::register($this);
                                                                 <li>
                                                                         <?= Html::a('<i class="fa fa-angle-double-right"></i> Tyres', ['/cms/tyres/index'], ['class' => 'title']) ?>
                                                                 </li>
-                                                                
+
                                                                 <li>
                                                                         <?= Html::a('<i class="fa fa-angle-double-right"></i> Alloy Wheels', ['/cms/alloy-wheels/index'], ['class' => 'title']) ?>
                                                                 </li>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Batteries', ['/cms/batteries/update?id=1'], ['class' => 'title']) ?>
+                                                                </li>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Brochures', ['/cms/brochures/index'], ['class' => 'title']) ?>
+                                                                </li>
                                                         </ul>
                                                 </li>
+
+                                                <li>
+                                                        <?= Html::a('<i class="fa fa-shield"></i> <span class="title">Services</span>', ['/cms/services/index'], ['class' => 'title']) ?>
+                                                </li>
+
+                                                <li>
+                                                        <?= Html::a('<i class="fa fa-map-marker"></i> <span class="title">Contact Address</span>', ['/cms/contact-address/index'], ['class' => 'title']) ?>
+                                                </li>
+
+
 
 
                                                 <!--                                                <li>

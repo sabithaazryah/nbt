@@ -12,23 +12,36 @@ use yii\widgets\ActiveForm;
         <?= common\widgets\Alert::widget() ?>
         <?php $form = ActiveForm::begin(); ?>
         <div class="row">
-                <div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
-                        <?= $form->field($model, 'address')->textarea(['maxlength' => true]) ?>
+
+                <div class='col-md-12 col-sm-12 col-xs-12 left_padd'>
+                        <?= $form->field($model, 'get_in_touch')->textarea(['maxlength' => true, 'rows' => 2]) ?>
 
                 </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
-                        <?= $form->field($model, 'address_1')->textarea(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'address')->textarea(['maxlength' => true]) ?>
 
                 </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
                         <?= $form->field($model, 'phone1')->textInput(['maxlength' => true]) ?>
 
                 </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
-                        <?= $form->field($model, 'phone2')->textInput(['maxlength' => true]) ?>
-
-                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
                         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
+                </div><div class='col-md-12 col-sm-12 col-xs-12 left_padd'>
+                        <?= $form->field($model, 'map')->textInput(['maxlength' => true]) ?>
+
+                </div><div class='col-md-12 col-sm-12 col-xs-12 left_padd'>
+                        <?= $form->field($model, 'map_link')->textInput(['maxlength' => true]) ?>
+
                 </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
-                        <?= $form->field($model, 'skype')->textInput(['maxlength' => true]) ?>
+                        <?= $form->field($model, 'facebook')->textInput(['maxlength' => true]) ?>
+
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
+                        <?= $form->field($model, 'twitter')->textInput(['maxlength' => true]) ?>
+
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
+                        <?= $form->field($model, 'google_plus')->textInput(['maxlength' => true]) ?>
+
+                </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>
+                        <?= $form->field($model, 'instagram')->textInput(['maxlength' => true]) ?>
 
                 </div>
         </div>

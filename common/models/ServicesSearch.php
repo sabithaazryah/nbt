@@ -19,7 +19,7 @@ class ServicesSearch extends Services
     {
         return [
             [['id', 'status', 'CB', 'UB'], 'integer'],
-            [['heading', 'content', 'image', 'we_provide', 'canonical_name', 'meta_title', 'meta_description', 'meta_keyword', 'DOC', 'DOU'], 'safe'],
+            [['title', 'content', 'gallery_iamge', 'DOC', 'DOU'], 'safe'],
         ];
     }
 
@@ -67,14 +67,9 @@ class ServicesSearch extends Services
             'DOU' => $this->DOU,
         ]);
 
-        $query->andFilterWhere(['like', 'heading', $this->heading])
+        $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'image', $this->image])
-            ->andFilterWhere(['like', 'we_provide', $this->we_provide])
-            ->andFilterWhere(['like', 'canonical_name', $this->canonical_name])
-            ->andFilterWhere(['like', 'meta_title', $this->meta_title])
-            ->andFilterWhere(['like', 'meta_description', $this->meta_description])
-            ->andFilterWhere(['like', 'meta_keyword', $this->meta_keyword]);
+            ->andFilterWhere(['like', 'gallery_iamge', $this->gallery_iamge]);
 
         return $dataProvider;
     }

@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Services */
 
-$this->title = $model->id;
+$this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Services', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -37,14 +37,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 'model' => $model,
                                                 'attributes' => [
                                                             'id',
-            'heading',
+            'title',
             'content:ntext',
-            'image',
-            'we_provide:ntext',
-            'canonical_name',
-            'meta_title',
-            'meta_description:ntext',
-            'meta_keyword:ntext',
+            'gallery_iamge',
             'status',
             'CB',
             'UB',

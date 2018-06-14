@@ -19,7 +19,7 @@ class ContactAddressSearch extends ContactAddress
     {
         return [
             [['id', 'status', 'CB', 'UB'], 'integer'],
-            [['city', 'landmark', 'phone1', 'phone2', 'phone_uae', 'email', 'DOC', 'DOU'], 'safe'],
+            [['phone1', 'phone2', 'email', 'address', 'map', 'get_in_touch', 'map_link', 'facebook', 'twitter', 'google_plus', 'instagram', 'DOC', 'DOU'], 'safe'],
         ];
     }
 
@@ -67,12 +67,17 @@ class ContactAddressSearch extends ContactAddress
             'DOU' => $this->DOU,
         ]);
 
-        $query->andFilterWhere(['like', 'city', $this->city])
-            ->andFilterWhere(['like', 'landmark', $this->landmark])
-            ->andFilterWhere(['like', 'phone1', $this->phone1])
+        $query->andFilterWhere(['like', 'phone1', $this->phone1])
             ->andFilterWhere(['like', 'phone2', $this->phone2])
-            ->andFilterWhere(['like', 'phone_uae', $this->phone_uae])
-            ->andFilterWhere(['like', 'email', $this->email]);
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'address', $this->address])
+            ->andFilterWhere(['like', 'map', $this->map])
+            ->andFilterWhere(['like', 'get_in_touch', $this->get_in_touch])
+            ->andFilterWhere(['like', 'map_link', $this->map_link])
+            ->andFilterWhere(['like', 'facebook', $this->facebook])
+            ->andFilterWhere(['like', 'twitter', $this->twitter])
+            ->andFilterWhere(['like', 'google_plus', $this->google_plus])
+            ->andFilterWhere(['like', 'instagram', $this->instagram]);
 
         return $dataProvider;
     }

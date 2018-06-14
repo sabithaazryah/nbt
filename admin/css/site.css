@@ -1383,3 +1383,13 @@ input[type=checkbox], input[type=radio] {
         background-color: #334045;
         text-color: #fff;
 }
+.news-img {
+        border: 1px solid #d4cece;
+        /* padding: 5px; */
+        width: 120px;
+        height: 120px;
+}
+.news-img img {
+        width: 100% !important;
+        height: 100% !important;
+}

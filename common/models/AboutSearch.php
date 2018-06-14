@@ -18,8 +18,8 @@ class AboutSearch extends About
     public function rules()
     {
         return [
-            [['id', 'status', 'CB', 'UB'], 'integer'],
-            [['image', 'content', 'work_cycle', 'work_cycle_1', 'work_cycle_1_content', 'work_cycle_2', 'work_cycle_2_content', 'work_cycle_3', 'work_cycle_3_content', 'work_cycle_4', 'work_cycle_4_content', 'work_cycle_5', 'work_cycle_5_content', 'work_cycle_6', 'work_cycle_6_content', 'DOC', 'DOU'], 'safe'],
+            [['id'], 'integer'],
+            [['small_content', 'detailed_content', 'customer_support', 'customer_support_detail', 'customer_support_no', 'caption_1', 'caption_1_detail', 'caption_2', 'caption_2_detail', 'caption_3', 'caption_3_detail', 'caption_4', 'caption_4_detail', 'caption_5', 'caption_5_detail', 'caption_6', 'caption_6_detail', 'about_image', 'about_image_alt'], 'safe'],
         ];
     }
 
@@ -60,28 +60,27 @@ class AboutSearch extends About
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'status' => $this->status,
-            'CB' => $this->CB,
-            'UB' => $this->UB,
-            'DOC' => $this->DOC,
-            'DOU' => $this->DOU,
         ]);
 
-        $query->andFilterWhere(['like', 'image', $this->image])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'work_cycle', $this->work_cycle])
-            ->andFilterWhere(['like', 'work_cycle_1', $this->work_cycle_1])
-            ->andFilterWhere(['like', 'work_cycle_1_content', $this->work_cycle_1_content])
-            ->andFilterWhere(['like', 'work_cycle_2', $this->work_cycle_2])
-            ->andFilterWhere(['like', 'work_cycle_2_content', $this->work_cycle_2_content])
-            ->andFilterWhere(['like', 'work_cycle_3', $this->work_cycle_3])
-            ->andFilterWhere(['like', 'work_cycle_3_content', $this->work_cycle_3_content])
-            ->andFilterWhere(['like', 'work_cycle_4', $this->work_cycle_4])
-            ->andFilterWhere(['like', 'work_cycle_4_content', $this->work_cycle_4_content])
-            ->andFilterWhere(['like', 'work_cycle_5', $this->work_cycle_5])
-            ->andFilterWhere(['like', 'work_cycle_5_content', $this->work_cycle_5_content])
-            ->andFilterWhere(['like', 'work_cycle_6', $this->work_cycle_6])
-            ->andFilterWhere(['like', 'work_cycle_6_content', $this->work_cycle_6_content]);
+        $query->andFilterWhere(['like', 'small_content', $this->small_content])
+            ->andFilterWhere(['like', 'detailed_content', $this->detailed_content])
+            ->andFilterWhere(['like', 'customer_support', $this->customer_support])
+            ->andFilterWhere(['like', 'customer_support_detail', $this->customer_support_detail])
+            ->andFilterWhere(['like', 'customer_support_no', $this->customer_support_no])
+            ->andFilterWhere(['like', 'caption_1', $this->caption_1])
+            ->andFilterWhere(['like', 'caption_1_detail', $this->caption_1_detail])
+            ->andFilterWhere(['like', 'caption_2', $this->caption_2])
+            ->andFilterWhere(['like', 'caption_2_detail', $this->caption_2_detail])
+            ->andFilterWhere(['like', 'caption_3', $this->caption_3])
+            ->andFilterWhere(['like', 'caption_3_detail', $this->caption_3_detail])
+            ->andFilterWhere(['like', 'caption_4', $this->caption_4])
+            ->andFilterWhere(['like', 'caption_4_detail', $this->caption_4_detail])
+            ->andFilterWhere(['like', 'caption_5', $this->caption_5])
+            ->andFilterWhere(['like', 'caption_5_detail', $this->caption_5_detail])
+            ->andFilterWhere(['like', 'caption_6', $this->caption_6])
+            ->andFilterWhere(['like', 'caption_6_detail', $this->caption_6_detail])
+            ->andFilterWhere(['like', 'about_image', $this->about_image])
+            ->andFilterWhere(['like', 'about_image_alt', $this->about_image_alt]);
 
         return $dataProvider;
     }

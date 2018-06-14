@@ -13,83 +13,35 @@ else
 <section class="rev_slider_wrapper ">
         <div class="rev_slider slider1" data-version="5.0" data-controller="true">
                 <ul>
-                        <li data-transition="random" data-title="Wheel Installation" data-thumb="img/slides/1.jpg"> <img src="img/slides/2.jpg" alt="" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
-                                <div class="tp-caption tp-resizeme"
-                                     data-x="left" data-hoffset="0"
-                                     data-y="center" data-voffset="142"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                     data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                     data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-start="500">
-                                        <div class="wheel-installation">
+                        <?php foreach ($sliders as $slider) { ?>
+                                <li data-transition="random" data-title="Wheel Installation" data-thumb="img/slides/1.jpg"> <img src="<?= Yii::$app->homeUrl ?>uploads/sliders/<?= $slider->id ?>/image.<?= $slider->image ?>" alt="" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                                        <div class="tp-caption tp-resizeme"
+                                             data-x="left" data-hoffset="0"
+                                             data-y="center" data-voffset="142"
+                                             data-transform_idle="o:1;"
+                                             data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                                             data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                             data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
+                                             data-splitin="none"
+                                             data-splitout="none"
+                                             data-start="500">
+                                                <div class="wheel-installation">
+                                                        <?php if (isset($slider->title_1) && $slider->title_1 != '') { ?>
+                                                                <h1><?= $slider->title_1 ?></h1>
+                                                        <?php } ?>
+                                                        <?php if (isset($slider->title_2) && $slider->title_2 != '') { ?>
+                                                                <span class="border"></span> <b><?= $slider->title_2 ?></b>
+                                                        <?php } ?>
 
-                                                <h1>Alloy Wheels</h1>
-                                                <span class="border"></span> <b>New Bharath Tyres</b>
-                                                <p>The trusted experts will to keep you safe on the road, It is a long established fact<br>
-                                                        that a reader will be distracted by the AuotoCare.</p>
+                                                        <?php if (isset($slider->title_3) && $slider->title_3 != '') { ?>
+
+                                                                <?= wordwrap($slider->title_3, 80, "<br />\n"); ?>
+                                                        <?php } ?>
+                                                </div>
                                         </div>
-                                </div>
-                        </li>
-                        <li data-transition="random"  data-title="Full Checkup" data-thumb="img/slides/3.jpg"> <img src="img/slides/1.jpg" alt="" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
-                                <div class="tp-caption tp-resizeme"
-                                     data-x="left" data-hoffset="0"
-                                     data-y="center" data-voffset="142"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                     data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                     data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-start="500">
-                                        <div class="wheel-installation">
-                                                <h1>Tyres</h1>
-                                                <span class="border"></span> <b>New Bharath Tyres</b>
-                                                <p>The trusted experts will to keep you safe on the road, It is a long established fact<br>
-                                                        that a reader will be distracted by the AuotoCare.</p>
-                                        </div>
-                                </div>
-                        </li>
-                        <li data-transition="random"  data-title="Full Checkup" data-thumb="img/slides/3.jpg"> <img src="img/slides/4.jpg" alt="" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
-                                <div class="tp-caption tp-resizeme"
-                                     data-x="left" data-hoffset="0"
-                                     data-y="center" data-voffset="142"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                     data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                     data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-start="500">
-                                        <div class="wheel-installation">
-                                                <h1>Batteries</h1>
-                                                <span class="border"></span> <b>New Bharath Tyres</b>
-                                                <p>The trusted experts will to keep you safe on the road, It is a long established fact<br>
-                                                        that a reader will be distracted by the AuotoCare.</p>
-                                        </div>
-                                </div>
-                        </li>
-                        <li data-transition="random"  data-title="Full Checkup" data-thumb="img/slides/3.jpg"> <img src="img/slides/5.jpg" alt="" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
-                                <div class="tp-caption tp-resizeme"
-                                     data-x="left" data-hoffset="0"
-                                     data-y="center" data-voffset="142"
-                                     data-transform_idle="o:1;"
-                                     data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
-                                     data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
-                                     data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
-                                     data-splitin="none"
-                                     data-splitout="none"
-                                     data-start="500">
-                                        <div class="wheel-installation">
-                                                <h1>Wheel Alignment</h1>
-                                                <span class="border"></span> <b>New Bharath Tyres</b>
-                                                <p>The trusted experts will to keep you safe on the road, It is a long established fact<br>
-                                                        that a reader will be distracted by the AuotoCare.</p>
-                                        </div>
-                                </div>
-                        </li>
+                                </li>
+                        <?php } ?>
+
                 </ul>
 
         </div>
@@ -100,96 +52,14 @@ else
         <div class="container">
                 <div class="content">
                         <div class="slider lazy wow fadeInDown" >
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/1.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/2.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/3.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/4.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/5.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/6.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/7.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/8.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/9.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/10.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/11.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/12.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/13.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/14.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/15.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/16.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/17.png" class="img-responsive">
-                                        </center>
-                                </div>
-                                <div class="col-md-3 out_lin">
-                                        <center>
-                                                <img src="img/brand/18.png" class="img-responsive">
-                                        </center>
-                                </div>
+                                <?php foreach ($brands as $barnd) { ?>
+                                        <div class="col-md-3 out_lin">
+                                                <center>
+                                                        <img src="<?= Yii::$app->homeUrl ?>uploads/brands/<?= $barnd->id ?>/image.<?= $barnd->image ?>" class="img-responsive">
+                                                </center>
+                                        </div>
+                                <?php } ?>
+
                         </div>
                 </div>
         </div>
@@ -233,50 +103,33 @@ else
                                         <div id="service-client-carousel" class="carousel slide" data-ride="carousel">
                                                 <div class="carousel-inner" role="listbox">
                                                         <!--Start single item-->
-                                                        <div class="item active">
-                                                                <div class="single-item">
-                                                                        <div class="img-holder"> <img src="img/resources/service-client/1.jpg" alt="Awesome Image"> <span class="line"></span> </div>
-                                                                        <div class="content">
-                                                                                <h3>Swaan Richard</h3>
-                                                                                <div class="info-box clearfix">
-                                                                                        <h6>Co Founder, BMW</h6>
-                                                                                        <div class="rating">
-                                                                                                <ul>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite-1"></span></li>
-                                                                                                </ul>
+                                                        <?php
+                                                        $t = 0;
+                                                        foreach ($testimonials as $test) {
+                                                                $t++;
+                                                                ?>
+                                                                <div class="item <?= $t == 1 ? 'active' : '' ?>">
+                                                                        <div class="single-item">
+                                                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/testimonials/<?= $test->id ?>/image.<?= $test->image ?>" alt="Awesome Image"> <span class="line"></span> </div>
+                                                                                <div class="content">
+                                                                                        <h3><?= $test->name ?></h3>
+                                                                                        <div class="info-box clearfix">
+                                                                                                <h6><?= $test->link ?></h6>
+                                                                                                <div class="rating">
+                                                                                                        <ul>
+                                                                                                                <?php for ($i = 0; $i < $test->rating; $i++) { ?>
+                                                                                                                        <li><span class="flaticon-favorite"></span></li>
+                                                                                                                <?php } ?>
+                                                                                                        </ul>
+                                                                                                </div>
                                                                                         </div>
+                                                                                        <p><?= $test->content ?></p>
                                                                                 </div>
-                                                                                <p>How to pursue pleasure ratiio encounter consequences thats are nor is pursues thereanyone ut who loves or or to obtain pain of itself, because ut it is pain, but because occasionally ut quaerat voluptatem ut sed enim ad minima veniam exercitationem ullam.</p>
                                                                         </div>
                                                                 </div>
-                                                        </div>
+                                                        <?php } ?>
                                                         <!--End single item-->
-                                                        <!--Start single item-->
-                                                        <div class="item">
-                                                                <div class="single-item">
-                                                                        <div class="img-holder"> <img src="img/resources/service-client/1.jpg" alt="Awesome Image"> <span class="line"></span> </div>
-                                                                        <div class="content">
-                                                                                <h3>Swaan Richard</h3>
-                                                                                <div class="info-box clearfix">
-                                                                                        <h6>Co Founder, BMW</h6>
-                                                                                        <div class="rating">
-                                                                                                <ul>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite"></span></li>
-                                                                                                        <li><span class="flaticon-favorite-1"></span></li>
-                                                                                                </ul>
-                                                                                        </div>
-                                                                                </div>
-                                                                                <p>How to pursue pleasure ratiio encounter consequences thats are nor is pursues thereanyone ut who loves or or to obtain pain of itself, because ut it is pain, but because occasionally ut quaerat voluptatem ut sed enim ad minima veniam exercitationem ullam.</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
+
                                                         <!--End single item-->
                                                         <div class="button"> <a class="left testimonial-control" href="#service-client-carousel" role="button" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a> <a class="right testimonial-control" href="#service-client-carousel" role="button" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a> </div>
                                                 </div>
@@ -415,417 +268,54 @@ else
                                 <div class="wheel-work-left">
                                         <div class="tab-content">
                                                 <!--Start single tab pane-->
-                                                <div class="tab-pane fade in active" id="wheelworks">
-                                                        <div class="title">
-                                                                <h3>Wheel Alignment</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/1.jpg" alt="Awesome Image"> </div>
+                                                <?php
+                                                $serv = 0;
+                                                foreach ($our_services as $services) {
+                                                        $serv++;
+                                                        ?>
+                                                        <div class="tab-pane fade <?= $serv == 1 ? 'in active' : '' ?>" id="<?= $services->id ?>">
+                                                                <div class="title">
+                                                                        <h3><?= $services->title ?></h3>
                                                                 </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
+                                                                <div class="row">
+                                                                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-services//<?= $services->id ?>/image.<?= $services->image ?>" alt="<?= $services->image_alt ?>"> </div>
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                                                                <div class="content">
+                                                                                        <p><?= $services->content ?> </p>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                                <?php
+                                                                if (isset($services->specifications) && $services->specifications != '') {
+                                                                        $specifications = explode(',', $services->specifications);
+                                                                        ?>
+                                                                        <div class="row">
+                                                                                <div class="col-lg-3 col-md-6 col-sm-8">
+                                                                                        <div class="single-list-item">
+                                                                                                <ul>
+                                                                                                        <?php
+                                                                                                        $serv_specification = 0;
+                                                                                                        foreach ($specifications as $spec) {
+                                                                                                                $serv_specification++;
+                                                                                                                ?>
 
-                                                                                <p>Wheel Alignment, sometimes referred to as breaking or tracking, is part of standard automobile maintenance that consists of adjusting the angles of the wheels so that they are set to the car maker's specification. The purpose of these adjustments is to reduce tyre wear, and to ensure that vehicle travel is straight and true (without "pulling" to one side). Alignment angles can also be altered beyond the maker's specifications to obtain a specific handling characteristic. Motorsport and off-road applications may call for angles to be adjusted well beyond "normal" for a variety of reasons. </p>
+                                                                                                                <li><i class="fa fa-check" aria-hidden="true"></i><?= $spec ?></li>
+                                                                                                                <?php
+                                                                                                                if ($serv_specification % 2 == 0) {
+                                                                                                                        echo '</ul></div></div><div class="col-lg-3 col-md-6 col-sm-8"><div class="single-list-item"><ul>';
+                                                                                                                }
+                                                                                                        }
+                                                                                                        ?>
+                                                                                                </ul>
+                                                                                        </div>
+                                                                                </div>
                                                                         </div>
-                                                                </div>
+                                                                <?php } ?>
+                                                                <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
                                                         </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Refinishing</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Punchure Repair</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Straightning</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Air Filling</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <!--Start single tab pane-->
-                                                <div class="tab-pane fade" id="airconditioner">
-                                                        <div class="title">
-                                                                <h3>Wheel Balancing</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/2.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p> Every time a wheel is first mounted onto the axle with a new tyre, it has to be balanced. The goal is to make sure the weight is even around the axle.
-
-
-
-                                                                                        Wheel balance is checked on a wheel balancing machine that can sense as little as 1/4 ounce difference in weight around the wheel. Why worry about 1/4 ounce on a wheel that weighs many pounds? That tiny amount of weight is traveling very fast around the axle: hundreds of times a minute. It creates enough momentum to cause serious vibration. And when you multiply by 4 wheels, the wobble really adds up. Unbalanced tyres put uneven pressure on the treads. </p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <!--Start single tab pane-->
-                                                <div class="tab-pane fade" id="painting-works">
-                                                        <div class="title">
-                                                                <h3>Tyre Fitment</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/3.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Straightning</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Air Filling</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="#">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <!--Start single tab pane-->
-                                                <div class="tab-pane fade" id="water-service">
-                                                        <div class="title">
-                                                                <h3>Wheel Care</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/4.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure</p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Straightning</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Air Filling</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <!--Start single tab pane-->
-                                                <div class="tab-pane fade" id="engine-works">
-                                                        <div class="title">
-                                                                <h3>Nitrogen Air</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/5.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure Rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works </p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <div class="tab-pane fade" id="air-conditioning-works">
-                                                        <div class="title">
-                                                                <h3>Air Conditioning</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/5.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure Rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works </p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <div class="tab-pane fade" id="brakes-works">
-                                                        <div class="title">
-                                                                <h3>Brakes</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/5.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure Rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works </p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <div class="tab-pane fade" id="window-tinting-works">
-                                                        <div class="title">
-                                                                <h3>Window Tinting</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/5.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure Rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works </p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
-                                                <div class="tab-pane fade" id="car-detailing-works">
-                                                        <div class="title">
-                                                                <h3>Car Detailing</h3>
-                                                        </div>
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="img-holder"> <img src="img/wheel-work/5.jpg" alt="Awesome Image"> </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                                                        <div class="content">
-
-                                                                                <p>Consequencees that are uts extremelly painf pleasure ra sedssue pleasure rationally seds that encounter consequences are ut painfull.Know how to pursue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works consequencees that are uts extremelly painfull pleasure Rationally sedssue pleasure rationally seds that encounter consequences are ut painfull nor again is theounter works </p>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                        <div class="row">
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Installation</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Balancing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-                                                                <div class="col-lg-3 col-md-6 col-sm-8">
-                                                                        <div class="single-list-item">
-                                                                                <ul>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Allignment</li>
-                                                                                        <li><i class="fa fa-check" aria-hidden="true"></i>Wheel Changing</li>
-                                                                                </ul>
-                                                                        </div>
-                                                                </div>
-                                                                <!--End single list item-->
-                                                                <!--Start single list item-->
-
-                                                                <!--End single list item-->
-                                                        </div>
-                                                        <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
-                                                </div>
-                                                <!--End single tab pane-->
+                                                <?php } ?>
 
                                         </div>
                                 </div>
@@ -834,78 +324,22 @@ else
                                 <div class="wheel-work-right">
                                         <h1>Our Services</h1>
                                         <ul class="otherservice_list">
-                                                <li class="active"> <a href="#wheelworks" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon"></div>
-                                                                                <h3>Wheel Alignment</h3>
+
+                                                <?php
+                                                $serv_list = 0;
+                                                foreach ($our_services as $services) {
+                                                        $serv_list++;
+                                                        ?>
+                                                        <li class="<?= $serv_list == 1 ? 'active' : '' ?>"> <a href="#<?= $services->id ?>" data-toggle="tab" class="otherservices-hover otherservice-mobile">
+                                                                        <div class="single-other-service-list">
+                                                                                <div class="title">
+                                                                                        <div class="title-icon <?= $serv_list == 1 ? '' : 'title-icon' . $serv_list ?>"></div>
+                                                                                        <h3><?= $services->title ?></h3>
+                                                                                </div>
                                                                         </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#airconditioner" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon2"></div>
-                                                                                <h3>Wheel Balancing</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#painting-works" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon3"></div>
-                                                                                <h3>Tyre Fitment</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#water-service" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon4"></div>
-                                                                                <h3>Wheel Care</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#engine-works" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon5"></div>
-                                                                                <h3>Nitrogen Air</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#air-conditioning-works" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon6"></div>
-                                                                                <h3>air conditioning</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#brakes-works" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon7"></div>
-                                                                                <h3>Brakes</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#window-tinting-works" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon8"></div>
-                                                                                <h3>window tinting</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
-                                                <li> <a href="#car-detailing-works" data-toggle="tab" class="otherservices-hover otherservice-mobile">
-                                                                <div class="single-other-service-list">
-                                                                        <div class="title">
-                                                                                <div class="title-icon title-icon9"></div>
-                                                                                <h3>car detailing</h3>
-                                                                        </div>
-                                                                </div>
-                                                        </a> </li>
+                                                                </a> </li>
+                                                <?php } ?>
+
                                         </ul>
                                 </div>
                         </div>
@@ -919,19 +353,19 @@ else
                         <div class="col-md-6">
                                 <div class="privileges-box">
                                         <h3 class="head-text">RIDE ON YOUR <span>PRIVILEGES</span></h3>
-                                        <p>Please read the following terms and conditions carefully as it sets out the terms of a legally binding agreement between you (the reader) and Business Standard Mar 7, 2018 - Terms and Conditions are a set of rules and guidelines that a user must agree to in order </p>
+                                        <p><?= $privilege->content ?> </p>
                                         <ul class="list">
-                                                <li class="silver"><a href="select-privilege.html">Silver Select Privileges</a></li>
-                                                <li class="gold"><a href="select-privilege.html">Gold Select Privileges</a></li>
-                                                <li class="platinum"><a href="select-privilege.html">platinum Select Privileges</a></li>
+                                                <li class="silver"><?= Html::a($privilege->privilege_1, ['/site/privileges']) ?></li>
+                                                <li class="gold"><?= Html::a($privilege->privilege_2, ['/site/privileges']) ?></li>
+                                                <li class="platinum"><?= Html::a($privilege->privilege_3, ['/site/privileges']) ?></li>
                                         </ul>
                                 </div>
                         </div>
                         <div class="col-md-6">
-                                <div class="img-box"><img src="img/resources/home-privileges.jpg" class="img-responsive"></div>
+                                <div class="img-box"><img alt="<?= $privilege->alt_tag ?>" src="<?= Yii::$app->homeUrl ?>uploads/home-privileges/<?= $privilege->id ?>/image.<?= $privilege->image ?>" class="img-responsive"></div>
                         </div>
                 </div>
-                <div class="link"><a href="select-privilege.html">View More Select Privileges</a></div>
+                <div class="link"><?= Html::a('View More Select Privileges', ['/site/privileges']) ?></div>
         </div>
 </section><!--home-secect-privileges-->
 <!--Start free appoinment area-->
