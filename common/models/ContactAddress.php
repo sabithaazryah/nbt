@@ -67,7 +67,7 @@ class ContactAddress extends \yii\db\ActiveRecord
             'facebook' => 'Facebook',
             'twitter' => 'Twitter',
             'google_plus' => 'Google Plus',
-            'instagram' => 'Instagram',
+            'instagram' => 'LineedIn',
             'status' => 'Status',
             'CB' => 'Cb',
             'UB' => 'Ub',

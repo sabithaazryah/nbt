@@ -43,83 +43,42 @@ else
 <!--Start services single area-->
 <section class="services-single-area">
         <div class="container">
+            
+            <?php foreach($privileges as $privilege){
+                if($privilege->id==2){
+                    $clas='gold';
+                } else if($privilege->id==3){
+                   $clas='platinum'; 
+                } else{
+                    $clas='silver'; 
+                }
+                ?>
                 <div class="in-select-privileges">
-                        <h3 class="head-text silver">Silver Select Privileges</h3>
+                        <h3 class="head-text <?=$clas?> "><?=$privilege->title?></h3>
                         <div class="main-cont-box">
                                 <div class="row">
                                         <div class="col-md-6">
                                                 <h4>Your Privileges</h4>
                                                 <ul class="list">
-                                                        <li>Lorem Ipsum is simply dummy text of the printing </li>
-                                                        <li>Industry. Lorem Ipsum has been the industry's</li>
-                                                        <li>Text ever since the 1500s, when an unknown </li>
-                                                        <li>Type and scrambled it to make a type specimen book. </li>
-                                                        <li>Not only five centuries, but also the leap into electronic</li>
-                                                        <li>Remaining essentially unchanged. It was popularised </li>
-                                                        <li>With the release of Letraset </li>
+
+<?=$privilege->content?>
                                                 </ul>
                                         </div>
                                         <div class="col-md-6">
-                                                <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/resources/privileges1.jpg" class="img-responsive"> </div>
+                                                <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>uploads/privileges/<?=$privilege->id?>/image.<?=$privilege->image?>" class="img-responsive"> </div>
                                         </div>
                                 </div>
                         </div>
                 </div>
-                <div class="in-select-privileges">
-                        <h3 class="head-text gold">Gold Select Privileges</h3>
-                        <div class="main-cont-box">
-                                <div class="row">
-                                        <div class="col-md-6">
-                                                <h4>Your Privileges</h4>
-                                                <ul class="list">
-                                                        <li>Lorem Ipsum is simply dummy text of the printing </li>
-                                                        <li>Industry. Lorem Ipsum has been the industry's</li>
-                                                        <li>Text ever since the 1500s, when an unknown </li>
-                                                        <li>Type and scrambled it to make a type specimen book. </li>
-                                                        <li>Not only five centuries, but also the leap into electronic</li>
-                                                        <li>Remaining essentially unchanged. It was popularised </li>
-                                                        <li>With the release of Letraset </li>
-                                                </ul>
-                                        </div>
-                                        <div class="col-md-6">
-                                                <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/resources/privileges2.jpg" class="img-responsive"> </div>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
-                <div class="in-select-privileges">
-                        <h3 class="head-text platinum">platinum Select Privileges</h3>
-                        <div class="main-cont-box">
-                                <div class="row">
-                                        <div class="col-md-6">
-                                                <h4>Your Privileges</h4>
-                                                <ul class="list">
-                                                        <li>Lorem Ipsum is simply dummy text of the printing </li>
-                                                        <li>Industry. Lorem Ipsum has been the industry's</li>
-                                                        <li>Text ever since the 1500s, when an unknown </li>
-                                                        <li>Type and scrambled it to make a type specimen book. </li>
-                                                        <li>Not only five centuries, but also the leap into electronic</li>
-                                                        <li>Remaining essentially unchanged. It was popularised </li>
-                                                        <li>With the release of Letraset </li>
-                                                </ul>
-                                        </div>
-                                        <div class="col-md-6">
-                                                <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/resources/privileges3.jpg" class="img-responsive"> </div>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
+            <?php }?>
+             
                 <div class="in-select-privileges">
                         <h3 class="head-text red">terms and conditions</h3>
                         <div class="main-cont-box">
                                 <div class="row">
-                                        <div class="col-md-12">
-                                                <p class="text">Please read the following terms and conditions carefully as it sets out the terms of a legally binding agreement between you (the reader) and Business Standard Mar 7, 2018 - Terms and Conditions are a set of rules and guidelines that a user must agree to in order to use your website or mobile app. It acts as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app</p>
-                                                <p class="text">Please read the following terms and conditions carefully as it sets out the terms of a legally binding agreement between you (the reader) and Business Standard Mar 7, 2018 - Terms and Conditions are a set of rules and guidelines that a user must agree to in order to use your website or mobile app. It acts as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app</p>
-                                                <p class="text">Please read the following terms and conditions carefully as it sets out the terms of a legally binding agreement between you (the reader) and Business Standard Mar 7, 2018 - Terms and Conditions are a set of rules and guidelines that a user must agree to in order to use your website or mobile app. It acts as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app</p>
-                                                <p class="text">Please read the following terms and conditions carefully as it sets out the terms of a legally binding agreement between you (the reader) and Business Standard Mar 7, 2018 - Terms and Conditions are a set of rules and guidelines that a user must agree to in order to use your website or mobile app. It acts as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app</p>
-                                                <p class="text">Please read the following terms and conditions carefully as it sets out the terms of a legally binding agreement between you (the reader) and Business Standard Mar 7, 2018 - Terms and Conditions are a set of rules and guidelines that a user must agree to in order to use your website or mobile app. It acts as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app</p>
-                                        </div>
+                                        <div class="col-md-12 terms-cond">
+                                            <?=$terms->content?>
+                                         </div>
 
                                 </div>
                         </div>
@@ -130,3 +89,8 @@ else
 <!--Start free appoinment area-->
 
 <!--End free appoinment area-->
+<script>
+$(document).ready(function(){
+    $('.terms-cond p').addClass('text');
+})
+</script>

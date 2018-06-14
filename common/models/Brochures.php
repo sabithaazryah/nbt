@@ -30,7 +30,7 @@ class Brochures extends \yii\db\ActiveRecord {
         public function rules() {
                 return [
                         [['status', 'CB', 'UB'], 'integer'],
-                        [['DOC', 'DOU'], 'safe'],
+                        [['DOC', 'DOU','name'], 'safe'],
                         [['brochure'], 'string', 'max' => 250],
                         [['brochure'], 'file', 'extensions' => 'pdf'],
                         [['brochure', 'status'], 'required']

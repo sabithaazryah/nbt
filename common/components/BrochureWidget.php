@@ -20,7 +20,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use yii\web\NotFoundHttpException;
 
-class TestimonialWidget extends Widget {
+class BrochureWidget extends Widget {
 
         public $type;
 
@@ -32,8 +32,8 @@ class TestimonialWidget extends Widget {
         }
 
         public function run() {
-                $testimonials = \common\models\Testimonials::find()->where(['type' => 2, 'marketing' => $this->type])->all();
-                return $this->render('testimonials', ['testimonials' => $testimonials, 'type' => $this->type]);
+            $brochure=\common\models\Brochures::find()->where(['status'=>1])->all();
+                return $this->render('brochures', ['brochure'=>$brochure]);
         }
 
 }

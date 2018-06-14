@@ -55,7 +55,7 @@ else
                                                 <h1>Get In Touch</h1>
                                                 <span class="decor"></span>
                                         </div>
-                                        <p>There are many variations off passages of available, but the majority have suffered alterations in some form, by injected humour look events slightly seds do eiusmod tempor incididunt ut labore.</p>
+                                        <p><?=$contact_details->get_in_touch?></p>
                                         <ul class="contact-info">
                                                 <li class="address">
                                                         <div class="icon-holder">
@@ -63,7 +63,7 @@ else
                                                         </div>
                                                         <div class="content">
                                                                 <h4>Address :</h4>
-                                                                <p>21/17, Level 4 Steel Rock St,<br>Melbourne, Victoria 3000 Australia</p>
+                                                                <p><?=$contact_details->address?></p>
                                                         </div>
                                                 </li>
                                                 <li class="email">
@@ -72,7 +72,7 @@ else
                                                         </div>
                                                         <div class="content">
                                                                 <h4>Ask Anything Here :</h4>
-                                                                <p>dubai@newbharathtyres.com</p>
+                                                                <p><?=$contact_details->email?></p>
                                                         </div>
                                                 </li>
                                                 <li>
@@ -81,7 +81,7 @@ else
                                                         </div>
                                                         <div class="content">
                                                                 <h4>Call Us:</h4>
-                                                                <p>042630606</p>
+                                                                <p><?=$contact_details->phone1?></p>
                                                         </div>
                                                 </li>
                                         </ul>
@@ -93,34 +93,35 @@ else
                                                 <h1>Send Message Us</h1>
                                                 <span class="decor"></span>
                                         </div>
-                                        <form action="#">
+                                    <?=\common\widgets\Alert::widget()?>
+                                         <?php $form = ActiveForm::begin(); ?>
                                                 <div class="row">
                                                         <div class="col-md-6">
-                                                                <input type="text" name="name" placeholder="Your Name*">
+                                                                <?= $form->field($model, 'name')->textInput(['placeholder'=>'Your Name*','class'=>'','required'=>''])->label(FALSE) ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" name="email" placeholder="Email Address*">
+                                                                <?= $form->field($model, 'email')->textInput(['placeholder'=>'Email Address*','class'=>'','required'=>''])->label(FALSE) ?>
                                                         </div>
                                                 </div>
                                                 <div class="row">
                                                         <div class="col-md-6">
-                                                                <input type="text" name="phone" placeholder="Phone">
+                                                                <?= $form->field($model, 'phone')->textInput(['placeholder'=>'Phone*','class'=>'','required'=>''])->label(FALSE) ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                                <input type="text" name="subject" placeholder="Subject*">
-                                                        </div>
-                                                </div>
-                                                <div class="row">
-                                                        <div class="col-md-12">
-                                                                <textarea name="message" placeholder="Message*"></textarea>
+                                                                <?= $form->field($model, 'website_url')->textInput(['placeholder'=>'Subject*','class'=>'','required'=>''])->label(FALSE) ?>
                                                         </div>
                                                 </div>
                                                 <div class="row">
                                                         <div class="col-md-12">
-                                                                <button type="submit">Send Message</button>
+                                                                 <?= $form->field($model, 'message')->textArea(['placeholder'=>'Message*','class'=>'','required'=>''])->label(FALSE) ?>
                                                         </div>
                                                 </div>
-                                        </form>
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                <?= Html::submitButton('Send Message', ['class' => '']) ?>
+                                                        </div>
+                                                </div>
+                                         <?php ActiveForm::end(); ?>
                                 </div>
                         </div>
                 </div>
@@ -130,5 +131,6 @@ else
 
 
 <div class="google-map" >
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.80587322747!2d55.383802315011245!3d25.277114983859093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c374c83da3d%3A0x95fef0a91c98e7f5!2sNew+Bharath+PITSTOP+(New+Bharath+Tyres)!5e0!3m2!1sen!2sin!4v1527771354702" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-</div>
+        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.80587322747!2d55.383802315011245!3d25.277114983859093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c374c83da3d%3A0x95fef0a91c98e7f5!2sNew+Bharath+PITSTOP+(New+Bharath+Tyres)!5e0!3m2!1sen!2sin!4v1527771354702" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+
+ <?=$contact_details->map?></div>

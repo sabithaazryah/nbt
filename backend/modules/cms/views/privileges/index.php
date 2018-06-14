@@ -47,10 +47,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     'value' => function($data) {
                                                         
                                                             $data->content = strip_tags($data->content);
-                                                            echo $data->content;exit;
-                                                            if (strlen($data->content) > 50) {
-                                                                    $str = substr($data->content, 0, strpos(wordwrap($data->content, 50), "\n"));
+                                                          
+                                                            if (strlen($data->content) > 50) {  
+                                                                    $str = substr($data->content, 0, 30);
                                                                     $dot = ' ....';
+                                                                   
                                                             } else {
                                                                     $str = $data->content;
                                                                     $dot = '';

@@ -71,7 +71,7 @@ else
                                 <div class="box">
                                         <div class="row">
                                                 <div class="col-md-8">
-                                                        <h2>Get First Class Services For Your Vichcle</h2>
+                                                        <h2><?=$home_page_cotent->banner_label?></h2>
                                                 </div>
                                                 <div class="col-md-4"> <a href="appointment.html">Get Free Appoinment</a> </div>
                                         </div>
@@ -88,15 +88,17 @@ else
                         <div class="col-md-7">
                                 <div class="service-content">
                                         <div class="sec-title text-left">
-                                                <h2>Welcom to New Bharath Tyres</h2>
+                                                <h2><?=$home_page_cotent->welcome_note?></h2>
                                                 <span class="decor"></span> </div>
-                                        <p>Welcome to NEW BHARATH TYRES. New Bharath Tyres offers a complete range of Tyres, Alloy-wheels and modern tyre services.<br>
+                                        <p><?=$home_page_cotent->small_content?><br>
                                                 <br>
-                                                <img src="img/icon/since.png"><br>
+                                                <img src="<?=Yii::$app->homeUrl?>img/icon/since.png"><br>
                                                 <br>
-                                                The Best quality products and 100% customer satisfaction at unbeatable price .<br>
-                                                NewBharath Tyres, the pioneers in tyre retailing with over 60 years of excellence has been accredited the No.1 dealer by world’s leading tyre manufacturers. </p>
-                                        <a class="aut-cr-btn" href="about-us.html">Read More</a> <a class="aut-cr-btn" href="services.html">View Services</a> </div>
+                                                <?=$home_page_cotent->detail_content?> </p>
+                                <?= Html::a('Read More', ['/site/about'], ['class' => 'aut-cr-btn']) ?>
+                        <?= Html::a('View Services', ['/site/s'], ['class' => 'aut-cr-btn']) ?>        
+                                </div>
+                        
                         </div>
                         <div class="col-md-5">
                                 <div class="service-client-carousel">
@@ -149,8 +151,8 @@ else
                                 <div class="single-item">
                                         <div class="icon-holder"> <span class="flaticon-social"></span> </div>
                                         <div class="content">
-                                                <h3>100% Transparency</h3>
-                                                <p>We ensure that you get a well detailed break-up of each minor repair work</p>
+                                                <h3><?=$home_page_cotent->caption_1?></h3>
+                                                <p><?=$home_page_cotent->caption_1_detail?></p>
                                                 <!--<a href="#">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a> --></div>
                                 </div>
                         </div>
@@ -160,8 +162,8 @@ else
                                 <div class="single-item">
                                         <div class="icon-holder"> <span class="flaticon-wrench"></span> </div>
                                         <div class="content">
-                                                <h3>Genuine Spare Parts</h3>
-                                                <p>We useuthorized genuine spare parts & accessories to ensure that your</p>
+                                                <h3><?=$home_page_cotent->caption_2?></h3>
+                                                <p><?=$home_page_cotent->caption_2_detail?></p>
                                         </div>
                                 </div>
                         </div>
@@ -171,8 +173,8 @@ else
                                 <div class="single-item">
                                         <div class="icon-holder"> <span class="flaticon-map"></span> </div>
                                         <div class="content">
-                                                <h3>Trusted & Quality Service</h3>
-                                                <p>You can avail our free pickup & drop so that you can just sit & relax</p>
+                                               <h3><?=$home_page_cotent->caption_3?></h3>
+                                                <p><?=$home_page_cotent->caption_3_detail?></p>
                                         </div>
                                 </div>
                         </div>
@@ -369,92 +371,4 @@ else
         </div>
 </section><!--home-secect-privileges-->
 <!--Start free appoinment area-->
-<section class="free-appoinment-area">
-        <div class="container">
-                <form class="free-appoinment-form" action="#">
-                        <div class="row">
-                                <div class="col-md-6">
-                                        <div class="sec-title text-left">
-                                                <h1>Make Free Appoinment</h1>
-                                                <span class="decor"></span> </div>
-                                        <div class="row">
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <input type="text" name="name" placeholder="Your Name*">
-                                                                <div class="icon-holder"> <span class="flaticon-people"></span> </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <input type="text" name="mobile-number" placeholder="Mobile Num">
-                                                                <div class="icon-holder"> <span class="flaticon-telephone"></span> </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <input type="text" name="email" placeholder="Email Address*">
-                                                                <div class="icon-holder"> <span class="flaticon-note"></span> </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <textarea name="comment" placeholder="Comments..."></textarea>
-                                                                <div class="icon-holder comment"> <span class="flaticon-social-1"></span> </div>
-                                                        </div>
-                                                </div>
-                                        </div>
-                                </div>
-                                <div class="col-md-6">
-                                        <p class="select-category">Select Category:</p>
-                                        <div class="category-item">
-                                                <input type="radio" id="indv" name="indvlcorpt" value="Individual">
-                                                <label for="indv">Individual</label>
-                                        </div>
-                                        <div class="category-item">
-                                                <input type="radio" id="corpt" name="indvlcorpt" value="Corporate">
-                                                <label for="corpt">Corporate</label>
-                                        </div>
-                                        <div class="row">
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
-                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="row">
-                                                                <div class="col-md-6">
-                                                                        <div class="input-field">
-                                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
-                                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
-                                                                        </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                        <div class="input-field">
-                                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
-                                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
-                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <div class="input-field">
-                                                                <input type="text" name="date" placeholder="Select Date">
-                                                                <div class="icon-holder"> <span class="flaticon-dates"></span> </div>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                        <button class="aut-cr-btn" type="button">Book Now</button>
-                                                </div>
-                                        </div>
-                                </div>
-                        </div>
-                </form>
-        </div>
-</section>
+<?=\common\components\ContactFormWidget::widget();?>

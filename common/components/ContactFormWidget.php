@@ -30,10 +30,7 @@ class ContactFormWidget extends Widget {
         }
 
         public function run() {
-                $model = new \common\models\ContactForm();
-                $model->setScenario('contact-form');
-                $contat_details = \common\models\ContactAddress::findOne(1);
-                return $this->render('contact_form', ['model' => $model, 'contat_details' => $contat_details]);
+                return $this->render('contact_form', []);
         }
 
 }

@@ -66,6 +66,7 @@ class BrochuresController extends Controller {
                 if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
                         $image = UploadedFile::getInstance($model, 'brochure');
                         $model->brochure = $image->extension;
+                        $model->name=$image->name;
                         if ($model->validate() && $model->save()) {
                                 if (!empty($image)) {
                                         $path = Yii::$app->basePath . '/../uploads/brochures/' . $model->id . '/';
@@ -91,13 +92,17 @@ class BrochuresController extends Controller {
         public function actionUpdate($id) {
                 $model = $this->findModel($id);
                 $image_ = $model->brochure;
+                $name_ = $model->name;
 
                 if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
                         $image = UploadedFile::getInstance($model, 'brochure');
-                        if (!empty($image))
+                        if (!empty($image)){
                                 $model->brochure = $image->extension;
-                        else
+                                $model->name=$image->name;
+                        }else{
                                 $model->brochure = $image_;
+                                $model->name = $name_;
+                        }
                         if ($model->validate() && $model->save()) {
                                 if (!empty($image)) {
                                         $path = Yii::$app->basePath . '/../uploads/brochures/' . $model->id . '/';

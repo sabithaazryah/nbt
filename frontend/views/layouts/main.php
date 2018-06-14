@@ -7,6 +7,7 @@ use frontend\assets\AppAsset;
 
 AppAsset::register($this);
 $contact_details = \common\models\ContactAddress::findOne(1);
+$contents=\common\models\HomePageOther::findOne(1);
 $about = \common\models\About::findOne(1);
 $params = $parameters = \yii::$app->getRequest()->getQueryParams();
 ?>
@@ -167,7 +168,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                         <div class="single-footer-widget">
                                                                 <div class="footer-logo"> <img src="<?= Yii::$app->homeUrl ?>img/resources/footer-logo.png" alt="Awesome Footer Logo"> </div>
                                                                 <div class="text">
-                                                                        <p>Welcome to NEW BHARATH TYRES. New Bharath Tyres offers a complete range of Tyres, Alloy-wheels and modern tyre services. The Best quality products and 100% customer satisfaction at unbeatable price .NewBharath Tyres, the pioneers in tyre retailing with over 60 years of excellence has been accredited the No.1 dealer by world’s leading tyre manufacturers. </p>
+                                                                        <p><?=$contents->footer_content?></p>
                                                                 </div>
                                                         </div>
                                                 </div>
@@ -214,22 +215,20 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                         <h2>CONTACT US</h2>
                                                                         <span class="decor"></span> </div>
                                                                 <div class="f-contact"><b>Address</b>
-                                                                        <p>NH 47 Bypass<br>
-                                                                                Puthiya Road Junction<br>
-                                                                                Cochin 682028</p>
+                                                                        <p><?=$contact_details->address?></p>
                                                                 </div>
                                                                 <div class="f-contact"><b>Phone No</b>
-                                                                        <p>042630606</p>
+                                                                        <p><?=$contact_details->phone1?></p>
                                                                 </div>
                                                                 <div class="f-contact"><b>Email</b>
-                                                                        <p>dubai@newbharathtyres.com</p>
+                                                                        <p><?=$contact_details->email?></p>
                                                                 </div>
                                                                 <div class="footer-social-link">
                                                                         <ul>
-                                                                                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                                                                                <li><a href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
-                                                                                <li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
-                                                                                <li><a href="#"><i class="flaticon-linkedin-logo"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->facebook ?>" target="_blank"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->twitter ?>" target="_blank"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->google_plus ?>" target="_blank"><i class="flaticon-google-plus-logo"></i></a></li>
+                                                                                <li><a href="<?= $contact_details->instagram ?>" target="_blank"><i class="flaticon-linkedin-logo"></i></a></li>
                                                                         </ul>
                                                                 </div>
                                                         </div>

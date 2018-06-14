@@ -32,7 +32,17 @@ $this->params['breadcrumbs'][] = $this->title;
                                             'columns' => [
                                                     ['class' => 'yii\grid\SerialColumn'],
                                                 'brochure',
-                                                'status',
+                                               [
+                                                    'attribute' => 'status',
+                                                    'value' => function($model, $key, $index, $column) {
+                                                            if ($model->status == '0') {
+                                                                    return 'Disabled';
+                                                            } elseif ($model->status == '1') {
+                                                                    return 'Enabled';
+                                                            }
+                                                    },
+                                                    'filter' => [0 => 'Disabled', 1 => 'Enabled'],
+                                                ],
                                                 // 'DOC',
                                                 // 'DOU',
                                                 ['class' => 'yii\grid\ActionColumn',

@@ -79,6 +79,7 @@ class SiteController extends Controller {
                 $meta_tags = CmsMetaTags::find()->where(['id' => 1])->one();
                 $our_services = \common\models\OurServices::find()->where(['status' => 1])->all();
                 $privilege = \common\models\HomePrivilege::findOne(1);
+                $home_page_cotent=\common\models\HomePageOther::findOne(1);
                 \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
                 \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('index', [
@@ -88,6 +89,7 @@ class SiteController extends Controller {
                             'brands' => $brands,
                             'our_services' => $our_services,
                             'privilege' => $privilege,
+                            'home_page_cotent' => $home_page_cotent,
                 ]);
         }
 
@@ -198,10 +200,15 @@ class SiteController extends Controller {
          */
         public function actionAbout() {
                 $about = \common\models\About::findOne(1);
+                $subscribe=new \common\models\Subscribe();
                 $meta_tags = CmsMetaTags::find()->where(['id' => 2])->one();
                 \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
                 \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
-                return $this->render('about', ['about' => $about, 'meta_title' => $meta_tags->meta_title,]);
+                if(Yii::$app->request->post()){
+                    $subscribe->email=Yii::$app->request->post('email');
+                    $subscribe->save();
+                }
+                return $this->render('about', ['about' => $about, 'meta_title' => $meta_tags->meta_title,'subscribe'=>$subscribe]);
         }
 
         /**
@@ -212,21 +219,21 @@ class SiteController extends Controller {
         public function actionContact() {
                 $contact_details = \common\models\ContactAddress::findOne(1);
                 $model = new \common\models\ContactForm();
-                $model->setScenario('contact-form');
+//                $model->setScenario('contact-form');
                 $meta_tags = CmsMetaTags::find()->where(['id' => 7])->one();
                 \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
                 \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 if ($model->load(Yii::$app->request->post()) && $model->validate()) {
                         $model->date = date('Y-m-d');
-                        if (isset($_POST['g-recaptcha-response']))
-                                $captcha = $_POST['g-recaptcha-response'];
-                        if ($captcha) {
+                      //  if (isset($_POST['g-recaptcha-response']))
+                               // $captcha = $_POST['g-recaptcha-response'];
+                       // if ($captcha) {
                                 if ($model->save()) {
                                         $this->Sendmail($model);
                                         Yii::$app->session->setFlash('success', 'Your enquiry submitted successfully.');
                                         $model = new \common\models\ContactForm();
                                 }
-                        }
+                       // }
                 }
                 return $this->render('contact', [
                             'model' => $model,
@@ -240,7 +247,13 @@ class SiteController extends Controller {
          */
 
         public function actionOffers() {
+            $offers=\common\models\Offers::find()->where(['status'=>1])->all();
+            $meta_tags = CmsMetaTags::find()->where(['id' => 10])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('offers', [
+                    'offers' => $offers,
+                    'meta_title' => $meta_tags->meta_title,
                 ]);
         }
 
@@ -254,10 +267,14 @@ class SiteController extends Controller {
             }else{
             $service_detail=\common\models\Services::find()->where(['canonical_name'=>$service])->one();
             }
+            $meta_tags = CmsMetaTags::find()->where(['id' => 8  ])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
             $all_services=\common\models\Services::find()->where(['status'=>1])->all();
                 return $this->render('services', [
                     'service_detail'=>$service_detail,
                     'services'=>$all_services,
+                     'meta_title' => $meta_tags->meta_title,
                 ]);
         }
 
@@ -267,8 +284,14 @@ class SiteController extends Controller {
 
         public function actionPrivileges() {
             $privileges=\common\models\Privileges::find()->where(['status'=>1])->all();
+            $meta_tags = CmsMetaTags::find()->where(['id' => 9])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
+            $terms=\common\models\TermsAndCondition::findOne(1);
                 return $this->render('privileges', [
                     'privileges'=>$privileges,
+                    'terms'=>$terms,
+                     'meta_title' => $meta_tags->meta_title,
                 ]);
         }
 
@@ -278,16 +301,24 @@ class SiteController extends Controller {
 
         public function actionTyres() {
                 $tyre_brands = \common\models\Brands::find()->where(['type' => 1, 'status' => 1])->all();
+                $meta_tags = CmsMetaTags::find()->where(['id' => 3])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('tyres', [
-                            'brands' => $tyre_brands
+                            'brands' => $tyre_brands,
+                     'meta_title' => $meta_tags->meta_title,
                 ]);
         }
 
         public function actionTyresDetail($brand) {
                 if (isset($brand)) {
                     $types=\common\models\Tyres::find()->where(['status'=>1])->select('type')->distinct()->all();
+                    $meta_tags = CmsMetaTags::find()->where(['id' => 4])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                         return $this->render('tyres-detail', [
                             'types'=>$types,
+                             'meta_title' => $meta_tags->meta_title,
                         ]);
                 } else {
                         $this->redirect('site/error');
@@ -296,28 +327,36 @@ class SiteController extends Controller {
 
         public function actionAlloyWheels() {
             $brands=\common\models\Brands::find()->where(['type' => 2, 'status' => 1])->all();
+            $meta_tags = CmsMetaTags::find()->where(['id' => 5])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('alloy-wheels', [
                     'brands'=>$brands,
+                     'meta_title' => $meta_tags->meta_title,
                 ]);
         }
 
         public function actionBatteries() {
             $batteries=\common\models\Batteries::findOne(1);
             $brands=\common\models\Brands::find()->where(['status'=>1,'type'=>3])->all();
+            $meta_tags = CmsMetaTags::find()->where(['id' => 6])->one();
+                \Yii::$app->view->registerMetaTag(['name' => 'keywords', 'content' => $meta_tags->meta_keyword]);
+                \Yii::$app->view->registerMetaTag(['name' => 'description', 'content' => $meta_tags->meta_description]);
                 return $this->render('batteries', [
                     'batteries'=>$batteries,
                     'brands'=>$brands,
+                     'meta_title' => $meta_tags->meta_title,
                 ]);
         }
 
         public function Sendmail($model) {
                 $to = "wails@epitome.ae,daniel@epitome.ae";
                 $subject = "Enquiry";
-                $message = $this->renderPartial('contact-mail', ['model' => $model]);
+               // $message = $this->renderPartial('contact-mail', ['model' => $model]);
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 $headers .= 'From: <info@coralepitome.com>' . "\r\n";
-                mail($to, $subject, $message, $headers);
+                //mail($to, $subject, $message, $headers);
         }
 
 }

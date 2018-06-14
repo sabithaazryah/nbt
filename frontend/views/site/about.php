@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+
 
 if (isset($meta_title) && $meta_title != '')
         $this->title = $meta_title;
@@ -388,11 +390,11 @@ else
                                 </div>
                                 <div class="subscribe">
                                         <h3>Subscribe Us</h3>
-                                        <form action="#">
+                                        <?php $form = ActiveForm::begin(); ?>
                                                 <input type="email" name="email" placeholder="Email Address">
                                                 <button type="submit"><span class="flaticon-paper"></span></button>
                                                 <p>* Your Mail id is Fully Protected.</p>
-                                        </form>
+                                       <?php ActiveForm::end(); ?>
                                 </div>
                         </div>
                 </div>

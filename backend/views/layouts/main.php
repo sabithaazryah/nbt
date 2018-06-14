@@ -94,6 +94,10 @@ AppAsset::register($this);
                                                         <li>
                                                                 <?= Html::a('<i class="fa fa-angle-double-right"></i> Brands', ['/cms/brands/index'], ['class' => 'title']) ?>
                                                         </li>
+                                                        
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Other Contents', ['/cms/home-page-other/update?id=1'], ['class' => 'title']) ?>
+                                                        </li>
 
                                                         <li>
                                                                 <?= Html::a('<i class="fa fa-angle-double-right"></i> Testimonials', ['/cms/testimonials/index'], ['class' => 'title']) ?>
@@ -166,6 +170,21 @@ AppAsset::register($this);
 
                                         <li>
                                                 <?= Html::a('<i class="fa fa-map-marker"></i> <span class="title">Contact Address</span>', ['/cms/contact-address/index'], ['class' => 'title']) ?>
+                                        </li>
+                                        
+                                        <li>
+                                                <a href="">
+                                                        <i class="fa fa-envelope"></i>
+                                                        <span class="title">Enquiries</span>
+                                                </a>
+                                                <ul>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Subscribe', ['/cms/subscribe/index'], ['class' => 'title']) ?>
+                                                        </li>
+
+                                                        
+                                                </ul>
                                         </li>
 
 
@@ -282,6 +301,10 @@ AppAsset::register($this);
                                                                 <li>
                                                                         <?= Html::a('<i class="fa fa-angle-double-right"></i> Brands', ['/cms/brands/index'], ['class' => 'title']) ?>
                                                                 </li>
+                                                                
+                                                                <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Other Contents', ['/cms/home-page-other/update?id=1'], ['class' => 'title']) ?>
+                                                        </li>
 
                                                                 <li>
                                                                         <?= Html::a('<i class="fa fa-angle-double-right"></i> Testimonials', ['/cms/testimonials/index'], ['class' => 'title']) ?>
@@ -360,6 +383,21 @@ AppAsset::register($this);
                                                 <li>
                                                         <?= Html::a('<i class="fa fa-map-marker"></i> <span class="title">Contact Address</span>', ['/cms/contact-address/index'], ['class' => 'title']) ?>
                                                 </li>
+                                                
+                                                                                        <li>
+                                                <a href="">
+                                                        <i class="fa fa-envelope"></i>
+                                                        <span class="title">Enquiries</span>
+                                                </a>
+                                                <ul>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Subscribe', ['/cms/subscribe/index'], ['class' => 'title']) ?>
+                                                        </li>
+
+                                                        
+                                                </ul>
+                                        </li>
 
 
 

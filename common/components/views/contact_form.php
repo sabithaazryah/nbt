@@ -4,60 +4,94 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 ?>
 
-<section class="in-main-help-you"><!--in-main-help-you-->
+<!--Start free appoinment area-->
+<section class="free-appoinment-area">
         <div class="container">
-                <div class="head-cont"><small>Fill in the form below, and we'll </small>
-                        <h2>get back to you within <b>24 hours.</b></h2></div>
-                <div class="row">
-                        <div class="col-lg-4 box-cont">
-                                <div class="cont">
-                                        <h2><small>How May </small>I Help You ?</h2>
-                                         <ul>
-                                                <li>Skype : <?= $contat_details->skype ?></li>
-                                                <li> Email: <?= $contat_details->email ?></li>
-                                                <li>Phone No: <?= $contat_details->phone1 ?></li>
-                                        </ul>
-                                </div>
-                        </div>
-                        <div class="col-lg-8 form-box">
-                                <div class="main-form">
-                                        <?= common\widgets\Alert::widget() ?>
-                                         <?php $form = ActiveForm::begin(['action' => ['site/enquiry'], 'options' => ['class' => 'in-main-form']]); ?>
+                <form class="free-appoinment-form" action="#">
+                        <div class="row">
+                                <div class="col-md-6">
+                                        <div class="sec-title text-left">
+                                                <h1>Make Free Appoinment</h1>
+                                                <span class="decor"></span> </div>
                                         <div class="row">
-                                                <div class="col-md-6">
-                                                        <div class="form-group">
-                                                                <?= $form->field($model, 'name')->textInput(['placeholder' => 'Name'])->label(FALSE) ?>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                        <div class="form-group">
-                                                                <?= $form->field($model, 'website_url')->textInput(['placeholder' => 'Website URL'])->label(FALSE) ?>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                        <div class="form-group">
-                                                                <?= $form->field($model, 'email')->textInput(['placeholder' => 'Email'])->label(FALSE) ?>
-                                                        </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                        <div class="form-group">
-                                                                <?= $form->field($model, 'phone')->textInput(['placeholder' => 'Phone No'])->label(FALSE) ?>
+                                                <div class="col-md-12">
+                                                        <div class="input-field">
+                                                                <input type="text" name="name" placeholder="Your Name*">
+                                                                <div class="icon-holder"> <span class="flaticon-people"></span> </div>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                        <div class="form-group">
-                                                                <?= $form->field($model, 'message')->textArea(['placeholder' => 'Message'])->label(FALSE) ?>
+                                                        <div class="input-field">
+                                                                <input type="text" name="mobile-number" placeholder="Mobile Num">
+                                                                <div class="icon-holder"> <span class="flaticon-telephone"></span> </div>
                                                         </div>
                                                 </div>
                                                 <div class="col-md-12">
-                                                        <div class="form-group">
-                                                                <center><input name="" type="submit" value="Send Request!" class="submit"></center>
+                                                        <div class="input-field">
+                                                                <input type="text" name="email" placeholder="Email Address*">
+                                                                <div class="icon-holder"> <span class="flaticon-note"></span> </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <div class="input-field">
+                                                                <textarea name="comment" placeholder="Comments..."></textarea>
+                                                                <div class="icon-holder comment"> <span class="flaticon-social-1"></span> </div>
                                                         </div>
                                                 </div>
                                         </div>
-                                        <?php ActiveForm::end(); ?>
+                                </div>
+                                <div class="col-md-6">
+                                        <p class="select-category">Select Category:</p>
+                                        <div class="category-item">
+                                                <input type="radio" id="indv" name="indvlcorpt" value="Individual">
+                                                <label for="indv">Individual</label>
+                                        </div>
+                                        <div class="category-item">
+                                                <input type="radio" id="corpt" name="indvlcorpt" value="Corporate">
+                                                <label for="corpt">Corporate</label>
+                                        </div>
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                        <div class="input-field">
+                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
+                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <div class="row">
+                                                                <div class="col-md-6">
+                                                                        <div class="input-field">
+                                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
+                                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                        <div class="input-field">
+                                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
+                                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <div class="input-field">
+                                                                <input type="text" name="reg-number" placeholder="Vehicle Registration Num*">
+                                                                <div class="icon-holder"> <span class="flaticon-sign"></span> </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <div class="input-field">
+                                                                <input type="text" name="date" placeholder="Select Date">
+                                                                <div class="icon-holder"> <span class="flaticon-dates"></span> </div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                        <button class="aut-cr-btn" type="button">Book Now</button>
+                                                </div>
+                                        </div>
                                 </div>
                         </div>
-                </div>
+                </form>
         </div>
-</section><!--in-main-help-you-->
+</section>
+<!--End free appoinment area-->
