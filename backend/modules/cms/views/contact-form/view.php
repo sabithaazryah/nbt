@@ -36,20 +36,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                                 <table id="w0" class="table table-striped table-bordered detail-view">
                                                         <tbody>
-                                                                <?php
-                                                                if ($model->portfolio != '') {
-                                                                        $platform = common\models\Platforms::findOne($model->portfolio);
-                                                                        ?>
-                                                                        <tr><th>Platform (Schedule demo for)</th><td><?= $platform->title ?></td></tr>
-                                                                <?php } ?>
+
                                                                 <tr><th>Name</th><td><?= $model->name ?></td></tr>
                                                                 <?php if ($model->last_name != '') { ?><tr><th>Last Name</th><td><?= $model->last_name ?></td></tr><?php } ?>
                                                                 <tr><th>Email</th><td><?= $model->email ?></td></tr>
                                                                 <tr><th>Phone</th><td><?= $model->phone ?></td></tr>
                                                                 <tr><th>Message</th><td style="width: 500px;word-wrap: break-word;"><?= $model->message ?></td></tr>
-                                                                <?php if ($model->website_url != '') { ?><tr><th>Website Url</th><td><?= $model->website_url ?></td></tr><?php } ?>
-                                                                <?php if ($model->company_name != '') { ?><tr><th>Company Name</th><td><?= $model->company_name ?></td></tr><?php } ?>
-                                                                <?php if ($model->country != '') { ?><tr><th>Country</th><td><?= $model->country ?></td></tr><?php } ?>
+                                                                <?php if ($model->website_url != '') { ?><tr><th>Subject</th><td><?= $model->website_url ?></td></tr><?php } ?>
+
                                                                 <tr><th>Date</th><td>2018-06-06</td></tr>
                                                         </tbody>
                                                 </table>

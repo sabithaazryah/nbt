@@ -71,9 +71,9 @@ else
                                 <div class="box">
                                         <div class="row">
                                                 <div class="col-md-8">
-                                                        <h2><?=$home_page_cotent->banner_label?></h2>
+                                                        <h2><?= $home_page_cotent->banner_label ?></h2>
                                                 </div>
-                                                <div class="col-md-4"> <a href="appointment.html">Get Free Appoinment</a> </div>
+                                                <div class="col-md-4"> <?= Html::a('Get Free Appoinment', ['/site/appointment']) ?> </div>
                                         </div>
                                 </div>
                         </div>
@@ -88,17 +88,17 @@ else
                         <div class="col-md-7">
                                 <div class="service-content">
                                         <div class="sec-title text-left">
-                                                <h2><?=$home_page_cotent->welcome_note?></h2>
+                                                <h2><?= $home_page_cotent->welcome_note ?></h2>
                                                 <span class="decor"></span> </div>
-                                        <p><?=$home_page_cotent->small_content?><br>
+                                        <p><?= $home_page_cotent->small_content ?><br>
                                                 <br>
-                                                <img src="<?=Yii::$app->homeUrl?>img/icon/since.png"><br>
+                                                <img src="<?= Yii::$app->homeUrl ?>img/icon/since.png"><br>
                                                 <br>
-                                                <?=$home_page_cotent->detail_content?> </p>
-                                <?= Html::a('Read More', ['/site/about'], ['class' => 'aut-cr-btn']) ?>
-                        <?= Html::a('View Services', ['/site/s'], ['class' => 'aut-cr-btn']) ?>        
+                                                <?= $home_page_cotent->detail_content ?> </p>
+                                        <?= Html::a('Read More', ['/site/about'], ['class' => 'aut-cr-btn']) ?>
+                                        <?= Html::a('View Services', ['/site/s'], ['class' => 'aut-cr-btn']) ?>
                                 </div>
-                        
+
                         </div>
                         <div class="col-md-5">
                                 <div class="service-client-carousel">
@@ -151,8 +151,8 @@ else
                                 <div class="single-item">
                                         <div class="icon-holder"> <span class="flaticon-social"></span> </div>
                                         <div class="content">
-                                                <h3><?=$home_page_cotent->caption_1?></h3>
-                                                <p><?=$home_page_cotent->caption_1_detail?></p>
+                                                <h3><?= $home_page_cotent->caption_1 ?></h3>
+                                                <p><?= $home_page_cotent->caption_1_detail ?></p>
                                                 <!--<a href="#">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a> --></div>
                                 </div>
                         </div>
@@ -162,8 +162,8 @@ else
                                 <div class="single-item">
                                         <div class="icon-holder"> <span class="flaticon-wrench"></span> </div>
                                         <div class="content">
-                                                <h3><?=$home_page_cotent->caption_2?></h3>
-                                                <p><?=$home_page_cotent->caption_2_detail?></p>
+                                                <h3><?= $home_page_cotent->caption_2 ?></h3>
+                                                <p><?= $home_page_cotent->caption_2_detail ?></p>
                                         </div>
                                 </div>
                         </div>
@@ -173,8 +173,8 @@ else
                                 <div class="single-item">
                                         <div class="icon-holder"> <span class="flaticon-map"></span> </div>
                                         <div class="content">
-                                               <h3><?=$home_page_cotent->caption_3?></h3>
-                                                <p><?=$home_page_cotent->caption_3_detail?></p>
+                                                <h3><?= $home_page_cotent->caption_3 ?></h3>
+                                                <p><?= $home_page_cotent->caption_3_detail ?></p>
                                         </div>
                                 </div>
                         </div>
@@ -197,20 +197,23 @@ else
                         <!--Start single item-->
                         <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="single-item">
-                                        <div class="img-holder"> <img src="img/best-service/1.jpg" alt="Awesome Image"> </div>
+                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/1/image.<?= $our_products->image_1 ?>" alt="Awesome Image"> </div>
                                         <div class="overlay">
-                                                <div class="img-holder"> <img src="img/best-service/1-hover.jpg" alt="Awesome Image"/> </div>
+                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/best-service/1-hover.jpg" alt="Awesome Image"/> </div>
                                                 <!-- /.img-holder -->
                                                 <div class="icon-holder"> <span class="flaticon-float"></span> </div>
                                                 <div class="content">
-                                                        <h3>Tyres</h3>
-                                                        <p>We should point out that maintaining your vehiclewith an occasional visual inspectionfluid level.</p>
-                                                        <a href="tyres.html">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a> </div>
+                                                        <h3><?= $our_products->title_1 ?></h3>
+                                                        <p><?= $our_products->description_1 ?></p>
+                                                        <?= Html::a('Read More<i class="fa fa-caret-right" ></i>', ['/site/tyres']) ?>
+                                                </div>
                                         </div>
                                         <div class="title clearfix">
                                                 <div class="icon-holder"> <span class="flaticon-float"></span> </div>
-                                                <h3> Tyres</h3>
-                                                <div class="go-top-icon"> <a href="tyres.html"><span class="flaticon-up-arrow"></span></a> </div>
+                                                <h3> <?= $our_products->title_1 ?></h3>
+                                                <div class="go-top-icon">
+                                                        <?= Html::a('<span class="flaticon-up-arrow"></span>', ['/site/tyres']) ?>
+                                                </div>
                                         </div>
                                 </div>
                         </div>
@@ -218,20 +221,24 @@ else
                         <!--Start single item-->
                         <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="single-item">
-                                        <div class="img-holder"> <img src="img/best-service/2.jpg" alt="Awesome Image"> </div>
+                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/2/image.<?= $our_products->image_2 ?>" alt="Awesome Image"> </div>
                                         <div class="overlay">
-                                                <div class="img-holder"> <img src="img/best-service/2-hover.jpg" alt="Awesome Image"/> </div>
+                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/best-service/2-hover.jpg" alt="Awesome Image"/> </div>
                                                 <!-- /.img-holder -->
                                                 <div class="icon-holder"> <span class="flaticon-car-service"></span> </div>
                                                 <div class="content">
-                                                        <h3>Alloy Wheels</h3>
-                                                        <p>We should point out that maintaining your vehiclewith an occasional visual inspectionfluid level.</p>
-                                                        <a href="alloy-wheels.html">Read More<i class="fa fa-caret-right" ></i></a> </div>
+                                                        <h3><?= $our_products->title_2 ?></h3>
+                                                        <p><?= $our_products->description_2 ?></p>
+                                                        <!--<a href="alloy-wheels.html">Read More<i class="fa fa-caret-right" ></i></a>-->
+                                                        <?= Html::a('Read More<i class="fa fa-caret-right" ></i>', ['/site/alloy-wheels']) ?>
+                                                </div>
                                         </div>
                                         <div class="title clearfix">
                                                 <div class="icon-holder"> <span class="flaticon-car-service"></span> </div>
                                                 <h3>Alloy Wheels</h3>
-                                                <div class="go-top-icon"> <a href="alloy-wheels.html"><span class="flaticon-up-arrow"></span></a> </div>
+                                                <div class="go-top-icon">
+                                                        <?= Html::a('<span class="flaticon-up-arrow"></span>', ['/site/alloy-wheels']) ?>
+                                                </div>
                                         </div>
                                 </div>
                         </div>
@@ -239,25 +246,26 @@ else
                         <!--Start single item-->
                         <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="single-item middle">
-                                        <div class="img-holder"> <img src="img/best-service/3.jpg" alt="Awesome Image"> </div>
+                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/3/image.<?= $our_products->image_3 ?>" alt="Awesome Image"> </div>
                                         <div class="overlay">
-                                                <div class="img-holder"> <img src="img/best-service/3-hover.jpg" alt="Awesome Image"/> </div>
+                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/best-service/3-hover.jpg" alt="Awesome Image"/> </div>
                                                 <!-- /.img-holder -->
                                                 <div class="icon-holder"> <span class="flaticon-technology"></span> </div>
                                                 <div class="content">
-                                                        <h3>Batteries</h3>
-                                                        <p>We should point out that maintaining your vehiclewith an occasional visual inspectionfluid level.</p>
-                                                        <a href="batteries.html">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></a> </div>
+                                                        <h3><?= $our_products->title_3 ?></h3>
+                                                        <p><?= $our_products->description_3 ?></p>
+                                                        <?= Html::a('Read More<i class="fa fa-caret-right" ></i>', ['/site/batteries']) ?>
+                                                </div>
                                         </div>
                                         <div class="title clearfix">
                                                 <div class="icon-holder"> <span class="flaticon-car-service"></span> </div>
                                                 <h3>Batteries</h3>
-                                                <div class="go-top-icon"> <a href="batteries.html"><span class="flaticon-up-arrow"></span></a> </div>
+                                                <div class="go-top-icon"><?= Html::a('<span class="flaticon-up-arrow"></span>', ['/site/batteries']) ?> </div>
                                         </div>
                                 </div>
                         </div>
                         <div class="clearfix"></div>
-                        <div class="products-read-more"><a href="tyres.html">view more</a></div>
+                        <div class="products-read-more"><?= Html::a('view more', ['/site/tyres']) ?></div>
                         <!--End single item-->
                 </div>
         </div>
@@ -371,4 +379,4 @@ else
         </div>
 </section><!--home-secect-privileges-->
 <!--Start free appoinment area-->
-<?=\common\components\ContactFormWidget::widget();?>
+<?= \common\components\ContactFormWidget::widget(); ?>

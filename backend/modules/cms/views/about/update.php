@@ -26,24 +26,24 @@ $this->params['breadcrumbs'][] = 'Update';
 
                                 <div class="panel-body"><div class="about-create">
 
-                                                <div class="tab-content tab_data_margin">
-                                                        <div class="tab-pane active" id="main-1">
-                                                                <ul class="nav nav-tabs">
-                                                                        <li class="active" style="width: 45%;">
-                                                                                <a href="#home" data-toggle="tab">
-                                                                                        <span class="visible-xs"><i class="fa-home"></i></span>
-                                                                                        <span class="hidden-xs">About</span>
-                                                                                </a>
-                                                                        </li>
-                                                                        <li style="width: 45%;">
-                                                                                <a href="#profile" data-toggle="tab">
-                                                                                        <span class="visible-xs"><i class="fa-user"></i></span>
-                                                                                        <span class="hidden-xs">History</span>
-                                                                                </a>
-                                                                        </li>
-                                                                </ul>
-                                                        </div>
-                                                </div>
+                                                <!--                                                <div class="tab-content tab_data_margin">
+                                                                                                        <div class="tab-pane active" id="main-1">
+                                                                                                                <ul class="nav nav-tabs">
+                                                                                                                        <li class="active" style="width: 45%;">
+                                                                                                                                <a href="#home" data-toggle="tab">
+                                                                                                                                        <span class="visible-xs"><i class="fa-home"></i></span>
+                                                                                                                                        <span class="hidden-xs">About</span>
+                                                                                                                                </a>
+                                                                                                                        </li>
+                                                                                                                      <li style="width: 45%;">
+                                                                                                                                <a href="#profile" data-toggle="tab">
+                                                                                                                                        <span class="visible-xs"><i class="fa-user"></i></span>
+                                                                                                                                        <span class="hidden-xs">History</span>
+                                                                                                                                </a>
+                                                                                                                        </li>
+                                                                                                                </ul>
+                                                                                                        </div>
+                                                                                                </div>-->
 
                                                 <br>
 
@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = 'Update';
                                                         </div>
 
                                                         <div class="tab-pane" id="profile">
-                                                                <?=
+                                                                <?php
                                                                 $this->render('history', [
                                                                     'model' => $model,
                                                                     'about_history' => $about_history,

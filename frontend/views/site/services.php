@@ -29,7 +29,7 @@ else
                 <div class="row">
                         <div class="col-md-6 col-sm-5">
                                 <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="<?= Yii::$app->homeUrl ?>">Home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>Services</li>
                                 </ul>
@@ -49,48 +49,52 @@ else
                         <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 pull-right">
                                 <div class="services-single-content">
                                         <div class="sec-title text-left">
-                                                <h1><?=$service_detail->title?></h1>
+                                                <h1><?= $service_detail->title ?></h1>
                                                 <span class="decor"></span>
                                         </div>
-                                    <?php  
-                                    $path = Yii::getAlias('@paths') . '/services/' . $service_detail->id . '/gallery_thumb';
-                        if (count(glob("{$path}/*")) > 0) { ?>
-                                    
-                                        <div id="services-single-carousel" class="carousel slide" data-ride="carousel">
-                                                <ol class="carousel-indicators">
-                                                    <?php
-                                                    $k = 0;
-                                foreach (glob("{$path}/*") as $file) {
-                                                    ?>
-                                                        <li data-target="#services-single-carousel" data-slide-to="<?=$k?>" class="<?=$k==0?'active':''?>"></li>
-                                                        
-                                <?php $k++;} ?>
-                                                </ol>
-                                                <div class="carousel-inner" role="listbox">
-                                                     <?php
-                                                    $l = 0;
-                                foreach (glob("{$path}/*") as $file) {
-                                    $arry = explode('/', $file);
-                                        $img_nmee = end($arry);
+                                        <?php
+                                        $path = Yii::getAlias('@paths') . '/services/' . $service_detail->id . '/gallery_thumb';
+                                        if (count(glob("{$path}/*")) > 0) {
+                                                ?>
 
-                                        $img_nmees = explode('.', $img_nmee);
-                                        if ($img_nmees['1'] != '') {
-                                                    ?>
-                                                        <div class="item <?=$l==0?'active':''?>">
-                                                                <div class="single-item">
-                                                                        <div class="img-holder">
-                                                                                <img src="<?= Yii::$app->homeUrl ?>uploads/services/<?=$service_detail->id?>/gallery/<?=end($arry)?>" alt="Awesome Image">
-                                                                        </div>
-                                                                </div>
+                                                <div id="services-single-carousel" class="carousel slide" data-ride="carousel">
+                                                        <ol class="carousel-indicators">
+                                                                <?php
+                                                                $k = 0;
+                                                                foreach (glob("{$path}/*") as $file) {
+                                                                        ?>
+                                                                        <li data-target="#services-single-carousel" data-slide-to="<?= $k ?>" class="<?= $k == 0 ? 'active' : '' ?>"></li>
+
+                <?php $k++;
+        } ?>
+                                                        </ol>
+                                                        <div class="carousel-inner" role="listbox">
+                                                                <?php
+                                                                $l = 0;
+                                                                foreach (glob("{$path}/*") as $file) {
+                                                                        $arry = explode('/', $file);
+                                                                        $img_nmee = end($arry);
+
+                                                                        $img_nmees = explode('.', $img_nmee);
+                                                                        if ($img_nmees['1'] != '') {
+                                                                                ?>
+                                                                                <div class="item <?= $l == 0 ? 'active' : '' ?>">
+                                                                                        <div class="single-item">
+                                                                                                <div class="img-holder">
+                                                                                                        <img src="<?= Yii::$app->homeUrl ?>uploads/services/<?= $service_detail->id ?>/gallery/<?= end($arry) ?>" alt="Awesome Image">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                        <?php $l++;
+                }
+        } ?>
+
                                                         </div>
-                                <?php $l++;}} ?>   
-                                                      
                                                 </div>
-                                        </div>
-                        <?php } ?>
+<?php } ?>
                                         <div class="content">
 
-                                                <?=$service_detail->content?>
+<?= $service_detail->content ?>
                                         </div>
 
 
@@ -102,14 +106,14 @@ else
                                         <!--Start Single item-->
                                         <div class="single-item">
                                                 <ul class="services-list">
-                                                    <?php foreach($services as $service){ ?>
-<li class="<?=$service->canonical_name==$service_detail->canonical_name?'active':''?>"><?= Html::a($service->title.' <i class="fa fa-angle-right" aria-hidden="true"></i>', ['/site/services','service'=>$service->canonical_name]) ?> </li>
-                                                    <?php }?>
+<?php foreach ($services as $service) { ?>
+                                                                <li class="<?= $service->canonical_name == $service_detail->canonical_name ? 'active' : '' ?>"><?= Html::a($service->title . ' <i class="fa fa-angle-right" aria-hidden="true"></i>', ['/site/services', 'service' => $service->canonical_name]) ?> </li>
+                                        <?php } ?>
                                                 </ul>
                                         </div>
                                         <!--End Single item-->
                                         <!--Start Single item-->
-                                        <?=\common\components\BrochureWidget::widget();?>
+<?= \common\components\BrochureWidget::widget(); ?>
                                         <!--End Single item-->
                                         <!--Start Single item-->
 
@@ -121,4 +125,4 @@ else
 </section>
 <!--End services single area-->
 <!--Start free appoinment area-->
-<?=\common\components\ContactFormWidget::widget();?>
+<?= \common\components\ContactFormWidget::widget(); ?>

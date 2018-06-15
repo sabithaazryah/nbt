@@ -28,7 +28,7 @@ else
                 <div class="row">
                         <div class="col-md-6 col-sm-5">
                                 <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="<?= Yii::$app->homeUrl ?>">Home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>Select Privileges</li>
                                 </ul>
@@ -43,42 +43,43 @@ else
 <!--Start services single area-->
 <section class="services-single-area">
         <div class="container">
-            
-            <?php foreach($privileges as $privilege){
-                if($privilege->id==2){
-                    $clas='gold';
-                } else if($privilege->id==3){
-                   $clas='platinum'; 
-                } else{
-                    $clas='silver'; 
-                }
-                ?>
-                <div class="in-select-privileges">
-                        <h3 class="head-text <?=$clas?> "><?=$privilege->title?></h3>
-                        <div class="main-cont-box">
-                                <div class="row">
-                                        <div class="col-md-6">
-                                                <h4>Your Privileges</h4>
-                                                <ul class="list">
 
-<?=$privilege->content?>
-                                                </ul>
-                                        </div>
-                                        <div class="col-md-6">
-                                                <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>uploads/privileges/<?=$privilege->id?>/image.<?=$privilege->image?>" class="img-responsive"> </div>
+                <?php
+                foreach ($privileges as $privilege) {
+                        if ($privilege->id == 2) {
+                                $clas = 'gold';
+                        } else if ($privilege->id == 3) {
+                                $clas = 'platinum';
+                        } else {
+                                $clas = 'silver';
+                        }
+                        ?>
+                        <div class="in-select-privileges">
+                                <h3 class="head-text <?= $clas ?> "><?= $privilege->title ?></h3>
+                                <div class="main-cont-box">
+                                        <div class="row">
+                                                <div class="col-md-6">
+                                                        <h4>Your Privileges</h4>
+                                                        <ul class="list">
+
+        <?= $privilege->content ?>
+                                                        </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>uploads/privileges/<?= $privilege->id ?>/image.<?= $privilege->image ?>" class="img-responsive"> </div>
+                                                </div>
                                         </div>
                                 </div>
                         </div>
-                </div>
-            <?php }?>
-             
+<?php } ?>
+
                 <div class="in-select-privileges">
                         <h3 class="head-text red">terms and conditions</h3>
                         <div class="main-cont-box">
                                 <div class="row">
                                         <div class="col-md-12 terms-cond">
-                                            <?=$terms->content?>
-                                         </div>
+<?= $terms->content ?>
+                                        </div>
 
                                 </div>
                         </div>
@@ -90,7 +91,7 @@ else
 
 <!--End free appoinment area-->
 <script>
-$(document).ready(function(){
-    $('.terms-cond p').addClass('text');
-})
+        $(document).ready(function () {
+                $('.terms-cond p').addClass('text');
+        })
 </script>

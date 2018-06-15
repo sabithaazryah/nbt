@@ -32,10 +32,10 @@ use dosamigos\ckeditor\CKEditor;
                         if ($model->isNewRecord)
                                 echo "";
                         else {
-                                if (!empty($model->image)) {
+                                if (!empty($model->about_image)) {
                                         ?>
 
-                                        <img src="<?= Yii::$app->homeUrl ?>../uploads/about/<?= $model->id ?>/small.<?= $model->image; ?>" width="125" height="100"/>
+                                        <img src="<?= Yii::$app->homeUrl ?>../uploads/about/<?= $model->id ?>/small.<?= $model->about_image; ?>" width="125" height="100"/>
                                         <?php
                                 }
                         }

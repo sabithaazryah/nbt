@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-
 if (isset($meta_title) && $meta_title != '')
         $this->title = $meta_title;
 else
@@ -33,7 +32,7 @@ else
                 <div class="row">
                         <div class="col-md-6 col-sm-5">
                                 <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="<?= Yii::$app->homeUrl ?>">Home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>About</li>
                                 </ul>
@@ -59,7 +58,7 @@ else
                                         </div>
                                         <div class="row">
                                                 <div class="col-md-5">
-                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>img/resources/about-sub.jpg" alt="Awesome Image" class="img-responsive"> </div>
+                                                        <div class="img-box"><img src="<?= Yii::$app->homeUrl ?>uploads/about/<?= $about->id ?>/image.<?= $about->about_image ?>" alt="<?= $about->about_image_alt ?>" class="img-responsive"> </div>
                                                 </div>
                                                 <div class="col-md-7">
                                                         <div class="content">
@@ -85,14 +84,14 @@ else
                                         <p><?= $about->customer_support_detail ?></p>
                                         <h3><span class="flaticon-telephone"></span><br><?= $about->customer_support_no ?></h3>
                                         <div class="info-box text-center">
-                                                <p>phone: 042630606</p>
-                                                <p>Email: dubai@newbharathtyres.com</p>
+                                                <p>phone: <?= $contact_details->phone1 ?></p>
+                                                <p>Email: <?= $contact_details->email ?></p>
 
                                                 <div class="social">
                                                         <ul>
-                                                                <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                                                                <li><a href="#"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
-                                                                <li><a href="#"><i class="flaticon-google-plus-logo"></i></a></li>
+                                                                <li><a href="<?= $contact_details->facebook ?>" target="_blank"><i class="flaticon-facebook-letter-logo"></i></a></li>
+                                                                <li><a href="<?= $contact_details->twitter ?>" target="_blank"><i class="flaticon-twitter-logo-silhouette"></i></a></li>
+                                                                <li><a href="<?= $contact_details->google_plus ?>" target="_blank"><i class="flaticon-google-plus-logo"></i></a></li>
                                                         </ul>
                                                 </div>
                                         </div>
@@ -391,10 +390,10 @@ else
                                 <div class="subscribe">
                                         <h3>Subscribe Us</h3>
                                         <?php $form = ActiveForm::begin(); ?>
-                                                <input type="email" name="email" placeholder="Email Address">
-                                                <button type="submit"><span class="flaticon-paper"></span></button>
-                                                <p>* Your Mail id is Fully Protected.</p>
-                                       <?php ActiveForm::end(); ?>
+                                        <input type="email" name="email" placeholder="Email Address">
+                                        <button type="submit"><span class="flaticon-paper"></span></button>
+                                        <p>* Your Mail id is Fully Protected.</p>
+                                        <?php ActiveForm::end(); ?>
                                 </div>
                         </div>
                 </div>

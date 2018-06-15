@@ -30,7 +30,7 @@ else
                 <div class="row">
                         <div class="col-md-6 col-sm-5">
                                 <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="<?= Yii::$app->homeUrl ?>">Home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>Products</li>
                                 </ul>
@@ -70,20 +70,20 @@ else
                                                 </ul>
                                         </div>
                                         <!--End Single item-->
-                                        <?=\common\components\BrochureWidget::widget();?>
+                                        <?= \common\components\BrochureWidget::widget(); ?>
                                         <!--Start Single item-->
-<!--                                        <div class="single-item">
-                                                <div class="sec-title text-left">
-                                                        <h2>Our Brochures</h2>
-                                                        <span class="decor"></span> </div>
-                                                <div class="brochures-content">
-                                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/resources/brochures.jpg" alt=""> </div>
-                                                        <ul class="brochures-list">
-                                                                <li><a href="#"><span class="flaticon-interface"></span>Service Brochure.PDF</a></li>
-                                                                <li><a href="#"><span class="flaticon-interface"></span>air conditioner.PDF</a></li>
-                                                        </ul>
-                                                </div>
-                                        </div>-->
+                                        <!--                                        <div class="single-item">
+                                                                                        <div class="sec-title text-left">
+                                                                                                <h2>Our Brochures</h2>
+                                                                                                <span class="decor"></span> </div>
+                                                                                        <div class="brochures-content">
+                                                                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/resources/brochures.jpg" alt=""> </div>
+                                                                                                <ul class="brochures-list">
+                                                                                                        <li><a href="#"><span class="flaticon-interface"></span>Service Brochure.PDF</a></li>
+                                                                                                        <li><a href="#"><span class="flaticon-interface"></span>air conditioner.PDF</a></li>
+                                                                                                </ul>
+                                                                                        </div>
+                                                                                </div>-->
                                         <!--End Single item-->
                                         <!--Start Single item-->
 
@@ -94,4 +94,4 @@ else
         </div>
 </section>
 <!--End services single area-->
-<?=\common\components\ContactFormWidget::widget();?>
+<?= \common\components\ContactFormWidget::widget(); ?>

@@ -28,7 +28,7 @@ else
                 <div class="row">
                         <div class="col-md-6 col-sm-5">
                                 <ul>
-                                        <li><a href="#">Home</a></li>
+                                        <li><a href="<?= Yii::$app->homeUrl ?>">Home</a></li>
                                         <li><i class="fa fa-angle-right"></i></li>
                                         <li>offers</li>
                                 </ul>
@@ -45,24 +45,24 @@ else
         <div class="container">
                 <div class="in-offer-section">
                         <div class="row">
-                            <?php foreach($offers as $offer) {?>
-                                <div class="col-md-6">
-                                        <div class="offer-box">
-                                                <div class="img-box">
-                                                        <img src="<?= Yii::$app->homeUrl ?>uploads/offers/<?=$offer->id?>/image.<?=$offer->image?>" alt="<?=$offer->alt_tag?>" class="img-responsive">
-                                                        <div class="off"><?=$offer->off?>% off</div>
+                                <?php foreach ($offers as $offer) { ?>
+                                        <div class="col-md-6">
+                                                <div class="offer-box">
+                                                        <div class="img-box">
+                                                                <img src="<?= Yii::$app->homeUrl ?>uploads/offers/<?= $offer->id ?>/image.<?= $offer->image ?>" alt="<?= $offer->alt_tag ?>" class="img-responsive">
+                                                                <div class="off"><?= $offer->off ?>% off</div>
+                                                        </div>
+                                                        <h4 class="text"><?= $offer->title ?></h4>
                                                 </div>
-                                                <h4 class="text"><?=$offer->title?></h4>
                                         </div>
-                                </div>
-                                
-                            <?php } ?>
-                                
+
+                                <?php } ?>
+
                         </div>
                 </div>
         </div>
 </section>
 <!--End services single area-->
 <!--Start free appoinment area-->
-<?=\common\components\ContactFormWidget::widget();?>
+<?= \common\components\ContactFormWidget::widget(); ?>
 <!--End free appoinment area-->

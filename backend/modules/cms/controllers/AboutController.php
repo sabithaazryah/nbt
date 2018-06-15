@@ -8,6 +8,7 @@ use common\models\AboutSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * AboutController implements the CRUD actions for About model.
@@ -80,14 +81,31 @@ class AboutController extends Controller {
                 $model = $this->findModel($id);
                 $about_history = new \common\models\AboutHistory();
 
-                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                $image_ = $model->about_image;
+
+                if ($model->load(Yii::$app->request->post())) {
+                        $image = UploadedFile::getInstance($model, 'about_image');
+                        if (!empty($image))
+                                $model->about_image = $image->extension;
+                        else
+                                $model->about_image = $image_;
+                        if ($model->validate() && $model->save()) {
+                                if (!empty($image)) {
+                                        $path = Yii::$app->basePath . '/../uploads/about/' . $model->id . '/';
+                                        $size = [
+                                                ['width' => 100, 'height' => 100, 'name' => 'small'],
+                                                ['width' => 406, 'height' => 264, 'name' => 'image'],
+                                        ];
+                                        Yii::$app->UploadFile->UploadFile($model, $image, $path, $size);
+                                }
+                        }
+                        Yii::$app->session->setFlash('success', "Updated Successfully");
                         return $this->redirect(['update', 'id' => $model->id]);
-                } else {
-                        return $this->render('update', [
-                                    'model' => $model,
-                                    'about_history' => $about_history,
-                        ]);
                 }
+
+                return $this->render('update', [
+                            'model' => $model,
+                ]);
         }
 
         /**

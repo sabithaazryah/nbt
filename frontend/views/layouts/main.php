@@ -4,10 +4,11 @@
 
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
+use yii\bootstrap\ActiveForm;
 
 AppAsset::register($this);
 $contact_details = \common\models\ContactAddress::findOne(1);
-$contents=\common\models\HomePageOther::findOne(1);
+$contents = \common\models\HomePageOther::findOne(1);
 $about = \common\models\About::findOne(1);
 $params = $parameters = \yii::$app->getRequest()->getQueryParams();
 ?>
@@ -29,20 +30,20 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                 <?php $this->head() ?>
         </head>
         <body class="main-body">
-                <?php $action = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id; // controller action id  ?>
+                <?php $action = Yii::$app->controller->id . '/' . Yii::$app->controller->action->id; // controller action id   ?>
                 <?php $this->beginBody() ?>
 
                 <?php if (Yii::$app->controller->action->id == 'index' || '') { ?>
                         <div class="left-sd-service">
                                 <ul class="list">
-                                        <li><a href="tyres.html">tyres</a></li>
-                                        <li><a href="batteries.html" class="icon2">Batteries</a></li>
-                                        <li><a href="alloy-wheels.html" class="icon3">alloy wheels</a></li>
-                                        <li><a href="services.html" class="icon4">wheel alignment</a></li>
-                                        <li><a href="services.html" class="icon5">wheel balancing</a></li>
-                                        <li><a href="services.html" class="icon6">nitrogen filling</a></li>
-                                        <li><a href="services.html" class="icon7">oil change</a></li>
-                                        <li><a href="services.html" class="icon8">brakes</a></li>
+                                        <li><?= Html::a('Tyres', ['/site/tyres']) ?></li>
+                                        <li><?= Html::a('Batteries', ['/site/batteries'], ['class' => 'icon2']) ?></li>
+                                        <li><?= Html::a('alloy wheels', ['/site/alloy-wheels'], ['class' => 'icon3']) ?></li>
+                                        <li><?= Html::a('wheel alignment', ['/site/services', 'service' => 'wheel-alignment'], ['class' => 'icon4']) ?></li>
+                                        <li><?= Html::a('wheel balancing', ['/site/services', 'service' => 'wheel-balancing'], ['class' => 'icon5']) ?></li>
+                                        <li><?= Html::a('nitrogen filling', ['/site/services', 'service' => 'nitrogen-filling'], ['class' => 'icon6']) ?></li>
+                                        <li><?= Html::a('oil change', ['/site/services', 'service' => 'oil-change'], ['class' => 'icon7']) ?></li>
+                                        <li><?= Html::a('brakes', ['/site/services', 'service' => 'brakes'], ['class' => 'icon8']) ?></li>
                                 </ul>
                         </div>
                         <div class="main-link"> <a href="#exampleModal" data-toggle="modal" class="quick-enquiry"></a> </div>
@@ -55,15 +56,15 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                                                                 <h4 class="modal-title">Need Assistance?</h4>
                                                         </div>
-                                                        <form>
-                                                                <div class="form-box">
-                                                                        <input name="" type="text" class="form-control" placeholder="Your Full Name">
-                                                                        <input name="" type="text" class="form-control" placeholder="Your Phone Number">
-                                                                        <input name="" type="text" class="form-control" placeholder="Your Email">
-                                                                        <textarea name="" cols="" rows="" class="form-control" placeholder="Your Message"></textarea>
-                                                                        <input name="" type="submit" value="SEND" class="submit">
-                                                                </div>
-                                                        </form>
+                                                        <?php $form = ActiveForm::begin(['action' => 'site/enquiry']); ?>
+                                                        <div class="form-box">
+                                                                <input name="fname" type="text" class="form-control" placeholder="Your Full Name" required="">
+                                                                <input name="fphone" type="text" class="form-control" placeholder="Your Phone Number" required="">
+                                                                <input name="femail" type="text" class="form-control" placeholder="Your Email" required="">
+                                                                <textarea name="fmessage" cols="" rows="" class="form-control" placeholder="Your Message" required=""></textarea>
+                                                                <input name="" type="submit" value="SEND" class="submit">
+                                                        </div>
+                                                        <?php ActiveForm::end(); ?>
                                                 </div>
                                         </div>
                                 </div>
@@ -121,23 +122,20 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                         <li class="<?= Yii::$app->controller->action->id == 'about' || '' ? 'active' : '' ?>"><?= Html::a('About Us', ['/site/about'], ['title' => 'New Bharath Pitstop']) ?></li>
                                                                         <li class="dropdown"> <a href="services.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Products <span class="decor"></span></a>
                                                                                 <ul class="dropdown-menu">
-                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/tyres">Tyres</a></li>
-                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/alloy-wheels">Alloy Wheels</a></li>
-                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/batteries">Batteries</a></li>
+                                                                                        <li><?= Html::a('Tyres', ['/site/tyres']) ?></li>
+                                                                                        <li><?= Html::a('Alloy Wheels', ['/site/alloy-wheels']) ?></li>
+                                                                                        <li><?= Html::a('Batteries', ['/site/batteries']) ?></li>
 
                                                                                 </ul>
                                                                         </li>
                                                                         <li class="dropdown"> <a href="<?= Yii::$app->homeUrl ?>site/services" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Services <span class="decor"></span></a>
                                                                                 <ul class="dropdown-menu">
-                                                                                        <li><a href="<?= Yii::$app->homeUrl ?>site/services">Wheel Alignment</a></li>
-                                                                                        <li><a href="#">Wheel Balancing</a></li>
-                                                                                        <li><a href="#">Tyre Fitment</a></li>
-                                                                                        <li><a href="#">Wheel Care</a></li>
-                                                                                        <li><a href="#">Nitrogen Air</a></li>
-                                                                                        <li><a href="#">Air Conditioning</a></li>
-                                                                                        <li><a href="#">Brakes</a></li>
-                                                                                        <li><a href="#">Window Tinting</a></li>
-                                                                                        <li><a href="#">Car Detailing</a></li>
+                                                                                        <?php
+                                                                                        $services = common\models\Services::find()->where(['status' => 1])->all();
+                                                                                        foreach ($services as $serv) {
+                                                                                                echo '<li>' . Html::a($serv->title, ['/site/services', 'service' => $serv->canonical_name]) . '</li>';
+                                                                                        }
+                                                                                        ?>
                                                                                 </ul>
                                                                         </li>
                                                                         <li class="<?= Yii::$app->controller->action->id == 'privileges' || '' ? 'active' : '' ?>"><?= Html::a('select Privilege', ['/site/privileges'], ['title' => 'New Bharath Pitstop']) ?></li>
@@ -168,7 +166,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                         <div class="single-footer-widget">
                                                                 <div class="footer-logo"> <img src="<?= Yii::$app->homeUrl ?>img/resources/footer-logo.png" alt="Awesome Footer Logo"> </div>
                                                                 <div class="text">
-                                                                        <p><?=$contents->footer_content?></p>
+                                                                        <p><?= $contents->footer_content ?></p>
                                                                 </div>
                                                         </div>
                                                 </div>
@@ -180,13 +178,11 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                         <h2>useful links</h2>
                                                                         <span class="decor"></span> </div>
                                                                 <ul class="service-list">
-                                                                        <li><a href="index.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a></li>
-                                                                        <li><a href="about-us.html"><i class="fa fa-angle-right" aria-hidden="true"></i>About us </a></li>
-                                                                        <li><a href="products.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Products </a></li>
-                                                                        <li><a href="services.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Services</a></li>
-                                                                        <li><a href="blog.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog </a></li>
-                                                                        <li><a href="brand.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Our brand</a></li>
-                                                                        <li><a href="contact.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact US</a></li>
+                                                                        <li><?= Html::a('<i class="fa fa-angle-right" aria-hidden="true"></i>Home', ['/site/index'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li><?= Html::a('<i class="fa fa-angle-right" aria-hidden="true"></i>About us', ['/site/about'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li><?= Html::a('<i class="fa fa-angle-right" aria-hidden="true"></i>Products', ['/site/tyres'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li><?= Html::a('<i class="fa fa-angle-right" aria-hidden="true"></i>Services', ['/site/services', 'service' => 'wheel-alignment'], ['title' => 'New Bharath Pitstop']) ?></li>
+                                                                        <li><?= Html::a('<i class="fa fa-angle-right" aria-hidden="true"></i>Contact US', ['/site/contact'], ['title' => 'New Bharath Pitstop']) ?></li>
                                                                 </ul>
                                                         </div>
                                                 </div>
@@ -197,15 +193,13 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                         <h2>Our Services</h2>
                                                                         <span class="decor"></span> </div>
                                                                 <ul class="service-list">
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Wheel Alignment</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Wheel Balancing</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Tyre Fitment</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Wheel Care</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Nitrogen Air</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Air Conditioning</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Brakes</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Window Tinting</a></li>
-                                                                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Car Detailing</a></li>
+                                                                        <?php
+                                                                        $services = common\models\Services::find()->where(['status' => 1])->all();
+                                                                        foreach ($services as $serv) {
+                                                                                echo '<li>' . Html::a('<i class="fa fa-angle-right" aria-hidden="true"></i>' . $serv->title, ['/site/services', 'service' => $serv->canonical_name]) . '</li>';
+                                                                        }
+                                                                        ?>
+
                                                                 </ul>
                                                         </div>
                                                 </div>
@@ -215,13 +209,13 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                         <h2>CONTACT US</h2>
                                                                         <span class="decor"></span> </div>
                                                                 <div class="f-contact"><b>Address</b>
-                                                                        <p><?=$contact_details->address?></p>
+                                                                        <p><?= $contact_details->address ?></p>
                                                                 </div>
                                                                 <div class="f-contact"><b>Phone No</b>
-                                                                        <p><?=$contact_details->phone1?></p>
+                                                                        <p><?= $contact_details->phone1 ?></p>
                                                                 </div>
                                                                 <div class="f-contact"><b>Email</b>
-                                                                        <p><?=$contact_details->email?></p>
+                                                                        <p><?= $contact_details->email ?></p>
                                                                 </div>
                                                                 <div class="footer-social-link">
                                                                         <ul>
