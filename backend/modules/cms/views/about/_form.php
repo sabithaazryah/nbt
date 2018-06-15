@@ -16,7 +16,12 @@ use dosamigos\ckeditor\CKEditor;
                 <div class='col-md-12 col-sm-12 col-xs-12 left_padd'>
                         <?= $form->field($model, 'small_content')->textArea(['maxlength' => true, 'rows' => 4]) ?>
                 </div><div class='col-md-12 col-sm-12 col-xs-12 left_padd'>
-                        <?= $form->field($model, 'detailed_content')->textArea(['maxlength' => true, 'rows' => 8]) ?>
+                        <?=
+                        $form->field($model, 'detailed_content', ['options' => ['class' => 'form-group']])->widget(CKEditor::className(), [
+                            'options' => ['rows' => 2],
+                            'preset' => 'custom',
+                        ])
+                        ?>
                 </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'customer_support')->textInput(['maxlength' => true]) ?>
 
                 </div><div class='col-md-4 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'customer_support_detail')->textInput(['maxlength' => true]) ?>
@@ -78,8 +83,13 @@ use dosamigos\ckeditor\CKEditor;
 
                 </div>
 
-                <div class='col-md-12 col-sm-6 col-xs-12 left_padd'>    <?= $form->field($model, 'working_time')->textarea(['maxlength' => true, 'rows' => 6]) ?>
-
+                <div class='col-md-12 col-sm-6 col-xs-12 left_padd'>    
+                        <?=
+                        $form->field($model, 'working_time', ['options' => ['class' => 'form-group']])->widget(CKEditor::className(), [
+                            'options' => ['rows' => 2],
+                            'preset' => 'custom',
+                        ])
+                        ?>
                 </div>
         </div>
 

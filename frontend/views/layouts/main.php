@@ -120,7 +120,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                                 <ul class="nav navbar-nav ">
                                                                         <li class="<?= Yii::$app->controller->action->id == 'index' || '' ? 'active' : '' ?>"><?= Html::a('Home <span class="decor"></span>', ['/site/index'], ['title' => 'New Bharath Pitstop']) ?></li>
                                                                         <li class="<?= Yii::$app->controller->action->id == 'about' || '' ? 'active' : '' ?>"><?= Html::a('About Us', ['/site/about'], ['title' => 'New Bharath Pitstop']) ?></li>
-                                                                        <li class="dropdown"> <a href="services.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Products <span class="decor"></span></a>
+                                                                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Products <span class="decor"></span></a>
                                                                                 <ul class="dropdown-menu">
                                                                                         <li><?= Html::a('Tyres', ['/site/tyres']) ?></li>
                                                                                         <li><?= Html::a('Alloy Wheels', ['/site/alloy-wheels']) ?></li>
@@ -128,7 +128,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
 
                                                                                 </ul>
                                                                         </li>
-                                                                        <li class="dropdown"> <a href="<?= Yii::$app->homeUrl ?>site/services" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Services <span class="decor"></span></a>
+                                                                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true">Services <span class="decor"></span></a>
                                                                                 <ul class="dropdown-menu">
                                                                                         <?php
                                                                                         $services = common\models\Services::find()->where(['status' => 1])->all();

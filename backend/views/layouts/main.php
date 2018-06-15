@@ -122,26 +122,7 @@ AppAsset::register($this);
                                                 <?= Html::a('<i class="fa fa-sitemap"></i> <span class="title">About</span>', ['/cms/about/update?id=1'], ['class' => 'title']) ?>
                                         </li>
 
-                                        <li>
-                                                <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Offers</span>', ['/cms/offers/index'], ['class' => 'title']) ?>
-                                        </li>
 
-                                        <li>
-                                                <a href="">
-                                                        <i class="fa fa-credit-card"></i>
-                                                        <span class="title">Privileges</span>
-                                                </a>
-                                                <ul>
-
-                                                        <li>
-                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
-                                                        </li>
-
-                                                        <li>
-                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Terms and Conditions', ['/cms/terms-and-condition/update?id=1'], ['class' => 'title']) ?>
-                                                        </li>
-                                                </ul>
-                                        </li>
 
                                         <li>
                                                 <a href="">
@@ -166,6 +147,27 @@ AppAsset::register($this);
 
                                         <li>
                                                 <?= Html::a('<i class="fa fa-shield"></i> <span class="title">Services</span>', ['/cms/services/index'], ['class' => 'title']) ?>
+                                        </li>
+
+                                        <li>
+                                                <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Offers</span>', ['/cms/offers/index'], ['class' => 'title']) ?>
+                                        </li>
+
+                                        <li>
+                                                <a href="">
+                                                        <i class="fa fa-credit-card"></i>
+                                                        <span class="title">Privileges</span>
+                                                </a>
+                                                <ul>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
+                                                        </li>
+
+                                                        <li>
+                                                                <?= Html::a('<i class="fa fa-angle-double-right"></i> Terms and Conditions', ['/cms/terms-and-condition/update?id=1'], ['class' => 'title']) ?>
+                                                        </li>
+                                                </ul>
                                         </li>
 
                                         <li>
@@ -320,27 +322,7 @@ AppAsset::register($this);
                                                         <?= Html::a('<i class="fa fa-sitemap"></i> <span class="title">About</span>', ['/cms/about/update?id=1'], ['class' => 'title']) ?>
                                                 </li>
 
-                                                <li>
-                                                        <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Offers</span>', ['/cms/offers/index'], ['class' => 'title']) ?>
-                                                </li>
 
-
-                                                <li>
-                                                        <a href="">
-                                                                <i class="fa fa-credit-card"></i>
-                                                                <span class="title">Privileges</span>
-                                                        </a>
-                                                        <ul>
-
-                                                                <li>
-                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
-                                                                </li>
-
-                                                                <li>
-                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Terms and Conditions', ['/cms/terms-and-condition/update?id=1'], ['class' => 'title']) ?>
-                                                                </li>
-                                                        </ul>
-                                                </li>
 
                                                 <li>
                                                         <a href="">
@@ -369,6 +351,28 @@ AppAsset::register($this);
 
                                                 <li>
                                                         <?= Html::a('<i class="fa fa-shield"></i> <span class="title">Services</span>', ['/cms/services/index'], ['class' => 'title']) ?>
+                                                </li>
+
+                                                <li>
+                                                        <?= Html::a('<i class="fa fa-inr"></i> <span class="title">Offers</span>', ['/cms/offers/index'], ['class' => 'title']) ?>
+                                                </li>
+
+
+                                                <li>
+                                                        <a href="">
+                                                                <i class="fa fa-credit-card"></i>
+                                                                <span class="title">Privileges</span>
+                                                        </a>
+                                                        <ul>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Privileges', ['/cms/privileges/index'], ['class' => 'title']) ?>
+                                                                </li>
+
+                                                                <li>
+                                                                        <?= Html::a('<i class="fa fa-angle-double-right"></i> Terms and Conditions', ['/cms/terms-and-condition/update?id=1'], ['class' => 'title']) ?>
+                                                                </li>
+                                                        </ul>
                                                 </li>
 
                                                 <li>

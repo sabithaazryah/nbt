@@ -23,16 +23,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 </div>
                                 <div class="panel-body">
-                                                                                            <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+                                        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
                                         <?= common\widgets\Alert::widget() ?>
-                                        <?=  Html::a('<i class="fa-th-list"></i><span> Add Tyres</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
-                                                                                                                                                        <?= GridView::widget([
-                                                'dataProvider' => $dataProvider,
-                                                'filterModel' => $searchModel,
-        'columns' => [
-                                                ['class' => 'yii\grid\SerialColumn'],
-
-                                                                [
+                                        <?= Html::a('<i class="fa-th-list"></i><span> Add Tyres</span>', ['create'], ['class' => 'btn btn-warning  btn-icon btn-icon-standalone']) ?>
+                                        <?=
+                                        GridView::widget([
+                                            'dataProvider' => $dataProvider,
+                                            'filterModel' => $searchModel,
+                                            'columns' => [
+                                                    ['class' => 'yii\grid\SerialColumn'],
+                                                    [
                                                     'attribute' => 'image',
                                                     'format' => 'raw',
                                                     'value' => function ($data) {
@@ -41,35 +41,31 @@ $this->params['breadcrumbs'][] = $this->title;
                                                             return $img;
                                                     },
                                                 ],
-            
-                                                            
-                                                                  [
+                                                    [
                                                     'attribute' => 'brand',
                                                     'value' => function ($data) {
-                                                            if (!empty($data->brand)){
-                                                                $brand=Brands::findOne($data->brand);
-                                                                return $brand->title;
+                                                            if (!empty($data->brand)) {
+                                                                    $brand = Brands::findOne($data->brand);
+                                                                    return $brand->title;
                                                             }
                                                     },
                                                 ],
-                                                             [
+                                                    [
                                                     'attribute' => 'type',
                                                     'value' => function ($data) {
-                                                            if (!empty($data->type)){
-                                                               if($data->type==1){
-                                                                   return 'Sports Car';
-                                                               } else{
-                                                                   return 'Luxury Saloon';
-                                                               }
+
+                                                            if ($data->type == 1) {
+                                                                    return 'Sports Car';
+                                                            } else if ($data->type == 0) {
+                                                                    return 'Luxury Saloon';
                                                             }
                                                     },
                                                 ],
-           
-            // 'spec_2',
-            // 'spec_2_value',
-            // 'image',
-            // 'alt_tag',
-               [
+                                                // 'spec_2',
+                                                // 'spec_2_value',
+                                                // 'image',
+                                                // 'alt_tag',
+                                                [
                                                     'attribute' => 'status',
                                                     'value' => function($model, $key, $index, $column) {
                                                             if ($model->status == '0') {
@@ -80,15 +76,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                                     },
                                                     'filter' => [0 => 'Disabled', 1 => 'Enabled'],
                                                 ],
-            // 'CB',
-            // 'UB',
-            // 'DOC',
-            // 'DOU',
-
+                                                // 'CB',
+                                                // 'UB',
+                                                // 'DOC',
+                                                // 'DOU',
                                                 ['class' => 'yii\grid\ActionColumn'],
-                                                ],
-                                                ]); ?>
-                                                                                                                </div>
+                                            ],
+                                        ]);
+                                        ?>
+                                </div>
                         </div>
                 </div>
         </div>
