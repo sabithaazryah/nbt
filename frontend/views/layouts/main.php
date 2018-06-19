@@ -79,10 +79,10 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                         <div class="header-top-content">
                                                 <div class="row">
                                                         <div class="col-lg-8 col-md-7 col-sm-9 col-xs-12">
-                                                                <div class="header-contact-info">
+                                                                <div class="header-contact-info" itemscope itemtype="http://schema.org/Person">
                                                                         <ul>
-                                                                                <li><i class="flaticon-telephone"></i>Customer Support: <?= $about->customer_support_no ?></li>
-                                                                                <li><i class="flaticon-interface-1"></i><?= $contact_details->email ?></li>
+                                                                                <li itemprop="tel"><i class="flaticon-telephone"></i>Customer Support: <?= $about->customer_support_no ?></li>
+                                                                                <li itemprop="email"><i class="flaticon-interface-1"></i><?= $contact_details->email ?></li>
                                                                         </ul>
                                                                 </div>
                                                         </div>
@@ -108,7 +108,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                         <!-- Brand and toggle get grouped for better mobile display -->
                                         <div class="row">
                                                 <div class="col-md-3">
-                                                        <div class="logo"> <a  href="<?= Yii::$app->homeUrl ?>"><img src="<?= Yii::$app->homeUrl ?>img/resources/logo.png" alt=""></a></div>
+                                                        <div class="logo"> <a  href="<?= Yii::$app->homeUrl ?>"><img src="<?= Yii::$app->homeUrl ?>img/resources/logo.png" alt="New Bharath Pitstop"></a></div>
                                                 </div>
                                                 <div class="col-md-7 col-sm-10 col-xs-9">
                                                         <div class="navbar-header">
@@ -146,7 +146,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                         <!-- /.navbar-collapse -->
                                                 </div>
                                                 <div class="col-md-2 col-sm-2 col-xs-3">
-                                                        <div class="header-years-box"><img src="<?= Yii::$app->homeUrl ?>img/icon/years.png" class="img-responsive"></div>
+                                                        <div class="header-years-box"><img src="<?= Yii::$app->homeUrl ?>img/icon/years.png" class="img-responsive" alt="New Bharath Pitstop"></div>
                                                 </div>
                                         </div>
                                 </div>
@@ -164,7 +164,7 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                 <!--Start single footer widget-->
                                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                                         <div class="single-footer-widget">
-                                                                <div class="footer-logo"> <img src="<?= Yii::$app->homeUrl ?>img/resources/footer-logo.png" alt="Awesome Footer Logo"> </div>
+                                                                <div class="footer-logo"> <img src="<?= Yii::$app->homeUrl ?>img/resources/footer-logo.png" alt="New Bharath Pitstop"> </div>
                                                                 <div class="text">
                                                                         <p><?= $contents->footer_content ?></p>
                                                                 </div>
@@ -204,18 +204,18 @@ $params = $parameters = \yii::$app->getRequest()->getQueryParams();
                                                         </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                        <div class="single-footer-widget">
+                                                        <div class="single-footer-widget" itemscope itemtype="http://schema.org/Person">
                                                                 <div class="sec-title text-left">
                                                                         <h2>CONTACT US</h2>
                                                                         <span class="decor"></span> </div>
                                                                 <div class="f-contact"><b>Address</b>
-                                                                        <p><?= $contact_details->address ?></p>
+                                                                        <p itemprop="company"><?= $contact_details->address ?></p>
                                                                 </div>
                                                                 <div class="f-contact"><b>Phone No</b>
-                                                                        <p><?= $contact_details->phone1 ?></p>
+                                                                        <p itemprop="tel"><?= $contact_details->phone1 ?></p>
                                                                 </div>
                                                                 <div class="f-contact"><b>Email</b>
-                                                                        <p><?= $contact_details->email ?></p>
+                                                                        <p itemprop="email"><?= $contact_details->email ?></p>
                                                                 </div>
                                                                 <div class="footer-social-link">
                                                                         <ul>

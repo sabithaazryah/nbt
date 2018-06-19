@@ -32,7 +32,7 @@ class Brands extends \yii\db\ActiveRecord {
         public function rules() {
                 return [
                         [['type', 'status', 'CB', 'UB'], 'integer'],
-                        [['DOC', 'DOU', 'home_page'], 'safe'],
+                        [['DOC', 'DOU', 'home_page', 'image_alt'], 'safe'],
                         [['title', 'image'], 'string', 'max' => 250],
                         [['title', 'type', 'status'], 'required'],
                         [['image'], 'required', 'on' => 'create'],

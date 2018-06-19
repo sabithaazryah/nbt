@@ -14,7 +14,7 @@ else
         <div class="rev_slider slider1" data-version="5.0" data-controller="true">
                 <ul>
                         <?php foreach ($sliders as $slider) { ?>
-                                <li data-transition="random" data-title="Wheel Installation" data-thumb="img/slides/1.jpg"> <img src="<?= Yii::$app->homeUrl ?>uploads/sliders/<?= $slider->id ?>/image.<?= $slider->image ?>" alt="" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                                <li data-transition="random" data-title="Wheel Installation" data-thumb="img/slides/1.jpg"> <img src="<?= Yii::$app->homeUrl ?>uploads/sliders/<?= $slider->id ?>/image.<?= $slider->image ?>" alt="<?= $slider->alt_tag ?>" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
                                         <div class="tp-caption tp-resizeme"
                                              data-x="left" data-hoffset="0"
                                              data-y="center" data-voffset="142"
@@ -27,7 +27,7 @@ else
                                              data-start="500">
                                                 <div class="wheel-installation">
                                                         <?php if (isset($slider->title_1) && $slider->title_1 != '') { ?>
-                                                                <h1><?= $slider->title_1 ?></h1>
+                                                                <h2><?= $slider->title_1 ?></h2>
                                                         <?php } ?>
                                                         <?php if (isset($slider->title_2) && $slider->title_2 != '') { ?>
                                                                 <span class="border"></span> <b><?= $slider->title_2 ?></b>
@@ -54,9 +54,9 @@ else
                         <div class="slider lazy wow fadeInDown" >
                                 <?php foreach ($brands as $barnd) { ?>
                                         <div class="col-md-3 out_lin">
-                                                <center>
-                                                        <img src="<?= Yii::$app->homeUrl ?>uploads/brands/<?= $barnd->id ?>/image.<?= $barnd->image ?>" class="img-responsive">
-                                                </center>
+                                                <!--<center>-->
+                                                <img src="<?= Yii::$app->homeUrl ?>uploads/brands/<?= $barnd->id ?>/image.<?= $barnd->image ?>" class="img-responsive" alt="<?= $barnd->image_alt ?>">
+                                                <!--</center>-->
                                         </div>
                                 <?php } ?>
 
@@ -92,11 +92,11 @@ else
                                                 <span class="decor"></span> </div>
                                         <p><?= $home_page_cotent->small_content ?><br>
                                                 <br>
-                                                <img src="<?= Yii::$app->homeUrl ?>img/icon/since.png"><br>
+                                                <img src="<?= Yii::$app->homeUrl ?>img/icon/since.png" alt="About NBT"><br>
                                                 <br>
                                                 <?= $home_page_cotent->detail_content ?> </p>
                                         <?= Html::a('Read More', ['/site/about'], ['class' => 'aut-cr-btn']) ?>
-                                        <?= Html::a('View Services', ['/site/s'], ['class' => 'aut-cr-btn']) ?>
+                                        <?= Html::a('View Services', ['/site/services', 'service' => 'wheel-alignment'], ['class' => 'aut-cr-btn']) ?>
                                 </div>
 
                         </div>
@@ -112,7 +112,7 @@ else
                                                                 ?>
                                                                 <div class="item <?= $t == 1 ? 'active' : '' ?>">
                                                                         <div class="single-item">
-                                                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/testimonials/<?= $test->id ?>/image.<?= $test->image ?>" alt="Awesome Image"> <span class="line"></span> </div>
+                                                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/testimonials/<?= $test->id ?>/image.<?= $test->image ?>" alt="<?= $test->name ?>"> <span class="line"></span> </div>
                                                                                 <div class="content">
                                                                                         <h3><?= $test->name ?></h3>
                                                                                         <div class="info-box clearfix">
@@ -197,9 +197,9 @@ else
                         <!--Start single item-->
                         <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="single-item">
-                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/1/image.<?= $our_products->image_1 ?>" alt="Awesome Image"> </div>
+                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/1/image.<?= $our_products->image_1 ?>" alt="<?= $our_products->image_alt_1 ?>"> </div>
                                         <div class="overlay">
-                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/best-service/1-hover.jpg" alt="Awesome Image"/> </div>
+                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/1/hover/image.<?= $our_products->other_image_1 ?>" alt="<?= $our_products->image_alt_1 ?>"/> </div>
                                                 <!-- /.img-holder -->
                                                 <div class="icon-holder"> <span class="flaticon-float"></span> </div>
                                                 <div class="content">
@@ -221,9 +221,9 @@ else
                         <!--Start single item-->
                         <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="single-item">
-                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/2/image.<?= $our_products->image_2 ?>" alt="Awesome Image"> </div>
+                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/2/image.<?= $our_products->image_2 ?>" alt="<?= $our_products->image_alt_2 ?>"> </div>
                                         <div class="overlay">
-                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/best-service/2-hover.jpg" alt="Awesome Image"/> </div>
+                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/2/hover/image.<?= $our_products->other_image_2 ?>" alt="<?= $our_products->image_alt_2 ?>"/> </div>
                                                 <!-- /.img-holder -->
                                                 <div class="icon-holder"> <span class="flaticon-car-service"></span> </div>
                                                 <div class="content">
@@ -246,9 +246,9 @@ else
                         <!--Start single item-->
                         <div class="col-md-4 col-sm-12 col-xs-12">
                                 <div class="single-item middle">
-                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/3/image.<?= $our_products->image_3 ?>" alt="Awesome Image"> </div>
+                                        <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/3/image.<?= $our_products->image_3 ?>" alt="<?= $our_products->image_alt_3 ?>"> </div>
                                         <div class="overlay">
-                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>img/best-service/3-hover.jpg" alt="Awesome Image"/> </div>
+                                                <div class="img-holder"> <img src="<?= Yii::$app->homeUrl ?>uploads/our-products/1/3/hover/image.<?= $our_products->other_image_3 ?>" alt="<?= $our_products->image_alt_3 ?>"/> </div>
                                                 <!-- /.img-holder -->
                                                 <div class="icon-holder"> <span class="flaticon-technology"></span> </div>
                                                 <div class="content">
@@ -323,7 +323,10 @@ else
                                                                                 </div>
                                                                         </div>
                                                                 <?php } ?>
-                                                                <div class="button"> <a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a> </div>
+                                                                <div class="button">
+                                                                        <!--<a class="aut-cr-btn" href="appointment.html">Get Free Appoinment</a>-->
+                                                                        <?= Html::a('Get Free Appoinment', ['/site/tyres'], ['class' => 'aut-cr-btn']) ?>
+                                                                </div>
                                                         </div>
                                                 <?php } ?>
 
@@ -332,7 +335,7 @@ else
                         </div>
                         <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 wheel-work-order">
                                 <div class="wheel-work-right">
-                                        <h1>Our Services</h1>
+                                        <h2>Our Services</h2>
                                         <ul class="otherservice_list">
 
                                                 <?php

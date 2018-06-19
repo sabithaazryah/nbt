@@ -354,14 +354,14 @@ class SiteController extends Controller {
         }
 
         public function Sendmail($model) {
-                $to = "wails@epitome.ae,daniel@epitome.ae";
+                $to = "wails@epitome.ae";
                 $subject = "Enquiry";
                 $message = $this->renderPartial('contact-mail', ['model' => $model]);
                 echo $message;
                 exit;
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= 'From: <info@coralepitome.com>' . "\r\n";
+                $headers .= 'From: <info@nbt.com>' . "\r\n";
                 //mail($to, $subject, $message, $headers);
         }
 

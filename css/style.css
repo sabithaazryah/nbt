@@ -731,6 +731,14 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
         margin: 0px 0 10px 0px !important;
         font-family: 'Open Sans', sans-serif;
 }
+.rev_slider_wrapper .wheel-installation h2 {
+        color: #ffffff;
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0px 0 10px 0px !important;
+        font-family: 'Open Sans', sans-serif;
+}
 .rev_slider_wrapper .wheel-installation b {
         color: #ffdb00;
         font-size: 22px;
@@ -1306,6 +1314,18 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
         z-index: -1;
 }
 .wheel-work-right h1 {
+        background: #ffcc00 none repeat scroll 0 0;
+        color: #ffffff;
+        display: block;
+        font-size: 30px;
+        font-weight: 700;
+        padding-bottom: 12px;
+        padding-left: 25px;
+        padding-top: 10px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+}
+.wheel-work-right h2 {
         background: #ffcc00 none repeat scroll 0 0;
         color: #ffffff;
         display: block;

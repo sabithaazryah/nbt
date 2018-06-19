@@ -22,48 +22,53 @@ use Yii;
  * @property string $DOC
  * @property string $DOU
  */
-class OurProducts extends \yii\db\ActiveRecord
-{
-    /**
-     * {@inheritdoc}
-     */
-    public static function tableName()
-    {
-        return 'our_products';
-    }
+class OurProducts extends \yii\db\ActiveRecord {
 
-    /**
-     * {@inheritdoc}
-     */
-    public function rules()
-    {
-        return [
-            [['CB', 'UB'], 'integer'],
-            [['DOC', 'DOU'], 'safe'],
-            [['title_1', 'image_1', 'description_1', 'title_2', 'image_2', 'description_2', 'title_3', 'image_3', 'description_3'], 'string', 'max' => 250],
-        ];
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public static function tableName() {
+                return 'our_products';
+        }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'title_1' => 'Title 1',
-            'image_1' => 'Image 1',
-            'description_1' => 'Description 1',
-            'title_2' => 'Title 2',
-            'image_2' => 'Image 2',
-            'description_2' => 'Description 2',
-            'title_3' => 'Title 3',
-            'image_3' => 'Image 3',
-            'description_3' => 'Description 3',
-            'CB' => 'Cb',
-            'UB' => 'Ub',
-            'DOC' => 'Doc',
-            'DOU' => 'Dou',
-        ];
-    }
+        /**
+         * {@inheritdoc}
+         */
+        public function rules() {
+                return [
+                        [['CB', 'UB'], 'integer'],
+                        [['DOC', 'DOU', 'other_image_1', 'other_image_2', 'other_image_3'], 'safe'],
+                        [['title_1', 'image_1', 'description_1', 'title_2', 'image_2', 'description_2', 'title_3', 'image_3', 'description_3'], 'string', 'max' => 250],
+                ];
+        }
+
+        /**
+         * {@inheritdoc}
+         */
+        public function attributeLabels() {
+                return [
+                    'id' => 'ID',
+                    'title_1' => 'Title ',
+                    'image_1' => 'Image',
+                    'image_1' => 'Image',
+                    'image_alt_1' => 'Image Alt Tag',
+                    'other_image_1' => 'Image (This image shows on hover)',
+                    'description_1' => 'Description 1',
+                    'title_2' => 'Title ',
+                    'image_2' => 'Image',
+                    'image_alt_2' => 'Image Alt Tag',
+                    'other_image_2' => 'Image (This image shows on hover)',
+                    'description_2' => 'Description 2',
+                    'title_3' => 'Title ',
+                    'image_3' => 'Image',
+                    'image_alt_2' => 'Image Alt Tag',
+                    'other_image_3' => 'Image (This image shows on hover)',
+                    'description_3' => 'Description 3',
+                    'CB' => 'Cb',
+                    'UB' => 'Ub',
+                    'DOC' => 'Doc',
+                    'DOU' => 'Dou',
+                ];
+        }
+
 }

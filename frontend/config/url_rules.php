@@ -11,5 +11,6 @@ return [
     'offers' => '/site/offers',
     'appointment' => '/site/appointment',
     'tyres/<brand>' => 'site/tyres-detail',
+    'services/<service>' => 'site/services',
         ]
 ;

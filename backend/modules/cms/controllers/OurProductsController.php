@@ -82,11 +82,19 @@ class OurProductsController extends Controller {
                 $image_1_ext = $model->image_1;
                 $image_2_ext = $model->image_2;
                 $image_3_ext = $model->image_3;
+
+                $other_image_1_ext = $model->other_image_1;
+                $other_image_2_ext = $model->other_image_2;
+                $other_image_3_ext = $model->other_image_3;
                 if ($model->load(Yii::$app->request->post()) && Yii::$app->SetValues->Attributes($model)) {
                         $size = [
                                 ['width' => 70, 'height' => 70, 'name' => 'small'],
                                 ['width' => 370, 'height' => 380, 'name' => 'image'],
                                 ['width' => 370, 'height' => 254, 'name' => 'index'],
+                        ];
+                        $size1 = [
+                                ['width' => 70, 'height' => 70, 'name' => 'small'],
+                                ['width' => 370, 'height' => 254, 'name' => 'image'],
                         ];
                         $flag = 0;
                         if ($model->validate() && $model->save()) {
@@ -97,7 +105,17 @@ class OurProductsController extends Controller {
                                         $path = Yii::$app->basePath . '/../uploads/our-products/' . $model->id . '/1/';
                                         Yii::$app->UploadFile->UploadFile($model, $image_1, $path, $size);
                                 } else {
-                                        $model->image = $image_1_ext;
+                                        $model->image_1 = $image_1_ext;
+                                }
+
+                                $other_image_1 = UploadedFile::getInstance($model, 'other_image_1');
+                                if (!empty($other_image_1)) {
+                                        $model->other_image_1 = $other_image_1->extension;
+                                        $flag = 1;
+                                        $path = Yii::$app->basePath . '/../uploads/our-products/' . $model->id . '/1/hover/';
+                                        Yii::$app->UploadFile->UploadFile($model, $other_image_1, $path, $size1);
+                                } else {
+                                        $model->other_image_1 = $other_image_1_ext;
                                 }
 
                                 $image_2 = UploadedFile::getInstance($model, 'image_2');
@@ -107,7 +125,18 @@ class OurProductsController extends Controller {
                                         $path = Yii::$app->basePath . '/../uploads/our-products/' . $model->id . '/2/';
                                         Yii::$app->UploadFile->UploadFile($model, $image_2, $path, $size);
                                 } else {
-                                        $model->image = $image_2_ext;
+                                        $model->image_2 = $image_2_ext;
+                                }
+
+
+                                $other_image_2 = UploadedFile::getInstance($model, 'other_image_2');
+                                if (!empty($other_image_2)) {
+                                        $model->other_image_2 = $other_image_2->extension;
+                                        $flag = 1;
+                                        $path = Yii::$app->basePath . '/../uploads/our-products/' . $model->id . '/2/hover/';
+                                        Yii::$app->UploadFile->UploadFile($model, $other_image_2, $path, $size1);
+                                } else {
+                                        $model->other_image_2 = $other_image_2_ext;
                                 }
 
                                 $image_3 = UploadedFile::getInstance($model, 'image_3');
@@ -117,14 +146,22 @@ class OurProductsController extends Controller {
                                         $path = Yii::$app->basePath . '/../uploads/our-products/' . $model->id . '/3/';
                                         Yii::$app->UploadFile->UploadFile($model, $image_3, $path, $size);
                                 } else {
-                                        $model->image = $image_3_ext;
+                                        $model->image_3 = $image_3_ext;
+                                }
+
+                                $other_image_3 = UploadedFile::getInstance($model, 'other_image_3');
+                                if (!empty($other_image_3)) {
+                                        $model->other_image_3 = $other_image_3->extension;
+                                        $flag = 1;
+                                        $path = Yii::$app->basePath . '/../uploads/our-products/' . $model->id . '/3/hover/';
+                                        Yii::$app->UploadFile->UploadFile($model, $other_image_3, $path, $size1);
+                                } else {
+                                        $model->other_image_3 = $other_image_3_ext;
                                 }
                                 $model->update();
 
                                 Yii::$app->session->setFlash('success', "Updated Successfully");
-                                return $this->redirect('update', [
-                                            'id' => $model->id,
-                                ]);
+                                return $this->redirect(['update', 'id' => $model->id]);
                         }
                 }
                 return $this->render('update', [
