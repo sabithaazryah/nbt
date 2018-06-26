@@ -22,6 +22,11 @@ use common\models\Services;
  */
 class SiteController extends Controller {
 
+        public function beforeAction($action) {
+                $this->enableCsrfValidation = false;
+                return parent::beforeAction($action);
+        }
+
         /**
          * {@inheritdoc}
          */
@@ -233,7 +238,7 @@ class SiteController extends Controller {
                         // $captcha = $_POST['g-recaptcha-response'];
                         // if ($captcha) {
                         if ($model->save()) {
-                                $this->Sendmail($model);
+                                $this->Sendmail($model, 1);
                                 Yii::$app->session->setFlash('success', 'Your enquiry submitted successfully.');
                                 $model = new \common\models\ContactForm();
                         }
@@ -353,22 +358,60 @@ class SiteController extends Controller {
                 ]);
         }
 
-        public function Sendmail($model) {
+        public function Sendmail($model, $type) {
                 $to = "wails@epitome.ae";
-                $subject = "Enquiry";
-                $message = $this->renderPartial('contact-mail', ['model' => $model]);
-                echo $message;
-                exit;
+
+                if ($type == 1) {
+                        $message = $this->renderPartial('contact-mail', ['model' => $model]);
+                        $subject = "Enquiry";
+                } else {
+                        $message = $this->renderPartial('appointment-mail', ['model' => $model]);
+                        $subject = "Appointment";
+                }
                 $headers = "MIME-Version: 1.0" . "\r\n";
                 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                 $headers .= 'From: <info@nbt.com>' . "\r\n";
-                //mail($to, $subject, $message, $headers);
+                mail($to, $subject, $message, $headers);
         }
 
         public function actionAppointment() {
+                if (Yii::$app->request->post()) {
+                        $model->name = Yii::$app->request->post('name');
+                        $model->mobile_no = Yii::$app->request->post('mobile_number');
+                        $model->email = Yii::$app->request->post('email');
+                        $model->vehicle_manufacturer = Yii::$app->request->post('vehicle_manufacturer');
+                        $model->vehicle_date = date('Y-m-d', strtotime(Yii::$app->request->post('date')));
+                        $model->category = Yii::$app->request->post('indvlcorpt');
+                        $model->comments = Yii::$app->request->post('comment');
+                        $model->date = date('Y-m-d');
+                        $model->save();
+                        $this->Sendmail($model, 2);
+                        Yii::$app->session->setFlash('success', 'Your enquiry submitted successfully.');
+                }
+
+
                 return $this->render('appointment', [
                                 //   'brands' => $brands,
                 ]);
+        }
+
+        public function actionAppoint() {
+
+                $model = new \common\models\Appointment();
+                if (Yii::$app->request->post()) {
+                        $model->name = Yii::$app->request->post('name');
+                        $model->mobile_no = Yii::$app->request->post('mobile_number');
+                        $model->email = Yii::$app->request->post('email');
+                        $model->vehicle_manufacturer = Yii::$app->request->post('vehicle_manufacturer');
+                        $model->vehicle_date = date('Y-m-d', strtotime(Yii::$app->request->post('date')));
+                        $model->category = Yii::$app->request->post('indvlcorpt');
+                        $model->comments = Yii::$app->request->post('comment');
+                        $model->date = date('Y-m-d');
+                        $model->save();
+                        $this->Sendmail($model, 2);
+                        Yii::$app->session->setFlash('success', 'Your enquiry submitted successfully.');
+                }
+                return $this->redirect(Yii::$app->request->referrer);
         }
 
         public function actionEnquiry() {

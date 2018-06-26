@@ -1975,6 +1975,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
         width: 100%;
         transition: all 700ms ease 0s;
 }
+
+.free-appoinment-form .submit-btn {
+        height: 52px;
+        margin-top: 10px;
+        width: 100%;
+        transition: all 700ms ease 0s;
+}
 .free-appoinment-form button:hover {
         border: 1px solid #c7131c;
 }
@@ -5032,6 +5039,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
         text-align:center;
         font-size:16px;
         font-weight:600;
+}
+.free-appoinment-form .input-field input, .free-appoinment-form .input-field textarea{
+        color:#333 !important;
 }
 
 

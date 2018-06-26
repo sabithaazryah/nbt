@@ -14,7 +14,7 @@ else
         <div class="rev_slider slider1" data-version="5.0" data-controller="true">
                 <ul>
                         <?php foreach ($sliders as $slider) { ?>
-                                <li data-transition="random" data-title="Wheel Installation" data-thumb="img/slides/1.jpg"> <img src="<?= Yii::$app->homeUrl ?>uploads/sliders/<?= $slider->id ?>/image.<?= $slider->image ?>" alt="<?= $slider->alt_tag ?>" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
+                                <li data-transition="random" data-title="Wheel Installation" data-thumb="<?= Yii::$app->homeUrl ?>uploads/sliders/<?= $slider->id ?>/image.<?= $slider->image ?>"> <img src="<?= Yii::$app->homeUrl ?>uploads/sliders/<?= $slider->id ?>/image.<?= $slider->image ?>" alt="<?= $slider->alt_tag ?>" width="1920" height="613" data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat" >
                                         <div class="tp-caption tp-resizeme"
                                              data-x="left" data-hoffset="0"
                                              data-y="center" data-voffset="142"

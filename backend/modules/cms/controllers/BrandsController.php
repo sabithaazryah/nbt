@@ -37,6 +37,8 @@ class BrandsController extends Controller {
         public function actionIndex() {
                 $searchModel = new BrandsSearch();
                 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//                $dataProvider->query->orderBy([new \yii\db\Expression('FIELD (id, 5,9,3,2,1,6,7,8,4)')]);
+
 
                 return $this->render('index', [
                             'searchModel' => $searchModel,

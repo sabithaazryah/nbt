@@ -30,7 +30,9 @@ class ContactFormWidget extends Widget {
         }
 
         public function run() {
-                return $this->render('contact_form', []);
+                $model = new \common\models\Appointment();
+                $model->setScenario('appointment');
+                return $this->render('contact_form', ['model' => $model]);
         }
 
 }
